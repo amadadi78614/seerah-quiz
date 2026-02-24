@@ -5,9 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Post-Islam — Seerah Quiz</title>
 <link rel="stylesheet" href="assets/style.css">
-
-<script defer src="/_vercel/insights/script.js"></script>
-
 <style>
   :root { --accent:#26c6da; --bg:#1a3a3a; }
 
@@ -738,6 +735,13 @@ function renderQuestion() {
   if (CUR_Q >= SESSION.length) { showResults(); return; }
   ANSWERED = false;
   const q   = SESSION[CUR_Q];
+  // Shuffle options if not already done for this question in this session
+  if (q._shuffled === undefined) {
+    const correctText = q.opts[q.correct];
+    const shuffled = [...q.opts].sort(() => Math.random() - 0.5);
+    q._shuffled = shuffled;
+    q._shuffledCorrect = shuffled.indexOf(correctText);
+  }
   const pct = Math.round((CUR_Q / SESSION.length) * 100);
   document.getElementById('q-progress-fill').style.width = pct + '%';
   document.getElementById('q-counter').textContent = (CUR_Q+1) + ' / ' + SESSION.length;
@@ -749,10 +753,10 @@ function renderQuestion() {
   document.getElementById('q-explain').style.display = 'none';
   document.getElementById('q-next-btn').style.display = 'none';
   const letters = ['A','B','C','D'];
-  document.getElementById('q-options').innerHTML = q.opts.map((opt, i) =>
+  document.getElementById('q-options').innerHTML = q._shuffled.map((opt, i) =>
     `<button class="opt-btn" onclick="answer(${i})" id="opt-${i}">
       <span class="opt-letter">${letters[i]}</span>
-      <span>${opt.replace(/^[A-D][\.\)]\s*/,'')}</span>
+      <span>${opt.replace(/^[A-Da-d][.)\s]\s*/,'')}</span>
     </button>`
   ).join('');
 }
@@ -761,13 +765,14 @@ function answer(idx) {
   if (ANSWERED) return;
   ANSWERED = true;
   const q = SESSION[CUR_Q];
+  const correctIdx = q._shuffledCorrect !== undefined ? q._shuffledCorrect : q.correct;
   document.querySelectorAll('.opt-btn').forEach((b,i) => {
     b.disabled = true;
-    if (i === q.correct) b.classList.add('correct');
-    else if (i === idx)  b.classList.add('wrong');
+    if (i === correctIdx) b.classList.add('correct');
+    else if (i === idx)   b.classList.add('wrong');
   });
-  if (idx === q.correct) SCORE++;
-  if (idx !== q.correct && q.explain) {
+  if (idx === correctIdx) SCORE++;
+  if (idx !== correctIdx && q.explain) {
     const el = document.getElementById('q-explain');
     el.innerHTML = '<span style="color:#ffd700">💡 Did you know?</span> ' + q.explain;
     el.style.display = 'block';
@@ -809,7 +814,7 @@ function showResults() {
   // Unlock banner
   const banner   = document.getElementById('unlock-banner');
   const nextIdx  = CUR_LEVEL + 1;
-  if (passed && nextIdx < LEVELS.length && !isCompleted(nextIdx-1+1)) {
+  if (passed && nextIdx < LEVELS.length) {
     const nextLabel = LEVELS[nextIdx] ? LEVELS[nextIdx].label : null;
     if (nextLabel) {
       banner.classList.add('show');
