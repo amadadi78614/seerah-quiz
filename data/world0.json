@@ -75,21 +75,6 @@
     "explanation": "The angel specifically mentioned as the keeper of the \"Bayt al-Ma'mur\" is not Ishmael (Isma'il), but rather it is an angel assigned to this heavenly sanctuary where many angels worship. Ishmael is a prophet, not an angel, so the keeper is a distinct angelic being responsible for this sacred place."
   },
   {
-    "id": "bidaya_1eb5fc518b",
-    "q": "According to the hadith narrated by Abu Hurairah about the creation days, on which day did Allah create the heavens?",
-    "opts": [
-      "Sunday and Monday",
-      "Tuesday and Wednesday",
-      "Thursday and Friday",
-      "They were created in two days, but the hadith specifies them on Tuesday and Wednesday"
-    ],
-    "correct": 3,
-    "topic": "Beginning of Time · Creation of the Earth",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "The hadith narrated by Abu Hurairah indicates that Allah created the heavens over two days, specifically on Tuesday and Wednesday, highlighting the detailed stages of creation within the six-day framework mentioned in Islamic teachings. This shows the methodical and purposeful nature of Allah’s creation process."
-  },
-  {
     "id": "bidaya_94d86aa0d6",
     "q": "What is the distance between each heaven and the next, according to the hadith of Abu Dharr?",
     "opts": [
@@ -103,21 +88,6 @@
     "difficulty": "medium",
     "source": "Al-Bidaya wal-Nihaya",
     "explanation": "According to the hadith narrated by Abu Dharr, the distance between each of the seven heavens is described as the distance one would travel in five hundred years. This illustrates the vastness and greatness of Allah’s creation beyond human comprehension."
-  },
-  {
-    "id": "bidaya_d47eaf793c",
-    "q": "What is the name of the \"Much-Frequented House\" (Al-Bayt al-Ma'mur) and in which heaven is it located?",
-    "opts": [
-      "In the first heaven, directly above the Kaaba",
-      "In the seventh heaven, directly above the Kaaba",
-      "In the second heaven, where the angels worship",
-      "In the fourth heaven, visited by Prophet Idris"
-    ],
-    "correct": 1,
-    "topic": "Beginning of Time · The Throne & The Kursi",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "Al-Bayt al-Ma'mur, the \"Much-Frequented House,\" is a celestial house of worship located in the seventh heaven, directly above the Kaaba on Earth. It is visited by angels who worship there, and each day it is frequented by a multitude of angels, never to be visited again by the same ones."
   },
   {
     "id": "bidaya_6a879013cc",
@@ -178,21 +148,6 @@
     "difficulty": "medium",
     "source": "Al-Bidaya wal-Nihaya",
     "explanation": "The hadith describes the distance between the seventh heaven and the Throne as five hundred years of traveling, emphasizing the vastness and majesty of Allah’s creation. This measure is similar to the distances between the heavens themselves, illustrating the immense scale of the universe beyond human comprehension."
-  },
-  {
-    "id": "bidaya_133a214888",
-    "q": "According to the hadith of Abu Hurairah, on which day did Allah create the mountains?",
-    "opts": [
-      "Saturday",
-      "Sunday",
-      "Monday",
-      "Tuesday"
-    ],
-    "correct": 1,
-    "topic": "Beginning of Time · Creation of the Earth",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "Allah created the mountains on Sunday, as mentioned in the hadith narrated by Abu Hurairah. This sequence highlights the orderly process of creation, where Allah formed the earth first, then the mountains, demonstrating His wisdom in preparing the world for life."
   },
   {
     "id": "bidaya_79f785b502",
@@ -345,36 +300,6 @@
     "explanation": "Malik is the chief angel appointed to guard Hellfire, as mentioned in Islamic teachings. He oversees the punishment of the inhabitants of Hell and ensures that the commands related to Hellfire are carried out."
   },
   {
-    "id": "bidaya_67ec764e5b",
-    "q": "According to the hadith where the Prophet ﷺ saw Jibril in his original form, how many wings did Jibril have, and what was their span?",
-    "opts": [
-      "Two wings, covering the entire earth",
-      "Six hundred wings, each covering the horizon",
-      "One thousand wings, covered with pearls and rubies",
-      "Seventy thousand wings, each dripping with light"
-    ],
-    "correct": 1,
-    "topic": "Beginning of Time · Angels",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "Jibril (Gabriel) was described in a hadith as having six hundred wings, each so vast that they covered the horizon, illustrating his immense power and grandeur as an angel. This emphasizes the majesty and awe-inspiring nature of angels in Islamic teachings."
-  },
-  {
-    "id": "bidaya_2002993a6e",
-    "q": "What fell from Jibril's wings when the Prophet ﷺ saw him in his original form?",
-    "opts": [
-      "Pearls and rubies",
-      "Drops of light",
-      "Fire and smoke",
-      "Rain and hail"
-    ],
-    "correct": 0,
-    "topic": "Beginning of Time · Angels",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "When the Prophet ﷺ saw Jibril in his original, majestic form, the immense light and power caused pearls and rubies to fall from his wings, symbolizing the angel's divine beauty and the awe-inspiring nature of his true appearance."
-  },
-  {
     "id": "bidaya_06b5a55382",
     "q": "Which angel is entrusted with the blowing of the Trumpet (Sur) on the Day of Judgment?",
     "opts": [
@@ -420,66 +345,6 @@
     "explanation": "In the hadith of Abu Dharr, the space of four fingers in the heavens is filled with angels prostrating to Allah, demonstrating their continuous worship and submission. This illustrates the vast number of angels and their devotion in the unseen realms."
   },
   {
-    "id": "bidaya_0beedc8b28",
-    "q": "In the hadith about the Prophet's ﷺ visit to Ta'if, which angel was sent to him by Allah, and what offer did he make?",
-    "opts": [
-      "Jibril, offering to bring the mountains of Ta'if to him",
-      "Mika'il, offering to send rain upon the people",
-      "The Angel of the Mountains, offering to crush the people between the two mountains",
-      "Israfil, offering to destroy the city with a blast"
-    ],
-    "correct": 2,
-    "topic": "Beginning of Time · Angels",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "During the Prophet's ﷺ visit to Ta'if, the Angel of the Mountains was sent by Allah and offered to crush the people between the two mountains as punishment for their rejection. However, the Prophet ﷺ prayed for their guidance instead, showing his mercy and patience."
-  },
-  {
-    "id": "bidaya_323e80d13a",
-    "q": "How did the Prophet ﷺ respond to the Angel of the Mountains' offer to destroy the people of Ta'if?",
-    "opts": [
-      "He accepted the offer to teach them a lesson",
-      "He asked the angel to wait until morning",
-      "He said he hoped that from their offspring would come people who worship Allah alone",
-      "He forgave them immediately and asked the angel to leave"
-    ],
-    "correct": 2,
-    "topic": "Beginning of Time · Creation of the Earth",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "The Prophet ﷺ declined the Angel of the Mountains' offer to destroy Ta'if because he hoped that future generations from their descendants would embrace monotheism and worship Allah alone, showing his mercy and optimism for their guidance."
-  },
-  {
-    "id": "bidaya_86f36ded0f",
-    "q": "What is the name of the angel who visited Prophet Ibrahim (Abraham) when the people of Lut (Lot) were about to be destroyed?",
-    "opts": [
-      "Jibril and two other angels",
-      "Mika'il alone",
-      "Israfil with a host of angels",
-      "Ridwan with the keys to punishment"
-    ],
-    "correct": 0,
-    "topic": "Beginning of Time · Angels",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "Prophet Ibrahim (Abraham) was visited by the angel Jibril along with two other angels who came to inform him about the impending destruction of the people of Lut (Lot). These angels carried out Allah’s command to punish the wicked inhabitants for their sins."
-  },
-  {
-    "id": "bidaya_c3a3a3f706",
-    "q": "How did these angels appear to Prophet Lut when they visited him?",
-    "opts": [
-      "As elderly men with canes",
-      "As handsome young men",
-      "As travelers on camels",
-      "As angels with wings spread"
-    ],
-    "correct": 1,
-    "topic": "Beginning of Time · Angels",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "The angels appeared to Prophet Lut as handsome young men to blend in with the people of the town and to test their behavior without revealing their true nature. This form helped convey their message and mission discreetly."
-  },
-  {
     "id": "bidaya_887261954e",
     "q": "According to Ibn Kathir's commentary, why did the angels appear in this form to Lut?",
     "opts": [
@@ -493,21 +358,6 @@
     "difficulty": "medium",
     "source": "Al-Bidaya wal-Nihaya",
     "explanation": "The angels appeared in human form to Lut as a test to see how he and his people would respond, revealing their true character and obedience to Allah's commands. This trial was meant to distinguish the righteous from the sinful."
-  },
-  {
-    "id": "bidaya_1c8b6ed425",
-    "q": "In what forms did Jibril sometimes appear to the Prophet Muhammad ﷺ?",
-    "opts": [
-      "Only as himself with 600 wings",
-      "Sometimes as a handsome companion (Dihya al-Kalbi) and sometimes as a Bedouin",
-      "As a pillar of light",
-      "As a voice without form"
-    ],
-    "correct": 1,
-    "topic": "Beginning of Time · Angels",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "Jibril sometimes appeared to the Prophet Muhammad ﷺ in the form of Dihya al-Kalbi, a handsome companion known to the Prophet, and other times as a simple Bedouin, to convey messages discreetly and make the encounters more relatable. This shows the angel’s ability to assume different human forms."
   },
   {
     "id": "bidaya_d682aaaac9",
@@ -855,36 +705,6 @@
     "explanation": "The story of Iblis's refusal to prostrate to Adam is mentioned in seven Quranic chapters to emphasize the significance of obedience and humility. These chapters—Al-Baqarah, Al-A'raf, Al-Hijr, Al-Isra', Al-Kahf, Ta-Ha, and Saad—highlight different aspects of the event and its lessons for mankind."
   },
   {
-    "id": "bidaya_125429e7d5",
-    "q": "Where did Allah place Adam and his wife after creating them?",
-    "opts": [
-      "On earth",
-      "In a garden on earth",
-      "In Paradise (Jannah)",
-      "On a mountain"
-    ],
-    "correct": 2,
-    "topic": "Beginning of Time · Creation of Adam ﷺ",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "After creating Adam and his wife, Allah placed them in Paradise (Jannah) as a beautiful and peaceful abode where they could live and enjoy His blessings before being sent to Earth. This setting symbolizes the initial perfect state of human existence."
-  },
-  {
-    "id": "bidaya_3ec8236d4a",
-    "q": "What was the one thing Allah forbade Adam and Hawwa from doing in Paradise?",
-    "opts": [
-      "Eating from a specific tree",
-      "Looking at each other",
-      "Sleeping at night",
-      "Speaking with the angels"
-    ],
-    "correct": 0,
-    "topic": "Beginning of Time · Creation of Adam ﷺ",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "Allah forbade Adam and Hawwa from eating the fruit of a specific tree in Paradise as a test of obedience. This command was meant to teach them submission to Allah’s will and the consequences of disobedience."
-  },
-  {
     "id": "bidaya_224104b300",
     "q": "How did Iblis deceive Adam and Hawwa into eating from the forbidden tree?",
     "opts": [
@@ -898,21 +718,6 @@
     "difficulty": "medium",
     "source": "Al-Bidaya wal-Nihaya",
     "explanation": "Iblis deceived Adam and Hawwa by whispering false promises that eating from the forbidden tree would grant them immortality or angelic status, appealing to their desire for eternal life and higher rank, which led them to disobey Allah's command."
-  },
-  {
-    "id": "bidaya_f1ac23d83a",
-    "q": "What was the immediate consequence for Adam and Hawwa after eating from the tree?",
-    "opts": [
-      "They fell asleep",
-      "Their nakedness became apparent to them, and they began to cover themselves with leaves from Paradise",
-      "They were immediately removed from Paradise",
-      "They forgot who they were"
-    ],
-    "correct": 1,
-    "topic": "Beginning of Time · Creation of Adam ﷺ",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "After eating from the tree, Adam and Hawwa became aware of their nakedness, symbolizing the loss of their initial innocence, and they covered themselves with leaves, reflecting their newfound sense of shame and awareness of disobedience."
   },
   {
     "id": "bidaya_ecbf3ffa87",
@@ -990,126 +795,6 @@
     "explanation": "Iblis descended to earth at Dashtimaysan, near Basra, as mentioned in Islamic traditions and historical texts like Al-Bidaya wal-Nihaya. This location is significant because it marks the beginning of his influence on humanity after his expulsion from the heavens."
   },
   {
-    "id": "bidaya_d9ca5e6eaa",
-    "q": "According to some narrations, what items came down with Adam from Paradise?",
-    "opts": [
-      "A tent, a staff, and a sword",
-      "The Black Stone, a handful of Paradise's leaves, and knowledge of all trades",
-      "A crown and a throne",
-      "Books of revelation"
-    ],
-    "correct": 1,
-    "topic": "Beginning of Time · Creation of Adam ﷺ",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "Adam ﷺ descended from Paradise carrying the Black Stone, a handful of Paradise's leaves, and knowledge of all trades, symbolizing divine blessings and guidance for humanity. These items represent spiritual connection, healing, and practical skills essential for human life on Earth."
-  },
-  {
-    "id": "bidaya_b128d72eda",
-    "q": "According to Abu Musa al-Ash'ari's narration cited by `Abd al-Razzaq, what did Allah teach Adam when he was sent down to earth?",
-    "opts": [
-      "The names of all animals",
-      "The craft of everything, and he was given provisions from Paradise's fruits, though earthly ones change",
-      "How to build houses",
-      "The languages of all peoples"
-    ],
-    "correct": 1,
-    "topic": "Beginning of Time · Creation of Adam ﷺ",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "When Adam was sent down to earth, Allah taught him the craft of everything, meaning the knowledge and skills needed for life, and provided him with fruits from Paradise as provisions, highlighting the difference between eternal heavenly sustenance and the changing, perishable nature of earthly provisions."
-  },
-  {
-    "id": "bidaya_ed17edcce4",
-    "q": "According to Ibn Abbas, how long did Adam remain in Paradise before being sent down?",
-    "opts": [
-      "One hundred years",
-      "One thousand years",
-      "Only between the afternoon prayer (`Asr) and sunset",
-      "Forty days"
-    ],
-    "correct": 2,
-    "topic": "Beginning of Time · Creation of Adam ﷺ",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "Ibn Abbas explains that Adam ﷺ stayed in Paradise for a very short time—from the afternoon prayer (`Asr) until sunset—highlighting the immediacy of his descent to Earth and the beginning of human life here. This emphasizes the swift transition from creation to earthly existence."
-  },
-  {
-    "id": "bidaya_06c4753a5c",
-    "q": "What was the occupation of Habil (Abel) and Qabil (Cain)?",
-    "opts": [
-      "Habil was a farmer, Qabil was a shepherd",
-      "Habil was a shepherd, Qabil was a farmer",
-      "Both were shepherds",
-      "Both were farmers"
-    ],
-    "correct": 1,
-    "topic": "Beginning of Time · Adam's Descent & Early Humanity",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "Habil (Abel) was a shepherd who tended animals, while Qabil (Cain) was a farmer who cultivated the land. This distinction is mentioned in Islamic tradition to highlight their different livelihoods and the context of their offerings to Allah."
-  },
-  {
-    "id": "bidaya_89dc2a9eb1",
-    "q": "Why did Qabil kill Habil?",
-    "opts": [
-      "Because of a dispute over land",
-      "Because Habil refused to share his wealth",
-      "Because Qabil was jealous that Habil's sacrifice was accepted while his was not",
-      "Because their father Adam favored Habil"
-    ],
-    "correct": 2,
-    "topic": "Beginning of Time · Adam's Descent & Early Humanity",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "Qabil killed Habil out of jealousy because Allah accepted Habil's sacrifice but rejected Qabil's. This event marks the first murder in human history, illustrating the consequences of envy and disobedience to Allah's commands."
-  },
-  {
-    "id": "bidaya_f4b10c84f1",
-    "q": "What did Allah send to show Qabil how to bury his brother's body?",
-    "opts": [
-      "An angel teaching him",
-      "A vision in his dream",
-      "A crow that scratched the ground to show him how to bury another dead crow",
-      "Adam came and taught him"
-    ],
-    "correct": 2,
-    "topic": "Beginning of Time · Creation of the Earth",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "Allah sent a crow that scratched the ground to demonstrate to Qabil how to bury his brother's body, teaching him the proper way to handle the deceased. This act symbolizes the beginning of burial practices in human history."
-  },
-  {
-    "id": "bidaya_798cb8bd2c",
-    "q": "What was Qabil's response after killing his brother and seeing the crow?",
-    "opts": [
-      "He rejoiced",
-      "He said \"Woe is me! Was I unable to be like this crow and hide the body of my brother?\"",
-      "He ran away",
-      "He tried to bring Habil back to life"
-    ],
-    "correct": 1,
-    "topic": "Beginning of Time · Adam's Descent & Early Humanity",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "After killing his brother, Qabil saw a crow burying another crow and realized he should have hidden his brother's body similarly. This moment reflects his regret and awareness of his wrongdoing, highlighting the early human understanding of guilt and responsibility."
-  },
-  {
-    "id": "bidaya_f4328f0bdd",
-    "q": "According to the authentic hadith, what is the ruling regarding a soul that is killed unjustly?",
-    "opts": [
-      "The killer alone bears the sin",
-      "The killer and his tribe bear the sin",
-      "The first son of Adam (Qabil) bears a portion of the sin of every murder because he was the first to establish the precedent of murder",
-      "Adam bears the sin because of his original sin"
-    ],
-    "correct": 2,
-    "topic": "Beginning of Time · Creation of Adam ﷺ",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "When a soul is killed unjustly, the sin extends beyond the immediate murderer; Qabil, Adam’s first son, carries part of this sin because he set the initial example of murder, establishing a grave precedent in human history as explained in authentic hadith and Islamic teachings."
-  },
-  {
     "id": "bidaya_024fae2353",
     "q": "How old was Adam when he died, according to the narrations cited by Ibn Kathir?",
     "opts": [
@@ -1153,21 +838,6 @@
     "difficulty": "medium",
     "source": "Al-Bidaya wal-Nihaya",
     "explanation": "Adam's final advice emphasized monotheism and obedience, urging his children to worship Allah alone and follow His messengers, ensuring they remain on the straight path and uphold the teachings revealed to humanity. This guidance highlights the core principle of Islam: sincere devotion to Allah and adherence to His guidance."
-  },
-  {
-    "id": "bidaya_2e31f00b26",
-    "q": "According to the hadith about Adam and Musa (Moses) meeting, why did Adam defeat Musa in their argument?",
-    "opts": [
-      "Adam had more knowledge of the Torah",
-      "Adam argued that his sin was predestined by Allah before he was created, and blaming him was like blaming Allah for His own decree",
-      "Musa was not a prophet at the time of the debate",
-      "Adam had already repented, so his sin was erased"
-    ],
-    "correct": 1,
-    "topic": "Beginning of Time · The Pen & The Tablet",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "Adam defeated Musa because he explained that his sin was already decreed by Allah before his creation, so holding him accountable would mean blaming Allah's divine will, which is beyond human control. This highlights the concept of predestination in Islamic theology."
   },
   {
     "id": "bidaya_53c4357054",
@@ -1650,21 +1320,6 @@
     "explanation": "Mountains act as stabilizers for the earth, preventing excessive shaking or movement. This helps maintain balance and stability for all living beings on the earth, as described in Islamic teachings and supported by natural observations."
   },
   {
-    "id": "bidaya_15d4478c85",
-    "q": "On which day of creation were the mountains created, according to the hadith of Abu Hurairah?",
-    "opts": [
-      "Saturday",
-      "Sunday",
-      "Monday",
-      "Tuesday"
-    ],
-    "correct": 1,
-    "topic": "Beginning of Time · Creation of the Earth",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "According to the hadith of Abu Hurairah, mountains were created on the second day of creation, not Sunday. This highlights the sequence of Allah's creation, where the earth and its features, including mountains, were formed early to stabilize the land."
-  },
-  {
     "id": "bidaya_3ed362d50e",
     "q": "What lies beneath the seventh earth, according to some narrations mentioned by Ibn Kathir?",
     "opts": [
@@ -1693,21 +1348,6 @@
     "difficulty": "medium",
     "source": "Al-Bidaya wal-Nihaya",
     "explanation": "The seven heavens are positioned above the seven earths, and between each earth there is a distance comparable to that between the heavens. This illustrates the vast and structured nature of creation as described in Islamic cosmology."
-  },
-  {
-    "id": "bidaya_d6d66cd35b",
-    "q": "In the hadith of Abu Hurairah about creation on specific days, what did Allah create on Wednesday?",
-    "opts": [
-      "The mountains",
-      "The trees",
-      "The light",
-      "The animals"
-    ],
-    "correct": 2,
-    "topic": "Beginning of Time · Creation of the Earth",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "On Wednesday, Allah created the light, which is considered the first creation and the source of all illumination in the universe. This highlights the importance of light as a fundamental element in the order of creation."
   },
   {
     "id": "bidaya_d226b4be13",
@@ -1933,36 +1573,6 @@
     "difficulty": "medium",
     "source": "Al-Bidaya wal-Nihaya",
     "explanation": "Azra'il, also known as Malak al-Mawt (Angel of Death), is the angel responsible for taking the souls of humans at the time of death, as mentioned in Islamic teachings. This role is specific to him, distinguishing him from other angels with different duties."
-  },
-  {
-    "id": "bidaya_8732884935",
-    "q": "In the hadith about the Prophet's ﷺ journey to Ta'if, which angel came to him with an offer to destroy the people?",
-    "opts": [
-      "Jibril",
-      "Mika'il",
-      "The Angel of the Mountains (Malak al-Jibal)",
-      "Israfil"
-    ],
-    "correct": 2,
-    "topic": "Beginning of Time · Angels",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "During the Prophet’s ﷺ journey to Ta'if, the Angel of the Mountains (Malak al-Jibal) appeared offering to crush the people between the mountains as punishment, but the Prophet ﷺ chose patience and prayed for their guidance instead, demonstrating mercy and forgiveness."
-  },
-  {
-    "id": "bidaya_3eca83f2a5",
-    "q": "What was the Prophet's ﷺ response to the Angel of the Mountains' offer to crush the people of Ta'if between the two mountains?",
-    "opts": [
-      "He accepted the offer to teach them a lesson",
-      "He asked the angel to wait until morning",
-      "He said: \"No, I hope that Allah will bring forth from their loins people who worship Allah alone, associating nothing with Him\"",
-      "He forgave them immediately and asked the angel to leave"
-    ],
-    "correct": 2,
-    "topic": "Beginning of Time · Creation of the Earth",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "The Prophet ﷺ declined the Angel's offer because he hoped for the guidance and repentance of the people of Ta'if, wishing that future generations from them would worship Allah alone without associating partners with Him, demonstrating his mercy and hope for their spiritual growth."
   },
   {
     "id": "bidaya_39eff400da",
@@ -2820,21 +2430,6 @@
     "explanation": "After eating from the forbidden tree, Adam and Hawwa (Eve) became aware of their nakedness, symbolizing the loss of their initial innocence, so they covered themselves with leaves from Paradise to conceal their private parts. This marked the beginning of human self-awareness and modesty."
   },
   {
-    "id": "bidaya_b86740dbc7",
-    "q": "What did Allah say to Adam after he ate from the tree?",
-    "opts": [
-      "\"Did I not forbid you from that tree and tell you that Satan is your clear enemy?\"",
-      "\"Get out of Paradise\"",
-      "\"You have disobeyed Me\"",
-      "\"Why did you listen to him?\""
-    ],
-    "correct": 0,
-    "topic": "Beginning of Time · Creation of Adam ﷺ",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "Allah reminded Adam that He had explicitly forbidden him from eating from the tree and warned that Satan is a clear enemy who deceives. This highlights the importance of obedience to Allah's commands and awareness of Satan's role in leading humans astray."
-  },
-  {
     "id": "bidaya_91c45246da",
     "q": "What words of repentance did Adam learn from his Lord?",
     "opts": [
@@ -2893,36 +2488,6 @@
     "difficulty": "medium",
     "source": "Al-Bidaya wal-Nihaya",
     "explanation": "According to some narrations in Islamic tradition, the snake descended to earth in Isfahan, a city in Persia. This detail highlights specific geographic references used in historical texts like Al-Bidaya wal-Nihaya to explain early events in creation stories."
-  },
-  {
-    "id": "bidaya_3e4882ab8e",
-    "q": "According to Ibn Abbas (may Allah be pleased with him), how long did Adam remain in Paradise before being sent down?",
-    "opts": [
-      "One hundred years",
-      "One thousand years",
-      "Only between the afternoon prayer (`Asr) and sunset",
-      "Forty days"
-    ],
-    "correct": 2,
-    "topic": "Beginning of Time · Creation of Adam ﷺ",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "Ibn Abbas (may Allah be pleased with him) explained that Prophet Adam ﷺ stayed in Paradise for a very short time, specifically between the `Asr (afternoon) prayer and sunset, highlighting the immediacy of his descent to Earth after creation. This emphasizes the swift transition from Paradise to earthly life."
-  },
-  {
-    "id": "bidaya_ec3600372f",
-    "q": "What items came down with Adam from Paradise, according to some narrations?",
-    "opts": [
-      "A tent, a staff, and a sword",
-      "The Black Stone, a handful of Paradise's leaves, and knowledge of all trades",
-      "A crown and a throne",
-      "Books of revelation"
-    ],
-    "correct": 1,
-    "topic": "Beginning of Time · Creation of Adam ﷺ",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "According to some narrations, Adam descended from Paradise carrying the Black Stone, a handful of Paradise's leaves, and knowledge of all trades, symbolizing divine blessings and wisdom granted to him for guidance and sustenance on Earth."
   },
   {
     "id": "bidaya_5cb4ee586e",
@@ -3030,21 +2595,6 @@
     "explanation": "Allah took the covenant from all human souls when He created Adam by bringing forth their descendants from his back and making them testify to His Lordship, ensuring their acknowledgment of His oneness before their earthly existence."
   },
   {
-    "id": "bidaya_22ae975b26",
-    "q": "What did all the descendants of Adam testify?",
-    "opts": [
-      "\"We bear witness that Muhammad is the Messenger of Allah\"",
-      "\"Am I not your Lord?\" They said, \"Yes, we bear witness\"",
-      "\"There is no god but Allah\"",
-      "\"Paradise is true and Hell is true\""
-    ],
-    "correct": 1,
-    "topic": "Beginning of Time · Creation of Adam ﷺ",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "All the descendants of Adam testified to the oneness of Allah by acknowledging His Lordship with the words, \"Am I not your Lord?\" and their response, \"Yes, we bear witness,\" as mentioned in the Quran (7:172), affirming their innate recognition of Allah before entering the world."
-  },
-  {
     "id": "bidaya_9d93482123",
     "q": "Why did Allah take this covenant from humanity?",
     "opts": [
@@ -3075,21 +2625,6 @@
     "explanation": "This covenant refers to the primordial testimony where all human souls acknowledged Allah's Lordship before earthly life, ensuring that on the Day of Judgment, no one can deny or claim ignorance of Allah's existence and authority, establishing universal human accountability."
   },
   {
-    "id": "bidaya_9f37a90934",
-    "q": "What were the occupations of Habil (Abel) and Qabil (Cain)?",
-    "opts": [
-      "Habil was a farmer, Qabil was a shepherd",
-      "Habil was a shepherd, Qabil was a farmer",
-      "Both were shepherds",
-      "Both were farmers"
-    ],
-    "correct": 1,
-    "topic": "Beginning of Time · Adam's Descent & Early Humanity",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "Habil (Abel) was a shepherd who tended animals, while Qabil (Cain) was a farmer who cultivated the land. Their different occupations are mentioned in Islamic tradition to highlight their distinct roles and the story of their offerings to Allah."
-  },
-  {
     "id": "bidaya_f2fab22dec",
     "q": "Why did each of them offer a sacrifice to Allah?",
     "opts": [
@@ -3103,6 +2638,531 @@
     "difficulty": "medium",
     "source": "Al-Bidaya wal-Nihaya",
     "explanation": "Each offered a sacrifice to Allah to express their devotion and seek closeness to Him, demonstrating submission and gratitude as part of their worship, which is a common practice in many prophetic traditions."
+  },
+  {
+    "id": "bidaya_d704937be0",
+    "q": "What does this hadith teach about the gravity of murder?",
+    "opts": [
+      "Murder is a minor sin",
+      "Each murderer only bears their own sin",
+      "The one who introduces an evil practice bears the sin of all who follow it without diminishing their sins",
+      "Murder is forgivable without repentance"
+    ],
+    "correct": 2,
+    "topic": "Beginning of Time · The Pen & The Tablet",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "This hadith emphasizes that initiating a sinful act, like murder, causes the originator to carry the burden of all subsequent sinners who imitate it, in addition to their own sins, highlighting the severe responsibility and gravity of starting such evil practices."
+  },
+  {
+    "id": "bidaya_3cf2d2bf3c",
+    "q": "Who were Wadd, Suwa', Yaghuth, Ya'uq, and Nasr?",
+    "opts": [
+      "Angels",
+      "Prophets",
+      "Righteous people from the descendants of Adam who were later worshipped as idols",
+      "Jinn kings"
+    ],
+    "correct": 2,
+    "topic": "Beginning of Time · Adam's Descent & Early Humanity",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "Wadd, Suwa', Yaghuth, Ya'uq, and Nasr were originally righteous individuals from Adam's descendants, but over time, people began to worship them as idols instead of Allah, which is condemned in Islamic teachings. This highlights the danger of idol worship and deviation from monotheism."
+  },
+  {
+    "id": "bidaya_6d76e353e3",
+    "q": "How did idol worship begin among the descendants of Adam?",
+    "opts": [
+      "It was revealed by Allah",
+      "Some people made images of righteous people who had died, to remember them and be inspired, then later generations worshipped these images",
+      "Iblis introduced it directly",
+      "It came from Egypt"
+    ],
+    "correct": 1,
+    "topic": "Beginning of Time · Creation of Adam ﷺ",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "Idol worship began when some descendants of Adam created images of righteous deceased individuals to remember and seek inspiration from them. Over time, later generations started worshipping these images themselves, turning remembrance into idol worship."
+  },
+  {
+    "id": "bidaya_1277d7f2d3",
+    "q": "What was the name of the person who first suggested making images of the righteous?",
+    "opts": [
+      "Qabil",
+      "A man named Yarub or something similar, according to some narrations",
+      "Adam",
+      "Iblis"
+    ],
+    "correct": 1,
+    "topic": "Beginning of Time · Jinn & Iblis",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "A man named Yarub is mentioned in some narrations as the first to suggest making images of the righteous, aiming to preserve their memory. This reflects early human efforts to honor and remember virtuous individuals through visual representation."
+  },
+  {
+    "id": "bidaya_e0b923f2b6",
+    "q": "How did Iblis exploit this practice?",
+    "opts": [
+      "He destroyed the images",
+      "He encouraged people to worship the images after the generation that made them passed away",
+      "He made more images",
+      "He told people the images were gods"
+    ],
+    "correct": 1,
+    "topic": "Beginning of Time · Jinn & Iblis",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "Iblis exploited the practice of venerating images by encouraging people to continue worshipping these idols even after the original creators had died, diverting them from the worship of Allah and leading them into shirk (associating partners with Allah)."
+  },
+  {
+    "id": "bidaya_661abadbce",
+    "q": "What do the names Wadd, Suwa', Yaghuth, Ya'uq, and Nasr mean according to some interpretations?",
+    "opts": [
+      "They mean \"love,\" \"hate,\" \"help,\" etc.",
+      "They were the actual names of the righteous men",
+      "They are names of idols only",
+      "They are names of angels"
+    ],
+    "correct": 1,
+    "topic": "Beginning of Time · Adam's Descent & Early Humanity",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "Wadd, Suwa', Yaghuth, Ya'uq, and Nasr are often understood as the names of idols worshipped by certain tribes, but some interpretations suggest they were originally the names of righteous men whose followers later deified them. This reflects how human figures became objects of worship over time."
+  },
+  {
+    "id": "bidaya_051ce99d50",
+    "q": "What does the Quranic phrase \"wa rafa'nahu makaanan 'aliyya\" (and We raised him to a high station) mean according to Ibn Kathir?",
+    "opts": [
+      "He was given great wealth",
+      "He was taken up to the heavens and is alive",
+      "He was given great knowledge",
+      "He was made king"
+    ],
+    "correct": 1,
+    "topic": "Beginning of Time · The Throne & The Kursi",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "Ibn Kathir explains that \"wa rafa'nahu makaanan 'aliyya\" means Prophet Isa (Jesus) was physically raised up to the heavens by Allah, where he remains alive, rather than being killed, highlighting his special status and divine protection."
+  },
+  {
+    "id": "bidaya_ad49e5030a",
+    "q": "What was the first form of idolatry that appeared among humanity?",
+    "opts": [
+      "Worship of statues of angels",
+      "Worship of images of righteous people who had died (Wadd, Suwa', Yaghuth, Ya'uq, Nasr)",
+      "Worship of the sun and moon",
+      "Worship of fire"
+    ],
+    "correct": 1,
+    "topic": "Beginning of Time · Adam's Descent & Early Humanity",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "The first form of idolatry involved worshipping images of righteous people who had passed away, such as Wadd, Suwa', Yaghuth, Ya'uq, and Nasr, as a way to seek their intercession or blessings, which deviated from pure monotheism taught by the prophets."
+  },
+  {
+    "id": "bidaya_965150a363",
+    "q": "What was the sign that the flood was about to begin?",
+    "opts": [
+      "An earthquake",
+      "Water gushing from the oven (tannur)",
+      "Darkness",
+      "Thunder and lightning"
+    ],
+    "correct": 1,
+    "topic": "Beginning of Time · Creation of the Earth",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "Before the flood began, water gushing from the oven (tannur) was a clear sign indicating the impending deluge. This event symbolized the release of overwhelming water, marking the start of the flood as described in Islamic tradition."
+  },
+  {
+    "id": "bidaya_16e677bd0f",
+    "q": "Where did the ark come to rest after the flood?",
+    "opts": [
+      "Mount Sinai",
+      "Mount Judi",
+      "Mount Ararat",
+      "Mount Lebanon"
+    ],
+    "correct": 1,
+    "topic": "Beginning of Time · Creation of the Earth",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "The ark came to rest on Mount Judi after the flood, as mentioned in Islamic tradition and the Quran (Surah Hud 11:44). This location is distinct from the biblical Mount Ararat and signifies where Prophet Noah's mission concluded successfully."
+  },
+  {
+    "id": "bidaya_34e3733a5e",
+    "q": "What happened to the earth after the flood?",
+    "opts": [
+      "It was completely new",
+      "Allah commanded the earth to swallow the water and the sky to cease raining",
+      "It remained flooded forever",
+      "It became desert"
+    ],
+    "correct": 1,
+    "topic": "Beginning of Time · Creation of the Earth",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "After the flood, Allah commanded the earth to absorb the excess water and the sky to stop raining, which caused the floodwaters to recede and allowed life to begin anew on the earth's surface. This demonstrates Allah's control over natural elements in the process of creation and renewal."
+  },
+  {
+    "id": "bidaya_fc6cab915f",
+    "q": "What is the significance of the phrase \"Bismillah majraha wa mursaha\" (In the name of Allah is its course and its anchorage)?",
+    "opts": [
+      "It is a magic spell",
+      "It teaches that everything begins and ends with the name of Allah",
+      "It was the name of the ship",
+      "It is a prayer for safety"
+    ],
+    "correct": 1,
+    "topic": "Beginning of Time · Creation of Adam ﷺ",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "The phrase \"Bismillah majraha wa mursaha\" emphasizes that all actions and events, from their start to their completion, occur by Allah’s will and power, highlighting His control over every process and outcome in the universe."
+  },
+  {
+    "id": "bidaya_ff6d8318c1",
+    "q": "What were the instructions regarding the she-camel?",
+    "opts": [
+      "To worship it",
+      "To let it drink from the water one day and the people the next day, and not to harm it",
+      "To sacrifice it to Allah",
+      "To keep it in a temple"
+    ],
+    "correct": 1,
+    "topic": "Beginning of Time · Creation of the Earth",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "The she-camel was a sign from Allah to the people of Thamud, and they were instructed to share the water by letting the camel drink one day and the people the next, ensuring no harm came to it as a test of their obedience and respect for divine commands."
+  },
+  {
+    "id": "bidaya_81471a0ca4",
+    "q": "When did the punishment come?",
+    "opts": [
+      "Immediately",
+      "After three days, during which they awaited it",
+      "After one year",
+      "After they repented"
+    ],
+    "correct": 1,
+    "topic": "Beginning of Time · The Pen & The Tablet",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "The punishment came after three days because the people were given a period to reflect and repent, but when they persisted in their wrongdoing, the punishment was then executed as a consequence of their actions. This waiting period highlights divine justice and mercy before enforcing punishment."
+  },
+  {
+    "id": "bidaya_03c1ae88c0",
+    "q": "How did Isma'il respond when his father told him about the command to sacrifice him?",
+    "opts": [
+      "He ran away",
+      "He said, \"O my father, do as you are commanded; you will find me, if Allah wills, among the steadfast\"",
+      "He asked for time",
+      "He cried"
+    ],
+    "correct": 1,
+    "topic": "Beginning of Time · Creation of the Earth",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "Isma'il showed complete submission and trust in Allah by encouraging his father to fulfill the command, expressing his own readiness and faith that he would be patient and steadfast through the trial. This demonstrates the importance of obedience and trust in God's will in Islam."
+  },
+  {
+    "id": "bidaya_d47eaf793c",
+    "q": "What is the name of the \"Much-Frequented House\" (Al-Bayt al-Ma'mur) and in which heaven is it located?",
+    "opts": [
+      "In the first heaven, directly above the Kaaba",
+      "In the seventh heaven, directly above the Kaaba",
+      "In the second heaven, where the angels worship",
+      "In the fourth heaven, visited by Prophet Idris"
+    ],
+    "correct": 1,
+    "topic": "Beginning of Time · The Throne & The Kursi",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "Al-Bayt al-Ma'mur, the \"Much-Frequented House,\" is a celestial house of worship located in the seventh heaven, directly above the Kaaba on Earth. It is visited by angels who worship there, and each day it is frequented by a multitude of angels, never to be visited again by the same ones."
+  },
+  {
+    "id": "bidaya_86f36ded0f",
+    "q": "What is the name of the angel who visited Prophet Ibrahim (Abraham) when the people of Lut (Lot) were about to be destroyed?",
+    "opts": [
+      "Jibril and two other angels",
+      "Mika'il alone",
+      "Israfil with a host of angels",
+      "Ridwan with the keys to punishment"
+    ],
+    "correct": 0,
+    "topic": "Beginning of Time · Angels",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "Prophet Ibrahim (Abraham) was visited by the angel Jibril along with two other angels who came to inform him about the impending destruction of the people of Lut (Lot). These angels carried out Allah’s command to punish the wicked inhabitants for their sins."
+  },
+  {
+    "id": "bidaya_c3a3a3f706",
+    "q": "How did these angels appear to Prophet Lut when they visited him?",
+    "opts": [
+      "As elderly men with canes",
+      "As handsome young men",
+      "As travelers on camels",
+      "As angels with wings spread"
+    ],
+    "correct": 1,
+    "topic": "Beginning of Time · Angels",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "The angels appeared to Prophet Lut as handsome young men to blend in with the people of the town and to test their behavior without revealing their true nature. This form helped convey their message and mission discreetly."
+  },
+  {
+    "id": "bidaya_125429e7d5",
+    "q": "Where did Allah place Adam and his wife after creating them?",
+    "opts": [
+      "On earth",
+      "In a garden on earth",
+      "In Paradise (Jannah)",
+      "On a mountain"
+    ],
+    "correct": 2,
+    "topic": "Beginning of Time · Creation of Adam ﷺ",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "After creating Adam and his wife, Allah placed them in Paradise (Jannah) as a beautiful and peaceful abode where they could live and enjoy His blessings before being sent to Earth. This setting symbolizes the initial perfect state of human existence."
+  },
+  {
+    "id": "bidaya_3ec8236d4a",
+    "q": "What was the one thing Allah forbade Adam and Hawwa from doing in Paradise?",
+    "opts": [
+      "Eating from a specific tree",
+      "Looking at each other",
+      "Sleeping at night",
+      "Speaking with the angels"
+    ],
+    "correct": 0,
+    "topic": "Beginning of Time · Creation of Adam ﷺ",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "Allah forbade Adam and Hawwa from eating the fruit of a specific tree in Paradise as a test of obedience. This command was meant to teach them submission to Allah’s will and the consequences of disobedience."
+  },
+  {
+    "id": "bidaya_f1ac23d83a",
+    "q": "What was the immediate consequence for Adam and Hawwa after eating from the tree?",
+    "opts": [
+      "They fell asleep",
+      "Their nakedness became apparent to them, and they began to cover themselves with leaves from Paradise",
+      "They were immediately removed from Paradise",
+      "They forgot who they were"
+    ],
+    "correct": 1,
+    "topic": "Beginning of Time · Creation of Adam ﷺ",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "After eating from the tree, Adam and Hawwa became aware of their nakedness, symbolizing the loss of their initial innocence, and they covered themselves with leaves, reflecting their newfound sense of shame and awareness of disobedience."
+  },
+  {
+    "id": "bidaya_d9ca5e6eaa",
+    "q": "According to some narrations, what items came down with Adam from Paradise?",
+    "opts": [
+      "A tent, a staff, and a sword",
+      "The Black Stone, a handful of Paradise's leaves, and knowledge of all trades",
+      "A crown and a throne",
+      "Books of revelation"
+    ],
+    "correct": 1,
+    "topic": "Beginning of Time · Creation of Adam ﷺ",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "Adam ﷺ descended from Paradise carrying the Black Stone, a handful of Paradise's leaves, and knowledge of all trades, symbolizing divine blessings and guidance for humanity. These items represent spiritual connection, healing, and practical skills essential for human life on Earth."
+  },
+  {
+    "id": "bidaya_b128d72eda",
+    "q": "According to Abu Musa al-Ash'ari's narration cited by `Abd al-Razzaq, what did Allah teach Adam when he was sent down to earth?",
+    "opts": [
+      "The names of all animals",
+      "The craft of everything, and he was given provisions from Paradise's fruits, though earthly ones change",
+      "How to build houses",
+      "The languages of all peoples"
+    ],
+    "correct": 1,
+    "topic": "Beginning of Time · Creation of Adam ﷺ",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "When Adam was sent down to earth, Allah taught him the craft of everything, meaning the knowledge and skills needed for life, and provided him with fruits from Paradise as provisions, highlighting the difference between eternal heavenly sustenance and the changing, perishable nature of earthly provisions."
+  },
+  {
+    "id": "bidaya_ed17edcce4",
+    "q": "According to Ibn Abbas, how long did Adam remain in Paradise before being sent down?",
+    "opts": [
+      "One hundred years",
+      "One thousand years",
+      "Only between the afternoon prayer (`Asr) and sunset",
+      "Forty days"
+    ],
+    "correct": 2,
+    "topic": "Beginning of Time · Creation of Adam ﷺ",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "Ibn Abbas explains that Adam ﷺ stayed in Paradise for a very short time—from the afternoon prayer (`Asr) until sunset—highlighting the immediacy of his descent to Earth and the beginning of human life here. This emphasizes the swift transition from creation to earthly existence."
+  },
+  {
+    "id": "bidaya_06c4753a5c",
+    "q": "What was the occupation of Habil (Abel) and Qabil (Cain)?",
+    "opts": [
+      "Habil was a farmer, Qabil was a shepherd",
+      "Habil was a shepherd, Qabil was a farmer",
+      "Both were shepherds",
+      "Both were farmers"
+    ],
+    "correct": 1,
+    "topic": "Beginning of Time · Adam's Descent & Early Humanity",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "Habil (Abel) was a shepherd who tended animals, while Qabil (Cain) was a farmer who cultivated the land. This distinction is mentioned in Islamic tradition to highlight their different livelihoods and the context of their offerings to Allah."
+  },
+  {
+    "id": "bidaya_89dc2a9eb1",
+    "q": "Why did Qabil kill Habil?",
+    "opts": [
+      "Because of a dispute over land",
+      "Because Habil refused to share his wealth",
+      "Because Qabil was jealous that Habil's sacrifice was accepted while his was not",
+      "Because their father Adam favored Habil"
+    ],
+    "correct": 2,
+    "topic": "Beginning of Time · Adam's Descent & Early Humanity",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "Qabil killed Habil out of jealousy because Allah accepted Habil's sacrifice but rejected Qabil's. This event marks the first murder in human history, illustrating the consequences of envy and disobedience to Allah's commands."
+  },
+  {
+    "id": "bidaya_f4b10c84f1",
+    "q": "What did Allah send to show Qabil how to bury his brother's body?",
+    "opts": [
+      "An angel teaching him",
+      "A vision in his dream",
+      "A crow that scratched the ground to show him how to bury another dead crow",
+      "Adam came and taught him"
+    ],
+    "correct": 2,
+    "topic": "Beginning of Time · Creation of the Earth",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "Allah sent a crow that scratched the ground to demonstrate to Qabil how to bury his brother's body, teaching him the proper way to handle the deceased. This act symbolizes the beginning of burial practices in human history."
+  },
+  {
+    "id": "bidaya_798cb8bd2c",
+    "q": "What was Qabil's response after killing his brother and seeing the crow?",
+    "opts": [
+      "He rejoiced",
+      "He said \"Woe is me! Was I unable to be like this crow and hide the body of my brother?\"",
+      "He ran away",
+      "He tried to bring Habil back to life"
+    ],
+    "correct": 1,
+    "topic": "Beginning of Time · Adam's Descent & Early Humanity",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "After killing his brother, Qabil saw a crow burying another crow and realized he should have hidden his brother's body similarly. This moment reflects his regret and awareness of his wrongdoing, highlighting the early human understanding of guilt and responsibility."
+  },
+  {
+    "id": "bidaya_f4328f0bdd",
+    "q": "According to the authentic hadith, what is the ruling regarding a soul that is killed unjustly?",
+    "opts": [
+      "The killer alone bears the sin",
+      "The killer and his tribe bear the sin",
+      "The first son of Adam (Qabil) bears a portion of the sin of every murder because he was the first to establish the precedent of murder",
+      "Adam bears the sin because of his original sin"
+    ],
+    "correct": 2,
+    "topic": "Beginning of Time · Creation of Adam ﷺ",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "When a soul is killed unjustly, the sin extends beyond the immediate murderer; Qabil, Adam’s first son, carries part of this sin because he set the initial example of murder, establishing a grave precedent in human history as explained in authentic hadith and Islamic teachings."
+  },
+  {
+    "id": "bidaya_2e31f00b26",
+    "q": "According to the hadith about Adam and Musa (Moses) meeting, why did Adam defeat Musa in their argument?",
+    "opts": [
+      "Adam had more knowledge of the Torah",
+      "Adam argued that his sin was predestined by Allah before he was created, and blaming him was like blaming Allah for His own decree",
+      "Musa was not a prophet at the time of the debate",
+      "Adam had already repented, so his sin was erased"
+    ],
+    "correct": 1,
+    "topic": "Beginning of Time · The Pen & The Tablet",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "Adam defeated Musa because he explained that his sin was already decreed by Allah before his creation, so holding him accountable would mean blaming Allah's divine will, which is beyond human control. This highlights the concept of predestination in Islamic theology."
+  },
+  {
+    "id": "bidaya_b86740dbc7",
+    "q": "What did Allah say to Adam after he ate from the tree?",
+    "opts": [
+      "\"Did I not forbid you from that tree and tell you that Satan is your clear enemy?\"",
+      "\"Get out of Paradise\"",
+      "\"You have disobeyed Me\"",
+      "\"Why did you listen to him?\""
+    ],
+    "correct": 0,
+    "topic": "Beginning of Time · Creation of Adam ﷺ",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "Allah reminded Adam that He had explicitly forbidden him from eating from the tree and warned that Satan is a clear enemy who deceives. This highlights the importance of obedience to Allah's commands and awareness of Satan's role in leading humans astray."
+  },
+  {
+    "id": "bidaya_3e4882ab8e",
+    "q": "According to Ibn Abbas (may Allah be pleased with him), how long did Adam remain in Paradise before being sent down?",
+    "opts": [
+      "One hundred years",
+      "One thousand years",
+      "Only between the afternoon prayer (`Asr) and sunset",
+      "Forty days"
+    ],
+    "correct": 2,
+    "topic": "Beginning of Time · Creation of Adam ﷺ",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "Ibn Abbas (may Allah be pleased with him) explained that Prophet Adam ﷺ stayed in Paradise for a very short time, specifically between the `Asr (afternoon) prayer and sunset, highlighting the immediacy of his descent to Earth after creation. This emphasizes the swift transition from Paradise to earthly life."
+  },
+  {
+    "id": "bidaya_ec3600372f",
+    "q": "What items came down with Adam from Paradise, according to some narrations?",
+    "opts": [
+      "A tent, a staff, and a sword",
+      "The Black Stone, a handful of Paradise's leaves, and knowledge of all trades",
+      "A crown and a throne",
+      "Books of revelation"
+    ],
+    "correct": 1,
+    "topic": "Beginning of Time · Creation of Adam ﷺ",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "According to some narrations, Adam descended from Paradise carrying the Black Stone, a handful of Paradise's leaves, and knowledge of all trades, symbolizing divine blessings and wisdom granted to him for guidance and sustenance on Earth."
+  },
+  {
+    "id": "bidaya_22ae975b26",
+    "q": "What did all the descendants of Adam testify?",
+    "opts": [
+      "\"We bear witness that Muhammad is the Messenger of Allah\"",
+      "\"Am I not your Lord?\" They said, \"Yes, we bear witness\"",
+      "\"There is no god but Allah\"",
+      "\"Paradise is true and Hell is true\""
+    ],
+    "correct": 1,
+    "topic": "Beginning of Time · Creation of Adam ﷺ",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "All the descendants of Adam testified to the oneness of Allah by acknowledging His Lordship with the words, \"Am I not your Lord?\" and their response, \"Yes, we bear witness,\" as mentioned in the Quran (7:172), affirming their innate recognition of Allah before entering the world."
+  },
+  {
+    "id": "bidaya_9f37a90934",
+    "q": "What were the occupations of Habil (Abel) and Qabil (Cain)?",
+    "opts": [
+      "Habil was a farmer, Qabil was a shepherd",
+      "Habil was a shepherd, Qabil was a farmer",
+      "Both were shepherds",
+      "Both were farmers"
+    ],
+    "correct": 1,
+    "topic": "Beginning of Time · Adam's Descent & Early Humanity",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "Habil (Abel) was a shepherd who tended animals, while Qabil (Cain) was a farmer who cultivated the land. Their different occupations are mentioned in Islamic tradition to highlight their distinct roles and the story of their offerings to Allah."
   },
   {
     "id": "bidaya_b5453ab10d",
@@ -3240,96 +3300,6 @@
     "explanation": "Qabil was cursed by Allah for killing his brother Habil, which led to a life filled with regret and fear as a consequence of his grave sin. This punishment served as a warning about the seriousness of taking an innocent life."
   },
   {
-    "id": "bidaya_d704937be0",
-    "q": "What does this hadith teach about the gravity of murder?",
-    "opts": [
-      "Murder is a minor sin",
-      "Each murderer only bears their own sin",
-      "The one who introduces an evil practice bears the sin of all who follow it without diminishing their sins",
-      "Murder is forgivable without repentance"
-    ],
-    "correct": 2,
-    "topic": "Beginning of Time · The Pen & The Tablet",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "This hadith emphasizes that initiating a sinful act, like murder, causes the originator to carry the burden of all subsequent sinners who imitate it, in addition to their own sins, highlighting the severe responsibility and gravity of starting such evil practices."
-  },
-  {
-    "id": "bidaya_3cf2d2bf3c",
-    "q": "Who were Wadd, Suwa', Yaghuth, Ya'uq, and Nasr?",
-    "opts": [
-      "Angels",
-      "Prophets",
-      "Righteous people from the descendants of Adam who were later worshipped as idols",
-      "Jinn kings"
-    ],
-    "correct": 2,
-    "topic": "Beginning of Time · Adam's Descent & Early Humanity",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "Wadd, Suwa', Yaghuth, Ya'uq, and Nasr were originally righteous individuals from Adam's descendants, but over time, people began to worship them as idols instead of Allah, which is condemned in Islamic teachings. This highlights the danger of idol worship and deviation from monotheism."
-  },
-  {
-    "id": "bidaya_6d76e353e3",
-    "q": "How did idol worship begin among the descendants of Adam?",
-    "opts": [
-      "It was revealed by Allah",
-      "Some people made images of righteous people who had died, to remember them and be inspired, then later generations worshipped these images",
-      "Iblis introduced it directly",
-      "It came from Egypt"
-    ],
-    "correct": 1,
-    "topic": "Beginning of Time · Creation of Adam ﷺ",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "Idol worship began when some descendants of Adam created images of righteous deceased individuals to remember and seek inspiration from them. Over time, later generations started worshipping these images themselves, turning remembrance into idol worship."
-  },
-  {
-    "id": "bidaya_1277d7f2d3",
-    "q": "What was the name of the person who first suggested making images of the righteous?",
-    "opts": [
-      "Qabil",
-      "A man named Yarub or something similar, according to some narrations",
-      "Adam",
-      "Iblis"
-    ],
-    "correct": 1,
-    "topic": "Beginning of Time · Jinn & Iblis",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "A man named Yarub is mentioned in some narrations as the first to suggest making images of the righteous, aiming to preserve their memory. This reflects early human efforts to honor and remember virtuous individuals through visual representation."
-  },
-  {
-    "id": "bidaya_e0b923f2b6",
-    "q": "How did Iblis exploit this practice?",
-    "opts": [
-      "He destroyed the images",
-      "He encouraged people to worship the images after the generation that made them passed away",
-      "He made more images",
-      "He told people the images were gods"
-    ],
-    "correct": 1,
-    "topic": "Beginning of Time · Jinn & Iblis",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "Iblis exploited the practice of venerating images by encouraging people to continue worshipping these idols even after the original creators had died, diverting them from the worship of Allah and leading them into shirk (associating partners with Allah)."
-  },
-  {
-    "id": "bidaya_661abadbce",
-    "q": "What do the names Wadd, Suwa', Yaghuth, Ya'uq, and Nasr mean according to some interpretations?",
-    "opts": [
-      "They mean \"love,\" \"hate,\" \"help,\" etc.",
-      "They were the actual names of the righteous men",
-      "They are names of idols only",
-      "They are names of angels"
-    ],
-    "correct": 1,
-    "topic": "Beginning of Time · Adam's Descent & Early Humanity",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "Wadd, Suwa', Yaghuth, Ya'uq, and Nasr are often understood as the names of idols worshipped by certain tribes, but some interpretations suggest they were originally the names of righteous men whose followers later deified them. This reflects how human figures became objects of worship over time."
-  },
-  {
     "id": "bidaya_447fe037e4",
     "q": "Who was Shayth (Seth) and what was his significance?",
     "opts": [
@@ -3405,21 +3375,6 @@
     "explanation": "Prophet Idris is described in the Quran as a truthful and patient prophet who was honored by being raised to a high station by Allah. His exemplary character and devotion make him a significant figure in Islamic teachings."
   },
   {
-    "id": "bidaya_051ce99d50",
-    "q": "What does the Quranic phrase \"wa rafa'nahu makaanan 'aliyya\" (and We raised him to a high station) mean according to Ibn Kathir?",
-    "opts": [
-      "He was given great wealth",
-      "He was taken up to the heavens and is alive",
-      "He was given great knowledge",
-      "He was made king"
-    ],
-    "correct": 1,
-    "topic": "Beginning of Time · The Throne & The Kursi",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "Ibn Kathir explains that \"wa rafa'nahu makaanan 'aliyya\" means Prophet Isa (Jesus) was physically raised up to the heavens by Allah, where he remains alive, rather than being killed, highlighting his special status and divine protection."
-  },
-  {
     "id": "bidaya_4b06a6e468",
     "q": "In which heaven did Prophet Muhammad ﷺ meet Idris during the Isra and Mi'raj?",
     "opts": [
@@ -3478,21 +3433,6 @@
     "difficulty": "medium",
     "source": "Al-Bidaya wal-Nihaya",
     "explanation": "After Adam, humanity initially followed monotheism but over generations gradually deviated by engaging in corruption and idol worship, leading to widespread moral decline. This prompted Allah to send Prophet Nuh to guide them back to the right path."
-  },
-  {
-    "id": "bidaya_ad49e5030a",
-    "q": "What was the first form of idolatry that appeared among humanity?",
-    "opts": [
-      "Worship of statues of angels",
-      "Worship of images of righteous people who had died (Wadd, Suwa', Yaghuth, Ya'uq, Nasr)",
-      "Worship of the sun and moon",
-      "Worship of fire"
-    ],
-    "correct": 1,
-    "topic": "Beginning of Time · Adam's Descent & Early Humanity",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "The first form of idolatry involved worshipping images of righteous people who had passed away, such as Wadd, Suwa', Yaghuth, Ya'uq, and Nasr, as a way to seek their intercession or blessings, which deviated from pure monotheism taught by the prophets."
   },
   {
     "id": "bidaya_ad08e454c3",
@@ -3615,21 +3555,6 @@
     "explanation": "Only a small number of people believed in Nuh’s message, including his family except one son who rejected him, and a few others who accepted the faith. This highlights the widespread rejection Nuh faced during his prophetic mission."
   },
   {
-    "id": "bidaya_965150a363",
-    "q": "What was the sign that the flood was about to begin?",
-    "opts": [
-      "An earthquake",
-      "Water gushing from the oven (tannur)",
-      "Darkness",
-      "Thunder and lightning"
-    ],
-    "correct": 1,
-    "topic": "Beginning of Time · Creation of the Earth",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "Before the flood began, water gushing from the oven (tannur) was a clear sign indicating the impending deluge. This event symbolized the release of overwhelming water, marking the start of the flood as described in Islamic tradition."
-  },
-  {
     "id": "bidaya_99a4c51a93",
     "q": "What did Nuh take with him on the ark?",
     "opts": [
@@ -3703,51 +3628,6 @@
     "difficulty": "medium",
     "source": "Al-Bidaya wal-Nihaya",
     "explanation": "Allah informed Nuh that the person he was concerned about was not truly part of his righteous family but was characterized by unrighteous behavior, emphasizing that spiritual kinship is based on faith and conduct rather than mere lineage."
-  },
-  {
-    "id": "bidaya_16e677bd0f",
-    "q": "Where did the ark come to rest after the flood?",
-    "opts": [
-      "Mount Sinai",
-      "Mount Judi",
-      "Mount Ararat",
-      "Mount Lebanon"
-    ],
-    "correct": 1,
-    "topic": "Beginning of Time · Creation of the Earth",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "The ark came to rest on Mount Judi after the flood, as mentioned in Islamic tradition and the Quran (Surah Hud 11:44). This location is distinct from the biblical Mount Ararat and signifies where Prophet Noah's mission concluded successfully."
-  },
-  {
-    "id": "bidaya_34e3733a5e",
-    "q": "What happened to the earth after the flood?",
-    "opts": [
-      "It was completely new",
-      "Allah commanded the earth to swallow the water and the sky to cease raining",
-      "It remained flooded forever",
-      "It became desert"
-    ],
-    "correct": 1,
-    "topic": "Beginning of Time · Creation of the Earth",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "After the flood, Allah commanded the earth to absorb the excess water and the sky to stop raining, which caused the floodwaters to recede and allowed life to begin anew on the earth's surface. This demonstrates Allah's control over natural elements in the process of creation and renewal."
-  },
-  {
-    "id": "bidaya_fc6cab915f",
-    "q": "What is the significance of the phrase \"Bismillah majraha wa mursaha\" (In the name of Allah is its course and its anchorage)?",
-    "opts": [
-      "It is a magic spell",
-      "It teaches that everything begins and ends with the name of Allah",
-      "It was the name of the ship",
-      "It is a prayer for safety"
-    ],
-    "correct": 1,
-    "topic": "Beginning of Time · Creation of Adam ﷺ",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "The phrase \"Bismillah majraha wa mursaha\" emphasizes that all actions and events, from their start to their completion, occur by Allah’s will and power, highlighting His control over every process and outcome in the universe."
   },
   {
     "id": "bidaya_4d059e73b2",
@@ -3915,21 +3795,6 @@
     "explanation": "Allah granted the people of Thamud a miraculous she-camel that emerged from a rock as a clear sign of His power through Prophet Salih. They were instructed not to harm the camel, symbolizing obedience and faith, but their disobedience led to their punishment."
   },
   {
-    "id": "bidaya_ff6d8318c1",
-    "q": "What were the instructions regarding the she-camel?",
-    "opts": [
-      "To worship it",
-      "To let it drink from the water one day and the people the next day, and not to harm it",
-      "To sacrifice it to Allah",
-      "To keep it in a temple"
-    ],
-    "correct": 1,
-    "topic": "Beginning of Time · Creation of the Earth",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "The she-camel was a sign from Allah to the people of Thamud, and they were instructed to share the water by letting the camel drink one day and the people the next, ensuring no harm came to it as a test of their obedience and respect for divine commands."
-  },
-  {
     "id": "bidaya_a9017855b1",
     "q": "How did the people of Thamud respond to Salih's message?",
     "opts": [
@@ -3975,21 +3840,6 @@
     "explanation": "After the people of Thamud killed the miraculous camel sent as a sign, Allah punished them with a single great blast (sayhah) that destroyed them instantly, demonstrating His swift and decisive justice against their disobedience and cruelty."
   },
   {
-    "id": "bidaya_81471a0ca4",
-    "q": "When did the punishment come?",
-    "opts": [
-      "Immediately",
-      "After three days, during which they awaited it",
-      "After one year",
-      "After they repented"
-    ],
-    "correct": 1,
-    "topic": "Beginning of Time · The Pen & The Tablet",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "The punishment came after three days because the people were given a period to reflect and repent, but when they persisted in their wrongdoing, the punishment was then executed as a consequence of their actions. This waiting period highlights divine justice and mercy before enforcing punishment."
-  },
-  {
     "id": "bidaya_2581aa261d",
     "q": "What is Prophet Ibrahim's title?",
     "opts": [
@@ -4003,21 +3853,6 @@
     "difficulty": "medium",
     "source": "Al-Bidaya wal-Nihaya",
     "explanation": "Prophet Ibrahim is called Khalilullah because he had a close, intimate friendship with Allah, marked by his unwavering faith and obedience. This title highlights his special status among prophets as the beloved friend of God."
-  },
-  {
-    "id": "bidaya_32a142a3d6",
-    "q": "Where was Prophet Ibrahim born and raised?",
-    "opts": [
-      "In Palestine",
-      "In Ur of the Chaldeans (in modern-day Iraq), among a people who worshipped idols",
-      "In Egypt",
-      "In Arabia"
-    ],
-    "correct": 1,
-    "topic": "Beginning of Time · Creation of the Earth",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "Prophet Ibrahim was born and raised in Ur of the Chaldeans, an ancient city in present-day Iraq, where people practiced idol worship. This context highlights his mission to call people to monotheism and reject idolatry."
   },
   {
     "id": "bidaya_03524516d9",
@@ -4200,21 +4035,6 @@
     "explanation": "Ibrahim settled Isma'il and Hajirah in the valley of Makkah (Bakkah) near the Sacred House (Kaaba) by Allah's command to establish a place for worship and to fulfill divine plans, marking the beginning of Makkah as a significant spiritual center in Islam."
   },
   {
-    "id": "bidaya_e41fbdc87a",
-    "q": "What happened to Hajirah when she ran out of water for baby Isma'il?",
-    "opts": [
-      "She died",
-      "She ran between Safa and Marwa seven times searching for water, and Allah caused the Zamzam well to spring forth",
-      "She found an oasis",
-      "Angels brought her water"
-    ],
-    "correct": 1,
-    "topic": "Beginning of Time · Angels",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "When Hajirah ran out of water for baby Isma'il, she desperately searched by running between the hills of Safa and Marwa seven times. Allah then caused the Zamzam well to spring forth, providing water and saving her child. This event is commemorated during the Hajj pilgrimage."
-  },
-  {
     "id": "bidaya_d412b1be50",
     "q": "What did Allah command Ibrahim to do in a vision regarding his son?",
     "opts": [
@@ -4243,21 +4063,6 @@
     "difficulty": "medium",
     "source": "Al-Bidaya wal-Nihaya",
     "explanation": "Ibrahim was commanded to sacrifice his son Isma'il according to the most authentic Islamic view, as supported by Quranic verses and Hadith. This event symbolizes submission to Allah's will and is commemorated during Eid al-Adha."
-  },
-  {
-    "id": "bidaya_03c1ae88c0",
-    "q": "How did Isma'il respond when his father told him about the command to sacrifice him?",
-    "opts": [
-      "He ran away",
-      "He said, \"O my father, do as you are commanded; you will find me, if Allah wills, among the steadfast\"",
-      "He asked for time",
-      "He cried"
-    ],
-    "correct": 1,
-    "topic": "Beginning of Time · Creation of the Earth",
-    "difficulty": "medium",
-    "source": "Al-Bidaya wal-Nihaya",
-    "explanation": "Isma'il showed complete submission and trust in Allah by encouraging his father to fulfill the command, expressing his own readiness and faith that he would be patient and steadfast through the trial. This demonstrates the importance of obedience and trust in God's will in Islam."
   },
   {
     "id": "bidaya_ffa23b5ba5",
@@ -4498,5 +4303,200 @@
     "difficulty": "medium",
     "source": "Al-Bidaya wal-Nihaya",
     "explanation": "Yusuf's innocence was proven when the women's fingers were cut after their false accusation, and the truth came to light through the testimony of a witness and the discovery of Yusuf's shirt, which showed signs of struggle, confirming he was not guilty of the alleged wrongdoing."
+  },
+  {
+    "id": "bidaya_32a142a3d6",
+    "q": "Where was Prophet Ibrahim born and raised?",
+    "opts": [
+      "In Palestine",
+      "In Ur of the Chaldeans (in modern-day Iraq), among a people who worshipped idols",
+      "In Egypt",
+      "In Arabia"
+    ],
+    "correct": 1,
+    "topic": "Beginning of Time · Creation of the Earth",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "Prophet Ibrahim was born and raised in Ur of the Chaldeans, an ancient city in present-day Iraq, where people practiced idol worship. This context highlights his mission to call people to monotheism and reject idolatry."
+  },
+  {
+    "id": "bidaya_e41fbdc87a",
+    "q": "What happened to Hajirah when she ran out of water for baby Isma'il?",
+    "opts": [
+      "She died",
+      "She ran between Safa and Marwa seven times searching for water, and Allah caused the Zamzam well to spring forth",
+      "She found an oasis",
+      "Angels brought her water"
+    ],
+    "correct": 1,
+    "topic": "Beginning of Time · Angels",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "When Hajirah ran out of water for baby Isma'il, she desperately searched by running between the hills of Safa and Marwa seven times. Allah then caused the Zamzam well to spring forth, providing water and saving her child. This event is commemorated during the Hajj pilgrimage."
+  },
+  {
+    "id": "bidaya_67ec764e5b",
+    "q": "According to the hadith where the Prophet ﷺ saw Jibril in his original form, how many wings did Jibril have, and what was their span?",
+    "opts": [
+      "Two wings, covering the entire earth",
+      "Six hundred wings, each covering the horizon",
+      "One thousand wings, covered with pearls and rubies",
+      "Seventy thousand wings, each dripping with light"
+    ],
+    "correct": 1,
+    "topic": "Beginning of Time · Angels",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "Jibril (Gabriel) was described in a hadith as having six hundred wings, each so vast that they covered the horizon, illustrating his immense power and grandeur as an angel. This emphasizes the majesty and awe-inspiring nature of angels in Islamic teachings."
+  },
+  {
+    "id": "bidaya_2002993a6e",
+    "q": "What fell from Jibril's wings when the Prophet ﷺ saw him in his original form?",
+    "opts": [
+      "Pearls and rubies",
+      "Drops of light",
+      "Fire and smoke",
+      "Rain and hail"
+    ],
+    "correct": 0,
+    "topic": "Beginning of Time · Angels",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "When the Prophet ﷺ saw Jibril in his original, majestic form, the immense light and power caused pearls and rubies to fall from his wings, symbolizing the angel's divine beauty and the awe-inspiring nature of his true appearance."
+  },
+  {
+    "id": "bidaya_0beedc8b28",
+    "q": "In the hadith about the Prophet's ﷺ visit to Ta'if, which angel was sent to him by Allah, and what offer did he make?",
+    "opts": [
+      "Jibril, offering to bring the mountains of Ta'if to him",
+      "Mika'il, offering to send rain upon the people",
+      "The Angel of the Mountains, offering to crush the people between the two mountains",
+      "Israfil, offering to destroy the city with a blast"
+    ],
+    "correct": 2,
+    "topic": "Beginning of Time · Angels",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "During the Prophet's ﷺ visit to Ta'if, the Angel of the Mountains was sent by Allah and offered to crush the people between the two mountains as punishment for their rejection. However, the Prophet ﷺ prayed for their guidance instead, showing his mercy and patience."
+  },
+  {
+    "id": "bidaya_323e80d13a",
+    "q": "How did the Prophet ﷺ respond to the Angel of the Mountains' offer to destroy the people of Ta'if?",
+    "opts": [
+      "He accepted the offer to teach them a lesson",
+      "He asked the angel to wait until morning",
+      "He said he hoped that from their offspring would come people who worship Allah alone",
+      "He forgave them immediately and asked the angel to leave"
+    ],
+    "correct": 2,
+    "topic": "Beginning of Time · Creation of the Earth",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "The Prophet ﷺ declined the Angel of the Mountains' offer to destroy Ta'if because he hoped that future generations from their descendants would embrace monotheism and worship Allah alone, showing his mercy and optimism for their guidance."
+  },
+  {
+    "id": "bidaya_1c8b6ed425",
+    "q": "In what forms did Jibril sometimes appear to the Prophet Muhammad ﷺ?",
+    "opts": [
+      "Only as himself with 600 wings",
+      "Sometimes as a handsome companion (Dihya al-Kalbi) and sometimes as a Bedouin",
+      "As a pillar of light",
+      "As a voice without form"
+    ],
+    "correct": 1,
+    "topic": "Beginning of Time · Angels",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "Jibril sometimes appeared to the Prophet Muhammad ﷺ in the form of Dihya al-Kalbi, a handsome companion known to the Prophet, and other times as a simple Bedouin, to convey messages discreetly and make the encounters more relatable. This shows the angel’s ability to assume different human forms."
+  },
+  {
+    "id": "bidaya_8732884935",
+    "q": "In the hadith about the Prophet's ﷺ journey to Ta'if, which angel came to him with an offer to destroy the people?",
+    "opts": [
+      "Jibril",
+      "Mika'il",
+      "The Angel of the Mountains (Malak al-Jibal)",
+      "Israfil"
+    ],
+    "correct": 2,
+    "topic": "Beginning of Time · Angels",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "During the Prophet’s ﷺ journey to Ta'if, the Angel of the Mountains (Malak al-Jibal) appeared offering to crush the people between the mountains as punishment, but the Prophet ﷺ chose patience and prayed for their guidance instead, demonstrating mercy and forgiveness."
+  },
+  {
+    "id": "bidaya_3eca83f2a5",
+    "q": "What was the Prophet's ﷺ response to the Angel of the Mountains' offer to crush the people of Ta'if between the two mountains?",
+    "opts": [
+      "He accepted the offer to teach them a lesson",
+      "He asked the angel to wait until morning",
+      "He said: \"No, I hope that Allah will bring forth from their loins people who worship Allah alone, associating nothing with Him\"",
+      "He forgave them immediately and asked the angel to leave"
+    ],
+    "correct": 2,
+    "topic": "Beginning of Time · Creation of the Earth",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "The Prophet ﷺ declined the Angel's offer because he hoped for the guidance and repentance of the people of Ta'if, wishing that future generations from them would worship Allah alone without associating partners with Him, demonstrating his mercy and hope for their spiritual growth."
+  },
+  {
+    "id": "bidaya_1eb5fc518b",
+    "q": "According to the hadith narrated by Abu Hurairah about the creation days, on which day did Allah create the heavens?",
+    "opts": [
+      "Sunday and Monday",
+      "Tuesday and Wednesday",
+      "Thursday and Friday",
+      "They were created in two days, but the hadith specifies them on Tuesday and Wednesday"
+    ],
+    "correct": 3,
+    "topic": "Beginning of Time · Creation of the Earth",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "The hadith narrated by Abu Hurairah indicates that Allah created the heavens over two days, specifically on Tuesday and Wednesday, highlighting the detailed stages of creation within the six-day framework mentioned in Islamic teachings. This shows the methodical and purposeful nature of Allah’s creation process."
+  },
+  {
+    "id": "bidaya_133a214888",
+    "q": "According to the hadith of Abu Hurairah, on which day did Allah create the mountains?",
+    "opts": [
+      "Saturday",
+      "Sunday",
+      "Monday",
+      "Tuesday"
+    ],
+    "correct": 1,
+    "topic": "Beginning of Time · Creation of the Earth",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "Allah created the mountains on Sunday, as mentioned in the hadith narrated by Abu Hurairah. This sequence highlights the orderly process of creation, where Allah formed the earth first, then the mountains, demonstrating His wisdom in preparing the world for life."
+  },
+  {
+    "id": "bidaya_15d4478c85",
+    "q": "On which day of creation were the mountains created, according to the hadith of Abu Hurairah?",
+    "opts": [
+      "Saturday",
+      "Sunday",
+      "Monday",
+      "Tuesday"
+    ],
+    "correct": 1,
+    "topic": "Beginning of Time · Creation of the Earth",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "According to the hadith of Abu Hurairah, mountains were created on the second day of creation, not Sunday. This highlights the sequence of Allah's creation, where the earth and its features, including mountains, were formed early to stabilize the land."
+  },
+  {
+    "id": "bidaya_d6d66cd35b",
+    "q": "In the hadith of Abu Hurairah about creation on specific days, what did Allah create on Wednesday?",
+    "opts": [
+      "The mountains",
+      "The trees",
+      "The light",
+      "The animals"
+    ],
+    "correct": 2,
+    "topic": "Beginning of Time · Creation of the Earth",
+    "difficulty": "medium",
+    "source": "Al-Bidaya wal-Nihaya",
+    "explanation": "On Wednesday, Allah created the light, which is considered the first creation and the source of all illumination in the universe. This highlights the importance of light as a fundamental element in the order of creation."
   }
 ]

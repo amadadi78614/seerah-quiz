@@ -1,5 +1,599 @@
 [
   {
+    "id": "q_0e968fef",
+    "difficulty": "easy",
+    "topic": "Post-Islam · Islamic Spain",
+    "world": 5,
+    "sort": 20001,
+    "q": "Which Muslim general first landed in Spain in 92 AH (711 CE)?",
+    "opts": [
+      "A. Musa bin Nusayr",
+      "B. Tariq bin Zeyad",
+      "C. Abdul Aziz bin Musa",
+      "D. Mughith al-Rumi"
+    ],
+    "correct": 1,
+    "explain": "",
+    "source": "prophets.xlsx",
+    "explanation": "Tariq bin Zeyad was the Muslim general who led the initial conquest of Spain in 92 AH (711 CE), crossing the Strait of Gibraltar. His leadership marked the beginning of Islamic rule in the Iberian Peninsula, establishing Al-Andalus as a significant cultural and political center."
+  },
+  {
+    "id": "q_9b21aa63",
+    "difficulty": "easy",
+    "topic": "Post-Islam · Islamic Spain",
+    "world": 5,
+    "sort": 20008,
+    "q": "Who joined Tariq with 18,000 soldiers after the initial victories?",
+    "opts": [
+      "A. Abdul Aziz bin Musa",
+      "B. Musa bin Nusayr",
+      "C. Mughith al-Rumi",
+      "D. Count Julian"
+    ],
+    "correct": 1,
+    "explain": "",
+    "source": "prophets.xlsx",
+    "explanation": "Musa bin Nusayr was the Umayyad governor of North Africa who reinforced Tariq ibn Ziyad with 18,000 soldiers after his initial victories in Iberia, helping to consolidate Muslim control and expand the conquest of Al-Andalus."
+  },
+  {
+    "id": "q_1520dff4",
+    "difficulty": "easy",
+    "topic": "Post-Islam · Islamic Spain",
+    "world": 5,
+    "sort": 20010,
+    "q": "Who was the first ruler of Muslim Spain after Musa bin Nusayr returned to Damascus?",
+    "opts": [
+      "A. Tariq bin Zeyad",
+      "B. Abdul Aziz bin Musa",
+      "C. Ayyub bin Habib",
+      "D. Al-Samh bin Malik"
+    ],
+    "correct": 1,
+    "explain": "",
+    "source": "prophets.xlsx",
+    "explanation": "After Musa bin Nusayr returned to Damascus, his son Abdul Aziz bin Musa became the first ruler of Muslim Spain, overseeing the consolidation and administration of the newly conquered territories. This leadership helped establish stable governance during the early period of Islamic rule in the region."
+  },
+  {
+    "id": "q_2f55c6a7",
+    "difficulty": "easy",
+    "topic": "Post-Islam · Islamic Spain",
+    "world": 5,
+    "sort": 20011,
+    "q": "What significant action did Abdul Aziz bin Musa take that displeased the Muslim commanders?",
+    "opts": [
+      "A. He converted to Christianity",
+      "B. He married Roderick's widow and she began influencing state affairs",
+      "C. He stopped paying taxes to Damascus",
+      "D. He declared himself Caliph"
+    ],
+    "correct": 1,
+    "explain": "",
+    "source": "prophets.xlsx",
+    "explanation": "Abdul Aziz bin Musa married the widow of the defeated Visigothic king Roderick, which was seen as controversial because she was a Christian and her influence on political decisions alarmed Muslim commanders, who feared it compromised Islamic authority and governance in Al-Andalus."
+  },
+  {
+    "id": "q_7274f4f7",
+    "difficulty": "easy",
+    "topic": "Post-Islam · Islamic Spain",
+    "world": 5,
+    "sort": 20012,
+    "q": "What was the fate of Abdul Aziz bin Musa?",
+    "opts": [
+      "A. He died naturally",
+      "B. He was assassinated by five Muslim commanders on Caliph Sulaiman's orders",
+      "C. He returned to Damascus",
+      "D. He was defeated by the Christians"
+    ],
+    "correct": 1,
+    "explain": "",
+    "source": "prophets.xlsx",
+    "explanation": "Abdul Aziz bin Musa was assassinated by five Muslim commanders acting on Caliph Sulaiman's orders because he was suspected of disloyalty and political ambitions that threatened the Umayyad Caliphate's authority in Al-Andalus. This ensured centralized control over the newly conquered territories."
+  },
+  {
+    "id": "q_733dac89",
+    "difficulty": "easy",
+    "topic": "Post-Islam · Islamic Spain",
+    "world": 5,
+    "sort": 20013,
+    "q": "Which governor shifted the capital of Muslim Spain to Cordova?",
+    "opts": [
+      "A. Harb bin Abdur Rahman",
+      "B. Ayyub bin Habib",
+      "C. Al-Samh bin Malik",
+      "D. Yahya bin Salma"
+    ],
+    "correct": 1,
+    "explain": "",
+    "source": "prophets.xlsx",
+    "explanation": "Ayyub bin Habib was the governor who moved the capital of Muslim Spain from Toledo to Cordova, establishing it as the political and cultural center, which later flourished as a major hub of Islamic civilization in Europe."
+  },
+  {
+    "id": "q_5ddd7365",
+    "difficulty": "medium",
+    "topic": "Post-Islam · Islamic Spain",
+    "world": 5,
+    "sort": 20050,
+    "q": "Which Hammudid ruler killed the last Umayyad Caliph Musta'in and took over Cordova?",
+    "opts": [
+      "A. Qasim bin Hamud",
+      "B. Yahya bin Ali",
+      "C. Ali bin Hamud",
+      "D. Idris bin Ali"
+    ],
+    "correct": 2,
+    "explain": "",
+    "source": "prophets.xlsx",
+    "explanation": "Ali bin Hamud, a Hammudid ruler, killed the last Umayyad Caliph Musta'in to seize control of Cordova, marking the end of Umayyad rule in Islamic Spain and the rise of Hammudid power in the region."
+  },
+  {
+    "id": "q_a3664609",
+    "difficulty": "medium",
+    "topic": "Post-Islam · Islamic Spain",
+    "world": 5,
+    "sort": 20052,
+    "q": "Which dynasty ruled Seville and western Spain during the period of anarchy?",
+    "opts": [
+      "A. Banu Hud",
+      "B. Banu Abbad (Abbadids)",
+      "C. Banu Aftas",
+      "D. Banu Dhun'nun"
+    ],
+    "correct": 1,
+    "explain": "",
+    "source": "prophets.xlsx",
+    "explanation": "The Banu Abbad, or Abbadids, were a dynasty that ruled Seville and parts of western Spain during the period of political fragmentation known as the Taifa period, following the collapse of the Caliphate of Córdoba. They established an independent taifa kingdom, contributing to the region's cultural and political history."
+  },
+  {
+    "id": "q_97c10cb4",
+    "difficulty": "medium",
+    "topic": "Post-Islam · Islamic Spain",
+    "world": 5,
+    "sort": 20053,
+    "q": "Which Abbadid ruler is famous for his poetry and patronage of scholars?",
+    "opts": [
+      "A. Abul Qasim Muhammad",
+      "B. Abu Umar Abbad (Mu'tazid)",
+      "C. Mu'tamid bin Abbad",
+      "D. Ismail bin Abbad"
+    ],
+    "correct": 2,
+    "explain": "",
+    "source": "prophets.xlsx",
+    "explanation": "Mu'tamid bin Abbad was renowned for his poetic talent and support of scholars, making his court a cultural center in Islamic Spain. His poetry reflects deep emotion and intellectual richness, highlighting the flourishing arts during his reign."
+  },
+  {
+    "id": "q_2af49abe",
+    "difficulty": "medium",
+    "topic": "Post-Islam · Islamic Spain",
+    "world": 5,
+    "sort": 20054,
+    "q": "Which dynasty ruled Toledo during the period of anarchy?",
+    "opts": [
+      "A. Banu Hud",
+      "B. Banu Aftas",
+      "C. Banu Dhun'nun",
+      "D. Banu Abbad"
+    ],
+    "correct": 2,
+    "explain": "",
+    "source": "prophets.xlsx",
+    "explanation": "The Banu Dhun'nun dynasty ruled Toledo during the period of anarchy, a time marked by political fragmentation after the collapse of the Caliphate of Córdoba. Their local control exemplified the rise of smaller, independent taifa kingdoms in Islamic Spain."
+  },
+  {
+    "id": "q_3f269af1",
+    "difficulty": "medium",
+    "topic": "Post-Islam · Islamic Spain",
+    "world": 5,
+    "sort": 20055,
+    "q": "Who was the Almoravid ruler that came to Spain's aid against the Christians at the request of Mu'tamid of Seville?",
+    "opts": [
+      "A. Yusuf bin Tashfain",
+      "B. Ali bin Yusuf",
+      "C. Abdul Mumin",
+      "D. Abu Yaqub Yusuf"
+    ],
+    "correct": 0,
+    "explain": "",
+    "source": "prophets.xlsx",
+    "explanation": "Yusuf bin Tashfin was the Almoravid leader who responded to Mu'tamid of Seville's plea for help, leading his forces into Spain to defend Muslim territories against advancing Christian kingdoms during the 11th century. His intervention was crucial in temporarily halting Christian expansion in the region."
+  },
+  {
+    "id": "q_1a044832",
+    "difficulty": "medium",
+    "topic": "Post-Islam · Islamic Spain",
+    "world": 5,
+    "sort": 20056,
+    "q": "In which famous battle did Yusuf bin Tashfain defeat the Christians in 479 AH (1086 CE)?",
+    "opts": [
+      "A. Battle of Al-Uqab",
+      "B. Battle of Zallacca (Sagrajas)",
+      "C. Battle of Alarcos",
+      "D. Battle of Las Navas de Tolosa"
+    ],
+    "correct": 1,
+    "explain": "",
+    "source": "prophets.xlsx",
+    "explanation": "Yusuf bin Tashfin defeated the Christian forces at the Battle of Zallacca (Sagrajas) in 479 AH (1086 CE), a significant victory that halted the Christian Reconquista temporarily and strengthened Muslim rule in Al-Andalus. This battle showcased the military prowess of the Almoravid dynasty in defending Islamic Spain."
+  },
+  {
+    "id": "q_e757f4d7",
+    "difficulty": "medium",
+    "topic": "Post-Islam · Islamic Spain",
+    "world": 5,
+    "sort": 20059,
+    "q": "What was the name of the Berber religious reformer who founded the Almohad movement?",
+    "opts": [
+      "A. Abdul Mumin",
+      "B. Muhammad bin Tumart",
+      "C. Ibn Rushd",
+      "D. Abu Yaqub Yusuf"
+    ],
+    "correct": 1,
+    "explain": "",
+    "source": "prophets.xlsx",
+    "explanation": "Muhammad bin Tumart was a Berber religious reformer who founded the Almohad movement in the 12th century, emphasizing strict monotheism and puritanical Islamic practices to reform and unify the Muslim community in North Africa and Spain."
+  },
+  {
+    "id": "q_d0f2a992",
+    "difficulty": "medium",
+    "topic": "Post-Islam · Islamic Spain",
+    "world": 5,
+    "sort": 20061,
+    "q": "Who succeeded Muhammad bin Tumart as leader of the Almohads?",
+    "opts": [
+      "A. His son",
+      "B. Abdul Mumin",
+      "C. Abu Yaqub Yusuf",
+      "D. Abu Yusuf Mansur"
+    ],
+    "correct": 1,
+    "explain": "",
+    "source": "prophets.xlsx",
+    "explanation": "After Muhammad bin Tumart's death, Abdul Mumin became the leader of the Almohads, successfully uniting the movement and expanding their control in North Africa and Spain, solidifying the Almohad Caliphate's power."
+  },
+  {
+    "id": "q_e5cf1cd6",
+    "difficulty": "medium",
+    "topic": "Post-Islam · Islamic Spain",
+    "world": 5,
+    "sort": 20062,
+    "q": "Which Almohad Caliph defeated the Christians at the Battle of Alarcos in 591 AH (1195 CE)?",
+    "opts": [
+      "A. Abu Yaqub Yusuf",
+      "B. Abu Yusuf Mansur",
+      "C. Abu Abdullah Muhammad (Nasir)",
+      "D. Abdul Mumin"
+    ],
+    "correct": 1,
+    "explain": "",
+    "source": "prophets.xlsx",
+    "explanation": "Abu Yusuf Mansur was the Almohad Caliph who led Muslim forces to victory against the Christians at the Battle of Alarcos in 591 AH (1195 CE), halting the Christian Reconquista temporarily and demonstrating Almohad military strength in Iberia."
+  },
+  {
+    "id": "q_4084c030",
+    "difficulty": "medium",
+    "topic": "Post-Islam · Islamic Spain",
+    "world": 5,
+    "sort": 20065,
+    "q": "Who founded the Nasrid dynasty in Granada?",
+    "opts": [
+      "A. Muhammad bin Yusuf bin Hud",
+      "B. Ibn al-Ahmar (Muhammad I)",
+      "C. Yusuf I",
+      "D. Muhammad V"
+    ],
+    "correct": 1,
+    "explain": "",
+    "source": "prophets.xlsx",
+    "explanation": "Ibn al-Ahmar, also known as Muhammad I, founded the Nasrid dynasty in Granada in the 13th century. He established the last Muslim kingdom in Spain, which became a significant cultural and political center until the Reconquista."
+  },
+  {
+    "id": "q_9de29087",
+    "difficulty": "medium",
+    "topic": "Post-Islam · Islamic Spain",
+    "world": 5,
+    "sort": 20068,
+    "q": "Which Nasrid Sultan won the miraculous Battle of Albirah in 719 AH with only 5,500 soldiers against 200,000 Christians?",
+    "opts": [
+      "A. Yusuf I",
+      "B. Abul Waleed (Ismail I)",
+      "C. Muhammad V",
+      "D. Yusuf III"
+    ],
+    "correct": 1,
+    "explain": "",
+    "source": "prophets.xlsx",
+    "explanation": "Abul Waleed (Ismail I) was the Nasrid Sultan who led a vastly outnumbered force to victory at the Battle of Albirah in 719 AH, demonstrating strategic brilliance and inspiring his troops despite facing a much larger Christian army. This battle highlighted the resilience of Islamic Spain during that period."
+  },
+  {
+    "id": "q_38ea92ab",
+    "difficulty": "medium",
+    "topic": "Post-Islam · Islamic Spain",
+    "world": 5,
+    "sort": 20074,
+    "q": "Who was the last Muslim ruler of Granada?",
+    "opts": [
+      "A. Abu Abdullah Muhammad XII (Boabdil)",
+      "B. Yusuf III",
+      "C. Muhammad VII",
+      "D. Abu al-Hasan Ali"
+    ],
+    "correct": 0,
+    "explain": "",
+    "source": "prophets.xlsx",
+    "explanation": "Abu Abdullah Muhammad XII, known as Boabdil, was the last Muslim ruler of Granada. He surrendered the Emirate of Granada to the Catholic Monarchs in 1492, marking the end of Muslim rule in Spain and the conclusion of the Reconquista."
+  },
+  {
+    "id": "q_08a41433",
+    "difficulty": "medium",
+    "topic": "Post-Islam · Islamic Spain",
+    "world": 5,
+    "sort": 20077,
+    "q": "Who founded the Idrisid dynasty in Morocco?",
+    "opts": [
+      "A. Idris I",
+      "B. Idris II",
+      "C. Musa bin Nusayr",
+      "D. Uqba bin Nafi"
+    ],
+    "correct": 0,
+    "explain": "",
+    "source": "prophets.xlsx",
+    "explanation": "Idris I founded the Idrisid dynasty in Morocco around 788 CE, establishing one of the first Islamic states in the region. He was a descendant of the Prophet Muhammad and played a key role in spreading Islam in North Africa."
+  },
+  {
+    "id": "q_2dd595f1",
+    "difficulty": "medium",
+    "topic": "Post-Islam · Islamic Spain",
+    "world": 5,
+    "sort": 20079,
+    "q": "Which Aghlabid ruler conquered the island of Sicily?",
+    "opts": [
+      "A. Ibrahim bin Aghlab",
+      "B. Ziyadatullah I",
+      "C. Abul Abbas Muhammad",
+      "D. Ibrahim bin Ahmad"
+    ],
+    "correct": 1,
+    "explain": "",
+    "source": "prophets.xlsx",
+    "explanation": "Ziyadatullah I was the Aghlabid ruler who initiated the conquest of Sicily in the 9th century, marking the beginning of Muslim rule on the island. His leadership expanded Islamic influence into the central Mediterranean region."
+  },
+  {
+    "id": "q_a8efb2b9",
+    "difficulty": "medium",
+    "topic": "Post-Islam · Islamic Spain",
+    "world": 5,
+    "sort": 20088,
+    "q": "Who was the founder of the Qaramatian sect in Bahrain?",
+    "opts": [
+      "A. Hamdan Qarmat",
+      "B. Abu Tahir Sulaiman",
+      "C. Abu Sa'id al-Jannabi",
+      "D. Hasan bin Sabbah"
+    ],
+    "correct": 0,
+    "explain": "",
+    "source": "prophets.xlsx",
+    "explanation": "Hamdan Qarmat founded the Qaramatian sect in Bahrain, known for its radical Ismaili beliefs and social reforms. His leadership marked a significant challenge to the Abbasid Caliphate during the 9th and 10th centuries."
+  },
+  {
+    "id": "q_d0332bb3",
+    "difficulty": "hard",
+    "topic": "Post-Islam · Islamic Spain",
+    "world": 5,
+    "sort": 20105,
+    "q": "Which Mamluk Sultan defeated the Mongols at the Battle of Ain Jalut in 658 AH (1260 CE)?",
+    "opts": [
+      "A. Qutuz",
+      "B. Baybars",
+      "C. Saifuddin",
+      "D. Al-Mansur"
+    ],
+    "correct": 0,
+    "explain": "",
+    "source": "prophets.xlsx",
+    "explanation": "Sultan Qutuz led the Mamluk forces to victory at the Battle of Ain Jalut in 1260 CE, halting the Mongol advance into the Muslim world. His leadership was crucial in preserving Islamic civilization in the region."
+  },
+  {
+    "id": "q_8cd2defa",
+    "difficulty": "hard",
+    "topic": "Post-Islam · Islamic Spain",
+    "world": 5,
+    "sort": 20106,
+    "q": "Who founded the Saffarid dynasty in Persia?",
+    "opts": [
+      "A. Amr bin Laith",
+      "B. Yaqub bin Laith al-Saffar",
+      "C. Tahir bin Husain",
+      "D. Ismail Samani"
+    ],
+    "correct": 1,
+    "explain": "",
+    "source": "prophets.xlsx",
+    "explanation": "Yaqub bin Laith al-Saffar founded the Saffarid dynasty in the 9th century in Persia, rising from a coppersmith to a powerful military leader who challenged Abbasid authority and established an independent state in the region."
+  },
+  {
+    "id": "q_9660e9dd",
+    "difficulty": "hard",
+    "topic": "Post-Islam · Islamic Spain",
+    "world": 5,
+    "sort": 20109,
+    "q": "Which famous Ghaznavid Sultan invaded India 17 times?",
+    "opts": [
+      "A. Sabuktigin",
+      "B. Mahmud of Ghazni",
+      "C. Mas'ud I",
+      "D. Ibrahim"
+    ],
+    "correct": 1,
+    "explain": "",
+    "source": "prophets.xlsx",
+    "explanation": "Mahmud of Ghazni was a prominent Ghaznavid Sultan known for his 17 invasions into India between the 11th and 12th centuries, aiming to expand his empire and acquire wealth, especially targeting temples and cities. His campaigns significantly influenced the spread of Islam in the Indian subcontinent."
+  },
+  {
+    "id": "q_bacd08b7",
+    "difficulty": "hard",
+    "topic": "Post-Islam · Islamic Spain",
+    "world": 5,
+    "sort": 20129,
+    "q": "Who was Selim I's main rival for the throne?",
+    "opts": [
+      "A. His father Bayazid II",
+      "B. His brother Ahmed",
+      "C. His son Suleiman",
+      "D. The Safavid Shah Ismail"
+    ],
+    "correct": 1,
+    "explain": "",
+    "source": "prophets.xlsx",
+    "explanation": "Selim I's main rival for the throne was his brother Ahmed, as succession disputes among Ottoman princes were common, often leading to conflicts to secure the sultanate. This rivalry was part of the broader Ottoman practice of fratricide to prevent civil war and ensure a stable rule."
+  },
+  {
+    "id": "q_55b7f859",
+    "difficulty": "hard",
+    "topic": "Post-Islam · Islamic Spain",
+    "world": 5,
+    "sort": 20130,
+    "q": "Which Safavid ruler did Selim I defeat at the Battle of Chaldiran in 920 AH (1514 CE)?",
+    "opts": [
+      "A. Shah Abbas",
+      "B. Shah Ismail I",
+      "C. Shah Tahmasp",
+      "D. Shah Safi"
+    ],
+    "correct": 1,
+    "explain": "",
+    "source": "prophets.xlsx",
+    "explanation": "Selim I defeated Shah Ismail I, the founder of the Safavid dynasty, at the Battle of Chaldiran in 1514 CE. This victory was significant as it established Ottoman dominance over eastern Anatolia and northern Iraq, limiting Safavid expansion."
+  },
+  {
+    "id": "q_23ecdc78",
+    "difficulty": "hard",
+    "topic": "Post-Islam · Islamic Spain",
+    "world": 5,
+    "sort": 20131,
+    "q": "Why did Selim I defeat the Safavids despite being outnumbered?",
+    "opts": [
+      "A. The Safavid army was poorly trained",
+      "B. Selim had better artillery (firearms and cannons)",
+      "C. Shah Ismail was sick",
+      "D. The Safavids ran out of food"
+    ],
+    "correct": 1,
+    "explain": "",
+    "source": "prophets.xlsx",
+    "explanation": "Selim I's victory over the Safavids was due to his superior use of artillery, including firearms and cannons, which gave his smaller army a significant technological advantage in battle, allowing them to overcome the larger Safavid forces."
+  },
+  {
+    "id": "q_964873aa",
+    "difficulty": "medium",
+    "topic": "Post-Islam · Islamic History",
+    "world": 5,
+    "sort": 30036,
+    "q": "Who did Mamoon Rasheed designate as his heir apparent, causing controversy with the Abbasids?",
+    "opts": [
+      "A. His son Abbas",
+      "B. His brother Motasim",
+      "C. Imam Ali Rida (Ali al-Rida)",
+      "D. Ibrahim bin Mehdi"
+    ],
+    "correct": 2,
+    "explain": "",
+    "source": "prophets.xlsx",
+    "explanation": "Mamoon Rasheed designated Imam Ali Rida, a descendant of Prophet Muhammad, as his heir to reconcile the Abbasid caliphate with the Shia community, causing controversy because it challenged the traditional Abbasid succession and political authority. This move aimed to unify Muslims but faced opposition from Abbasid elites."
+  },
+  {
+    "id": "q_b639bed4",
+    "difficulty": "medium",
+    "topic": "Post-Islam · Islamic History",
+    "world": 5,
+    "sort": 30049,
+    "q": "Who was the founder of the Saffarid dynasty that captured Khorasan and Iran?",
+    "opts": [
+      "A. Amr bin Laith",
+      "B. Yaqub bin Laith Saffar",
+      "C. Tahir bin Husain",
+      "D. Ismail Samani"
+    ],
+    "correct": 1,
+    "explain": "",
+    "source": "prophets.xlsx",
+    "explanation": "Yaqub bin Laith Saffar founded the Saffarid dynasty in the 9th century, rising from a coppersmith to a powerful ruler who captured Khorasan and parts of Iran, marking a significant shift in regional power during the post-Islamic period."
+  },
+  {
+    "id": "q_6521c3fe",
+    "difficulty": "hard",
+    "topic": "Post-Islam · Islamic History",
+    "world": 5,
+    "sort": 30055,
+    "q": "Which Qaramatian leader committed atrocities in Makkah in 317 AH, including removing the Black Stone?",
+    "opts": [
+      "A. Abu Tahir Sulaiman",
+      "B. Hamdan Qaramata",
+      "C. Abu Sayeed Janani",
+      "D. Zikrwaih"
+    ],
+    "correct": 0,
+    "explain": "",
+    "source": "prophets.xlsx",
+    "explanation": "Abu Tahir Sulaiman, leader of the Qaramatians in 317 AH, is known for his attack on Makkah where his forces desecrated the Kaaba and removed the Black Stone, causing great shock and outrage among Muslims. This event highlighted the Qaramatians' extreme opposition to mainstream Islamic authority."
+  },
+  {
+    "id": "q_85db32fa",
+    "difficulty": "medium",
+    "topic": "Post-Islam · Islamic Spain",
+    "world": 5,
+    "sort": 20089,
+    "q": "What did Abu Tahir al-Qarmati do in 317 AH (930 CE) that shocked the Muslim world?",
+    "opts": [
+      "A. He conquered Baghdad",
+      "B. He attacked Makkah, killed pilgrims, and stole the Black Stone",
+      "C. He declared himself Caliph",
+      "D. He destroyed the Ka'bah"
+    ],
+    "correct": 1,
+    "explain": "",
+    "source": "prophets.xlsx",
+    "explanation": "In 317 AH (930 CE), Abu Tahir al-Qarmati led a violent raid on Makkah, killing many pilgrims during the Hajj and stealing the Black Stone from the Kaaba, an act that deeply shocked and outraged the Muslim world due to the sacredness of the site and the stone."
+  },
+  {
+    "id": "q_f46567c9",
+    "difficulty": "hard",
+    "topic": "Post-Islam · Islamic Spain",
+    "world": 5,
+    "sort": 20125,
+    "q": "What was the name of the Byzantine Emperor who died defending Constantinople?",
+    "opts": [
+      "A. Constantine XI Palaiologos",
+      "B. Justinian",
+      "C. Heraclius",
+      "D. Alexios Komnenos"
+    ],
+    "correct": 0,
+    "explain": "",
+    "source": "prophets.xlsx",
+    "explanation": "Constantine XI Palaiologos was the last Byzantine Emperor who died heroically defending Constantinople during its fall to the Ottoman Turks in 1453, marking the end of the Byzantine Empire and a significant turning point in Islamic and world history."
+  },
+  {
+    "id": "q_3d7b8c06",
+    "difficulty": "easy",
+    "topic": "Post-Islam · Islamic History",
+    "world": 5,
+    "sort": 30010,
+    "q": "What happened to the Ka'bah during the siege of Makkah?",
+    "opts": [
+      "A. It was completely destroyed",
+      "B. Its walls were broken and roof caved in due to catapult stones",
+      "C. It remained completely unharmed",
+      "D. It was set on fire"
+    ],
+    "correct": 1,
+    "explain": "",
+    "source": "prophets.xlsx",
+    "explanation": "During the siege of Makkah, the Ka'bah was severely damaged as the attacking forces used catapult stones, causing its walls to break and the roof to collapse. This event highlighted the intense conflict before the peaceful conquest of Makkah by the Muslims."
+  },
+  {
     "id": "q_c18958dd",
     "difficulty": "easy",
     "topic": "Post-Islam · Umayyad Era",
@@ -16,6 +610,24 @@
     "explain": "",
     "source": "prophets.xlsx",
     "explanation": "Amir Muawiya (رضي الله عنه) was born 17 years before the Hijra, which means he was born 17 years before the Prophet Muhammad's migration from Mecca to Medina in 622 CE. This timing places his birth around 605 CE, during the pre-Islamic period."
+  },
+  {
+    "id": "q_6d99d9d9",
+    "difficulty": "easy",
+    "topic": "Post-Islam · Islamic History",
+    "world": 5,
+    "sort": 30013,
+    "q": "What significant change did Umar bin Abdul Aziz make regarding the treatment of Ali (رضي الله عنه)?",
+    "opts": [
+      "A. He cursed Ali in the sermons",
+      "B. He ordered that nobody should talk badly of Ali",
+      "C. He removed Ali's name from all records",
+      "D. He declared Ali as the only rightful caliph"
+    ],
+    "correct": 1,
+    "explain": "",
+    "source": "prophets.xlsx",
+    "explanation": "Umar bin Abdul Aziz emphasized respect for Ali (رضي الله عنه) by prohibiting any negative speech about him, promoting unity and honoring the Prophet’s family. This policy helped reduce sectarian tensions and reinforced Ali’s esteemed status in Islamic history."
   },
   {
     "id": "q_e0b070a1",
@@ -162,24 +774,6 @@
     "explanation": "After the Abbasid revolution, Abdur Rahman bin Muawiya escaped to the Iberian Peninsula, where he established the Umayyad Emirate in Spain (Al-Andalus), creating a new center of Umayyad power separate from the Abbasid Caliphate in Baghdad."
   },
   {
-    "id": "q_0e968fef",
-    "difficulty": "easy",
-    "topic": "Post-Islam · Islamic Spain",
-    "world": 5,
-    "sort": 20001,
-    "q": "Which Muslim general first landed in Spain in 92 AH (711 CE)?",
-    "opts": [
-      "A. Musa bin Nusayr",
-      "B. Tariq bin Zeyad",
-      "C. Abdul Aziz bin Musa",
-      "D. Mughith al-Rumi"
-    ],
-    "correct": 1,
-    "explain": "",
-    "source": "prophets.xlsx",
-    "explanation": "Tariq bin Zeyad was the Muslim general who led the initial conquest of Spain in 92 AH (711 CE), crossing the Strait of Gibraltar. His leadership marked the beginning of Islamic rule in the Iberian Peninsula, establishing Al-Andalus as a significant cultural and political center."
-  },
-  {
     "id": "q_0c6551a3",
     "difficulty": "easy",
     "topic": "Post-Islam · Islamic Spain",
@@ -288,24 +882,6 @@
     "explanation": "King Roderick fled the battlefield during the Battle of Guadalete, which led to the defeat of the Visigothic forces and allowed Muslim armies to advance into the Iberian Peninsula. His flight is often seen as a key factor in the rapid Muslim conquest of Spain."
   },
   {
-    "id": "q_9b21aa63",
-    "difficulty": "easy",
-    "topic": "Post-Islam · Islamic Spain",
-    "world": 5,
-    "sort": 20008,
-    "q": "Who joined Tariq with 18,000 soldiers after the initial victories?",
-    "opts": [
-      "A. Abdul Aziz bin Musa",
-      "B. Musa bin Nusayr",
-      "C. Mughith al-Rumi",
-      "D. Count Julian"
-    ],
-    "correct": 1,
-    "explain": "",
-    "source": "prophets.xlsx",
-    "explanation": "Musa bin Nusayr was the Umayyad governor of North Africa who reinforced Tariq ibn Ziyad with 18,000 soldiers after his initial victories in Iberia, helping to consolidate Muslim control and expand the conquest of Al-Andalus."
-  },
-  {
     "id": "q_170c5e09",
     "difficulty": "easy",
     "topic": "Post-Islam · Islamic Spain",
@@ -322,78 +898,6 @@
     "explain": "",
     "source": "prophets.xlsx",
     "explanation": "Toledo was the capital of the Visigothic Kingdom in Spain before the Islamic conquest. It served as the political and religious center, symbolizing Gothic rule and culture in the Iberian Peninsula during the early medieval period."
-  },
-  {
-    "id": "q_1520dff4",
-    "difficulty": "easy",
-    "topic": "Post-Islam · Islamic Spain",
-    "world": 5,
-    "sort": 20010,
-    "q": "Who was the first ruler of Muslim Spain after Musa bin Nusayr returned to Damascus?",
-    "opts": [
-      "A. Tariq bin Zeyad",
-      "B. Abdul Aziz bin Musa",
-      "C. Ayyub bin Habib",
-      "D. Al-Samh bin Malik"
-    ],
-    "correct": 1,
-    "explain": "",
-    "source": "prophets.xlsx",
-    "explanation": "After Musa bin Nusayr returned to Damascus, his son Abdul Aziz bin Musa became the first ruler of Muslim Spain, overseeing the consolidation and administration of the newly conquered territories. This leadership helped establish stable governance during the early period of Islamic rule in the region."
-  },
-  {
-    "id": "q_2f55c6a7",
-    "difficulty": "easy",
-    "topic": "Post-Islam · Islamic Spain",
-    "world": 5,
-    "sort": 20011,
-    "q": "What significant action did Abdul Aziz bin Musa take that displeased the Muslim commanders?",
-    "opts": [
-      "A. He converted to Christianity",
-      "B. He married Roderick's widow and she began influencing state affairs",
-      "C. He stopped paying taxes to Damascus",
-      "D. He declared himself Caliph"
-    ],
-    "correct": 1,
-    "explain": "",
-    "source": "prophets.xlsx",
-    "explanation": "Abdul Aziz bin Musa married the widow of the defeated Visigothic king Roderick, which was seen as controversial because she was a Christian and her influence on political decisions alarmed Muslim commanders, who feared it compromised Islamic authority and governance in Al-Andalus."
-  },
-  {
-    "id": "q_7274f4f7",
-    "difficulty": "easy",
-    "topic": "Post-Islam · Islamic Spain",
-    "world": 5,
-    "sort": 20012,
-    "q": "What was the fate of Abdul Aziz bin Musa?",
-    "opts": [
-      "A. He died naturally",
-      "B. He was assassinated by five Muslim commanders on Caliph Sulaiman's orders",
-      "C. He returned to Damascus",
-      "D. He was defeated by the Christians"
-    ],
-    "correct": 1,
-    "explain": "",
-    "source": "prophets.xlsx",
-    "explanation": "Abdul Aziz bin Musa was assassinated by five Muslim commanders acting on Caliph Sulaiman's orders because he was suspected of disloyalty and political ambitions that threatened the Umayyad Caliphate's authority in Al-Andalus. This ensured centralized control over the newly conquered territories."
-  },
-  {
-    "id": "q_733dac89",
-    "difficulty": "easy",
-    "topic": "Post-Islam · Islamic Spain",
-    "world": 5,
-    "sort": 20013,
-    "q": "Which governor shifted the capital of Muslim Spain to Cordova?",
-    "opts": [
-      "A. Harb bin Abdur Rahman",
-      "B. Ayyub bin Habib",
-      "C. Al-Samh bin Malik",
-      "D. Yahya bin Salma"
-    ],
-    "correct": 1,
-    "explain": "",
-    "source": "prophets.xlsx",
-    "explanation": "Ayyub bin Habib was the governor who moved the capital of Muslim Spain from Toledo to Cordova, establishing it as the political and cultural center, which later flourished as a major hub of Islamic civilization in Europe."
   },
   {
     "id": "q_cad25594",
@@ -1080,24 +1584,6 @@
     "explanation": "The Hammudids (Banu Hamud) were a dynasty descended from the Idrisid family, originating in Morocco. They ruled parts of Islamic Spain in the early 11th century, linking North African and Andalusian Islamic history through their Berber heritage."
   },
   {
-    "id": "q_5ddd7365",
-    "difficulty": "medium",
-    "topic": "Post-Islam · Islamic Spain",
-    "world": 5,
-    "sort": 20050,
-    "q": "Which Hammudid ruler killed the last Umayyad Caliph Musta'in and took over Cordova?",
-    "opts": [
-      "A. Qasim bin Hamud",
-      "B. Yahya bin Ali",
-      "C. Ali bin Hamud",
-      "D. Idris bin Ali"
-    ],
-    "correct": 2,
-    "explain": "",
-    "source": "prophets.xlsx",
-    "explanation": "Ali bin Hamud, a Hammudid ruler, killed the last Umayyad Caliph Musta'in to seize control of Cordova, marking the end of Umayyad rule in Islamic Spain and the rise of Hammudid power in the region."
-  },
-  {
     "id": "q_759f5b60",
     "difficulty": "medium",
     "topic": "Post-Islam · Islamic Spain",
@@ -1114,96 +1600,6 @@
     "explain": "",
     "source": "prophets.xlsx",
     "explanation": "Ali bin Hamud, a ruler in Islamic Spain, was assassinated by his Saqlabi slaves while he was in the bathroom. This event highlights the internal conflicts and power struggles that occurred within the ruling elite during that period."
-  },
-  {
-    "id": "q_a3664609",
-    "difficulty": "medium",
-    "topic": "Post-Islam · Islamic Spain",
-    "world": 5,
-    "sort": 20052,
-    "q": "Which dynasty ruled Seville and western Spain during the period of anarchy?",
-    "opts": [
-      "A. Banu Hud",
-      "B. Banu Abbad (Abbadids)",
-      "C. Banu Aftas",
-      "D. Banu Dhun'nun"
-    ],
-    "correct": 1,
-    "explain": "",
-    "source": "prophets.xlsx",
-    "explanation": "The Banu Abbad, or Abbadids, were a dynasty that ruled Seville and parts of western Spain during the period of political fragmentation known as the Taifa period, following the collapse of the Caliphate of Córdoba. They established an independent taifa kingdom, contributing to the region's cultural and political history."
-  },
-  {
-    "id": "q_97c10cb4",
-    "difficulty": "medium",
-    "topic": "Post-Islam · Islamic Spain",
-    "world": 5,
-    "sort": 20053,
-    "q": "Which Abbadid ruler is famous for his poetry and patronage of scholars?",
-    "opts": [
-      "A. Abul Qasim Muhammad",
-      "B. Abu Umar Abbad (Mu'tazid)",
-      "C. Mu'tamid bin Abbad",
-      "D. Ismail bin Abbad"
-    ],
-    "correct": 2,
-    "explain": "",
-    "source": "prophets.xlsx",
-    "explanation": "Mu'tamid bin Abbad was renowned for his poetic talent and support of scholars, making his court a cultural center in Islamic Spain. His poetry reflects deep emotion and intellectual richness, highlighting the flourishing arts during his reign."
-  },
-  {
-    "id": "q_2af49abe",
-    "difficulty": "medium",
-    "topic": "Post-Islam · Islamic Spain",
-    "world": 5,
-    "sort": 20054,
-    "q": "Which dynasty ruled Toledo during the period of anarchy?",
-    "opts": [
-      "A. Banu Hud",
-      "B. Banu Aftas",
-      "C. Banu Dhun'nun",
-      "D. Banu Abbad"
-    ],
-    "correct": 2,
-    "explain": "",
-    "source": "prophets.xlsx",
-    "explanation": "The Banu Dhun'nun dynasty ruled Toledo during the period of anarchy, a time marked by political fragmentation after the collapse of the Caliphate of Córdoba. Their local control exemplified the rise of smaller, independent taifa kingdoms in Islamic Spain."
-  },
-  {
-    "id": "q_3f269af1",
-    "difficulty": "medium",
-    "topic": "Post-Islam · Islamic Spain",
-    "world": 5,
-    "sort": 20055,
-    "q": "Who was the Almoravid ruler that came to Spain's aid against the Christians at the request of Mu'tamid of Seville?",
-    "opts": [
-      "A. Yusuf bin Tashfain",
-      "B. Ali bin Yusuf",
-      "C. Abdul Mumin",
-      "D. Abu Yaqub Yusuf"
-    ],
-    "correct": 0,
-    "explain": "",
-    "source": "prophets.xlsx",
-    "explanation": "Yusuf bin Tashfin was the Almoravid leader who responded to Mu'tamid of Seville's plea for help, leading his forces into Spain to defend Muslim territories against advancing Christian kingdoms during the 11th century. His intervention was crucial in temporarily halting Christian expansion in the region."
-  },
-  {
-    "id": "q_1a044832",
-    "difficulty": "medium",
-    "topic": "Post-Islam · Islamic Spain",
-    "world": 5,
-    "sort": 20056,
-    "q": "In which famous battle did Yusuf bin Tashfain defeat the Christians in 479 AH (1086 CE)?",
-    "opts": [
-      "A. Battle of Al-Uqab",
-      "B. Battle of Zallacca (Sagrajas)",
-      "C. Battle of Alarcos",
-      "D. Battle of Las Navas de Tolosa"
-    ],
-    "correct": 1,
-    "explain": "",
-    "source": "prophets.xlsx",
-    "explanation": "Yusuf bin Tashfin defeated the Christian forces at the Battle of Zallacca (Sagrajas) in 479 AH (1086 CE), a significant victory that halted the Christian Reconquista temporarily and strengthened Muslim rule in Al-Andalus. This battle showcased the military prowess of the Almoravid dynasty in defending Islamic Spain."
   },
   {
     "id": "q_00ac4443",
@@ -1242,24 +1638,6 @@
     "explanation": "The Abbasid Caliph of Baghdad granted Yusuf bin Tashfin the title \"Amir al-Muslimin\" to recognize his authority as a leader of the Muslim community, legitimizing his rule in Al-Andalus and North Africa under the caliphate's spiritual and political influence."
   },
   {
-    "id": "q_e757f4d7",
-    "difficulty": "medium",
-    "topic": "Post-Islam · Islamic Spain",
-    "world": 5,
-    "sort": 20059,
-    "q": "What was the name of the Berber religious reformer who founded the Almohad movement?",
-    "opts": [
-      "A. Abdul Mumin",
-      "B. Muhammad bin Tumart",
-      "C. Ibn Rushd",
-      "D. Abu Yaqub Yusuf"
-    ],
-    "correct": 1,
-    "explain": "",
-    "source": "prophets.xlsx",
-    "explanation": "Muhammad bin Tumart was a Berber religious reformer who founded the Almohad movement in the 12th century, emphasizing strict monotheism and puritanical Islamic practices to reform and unify the Muslim community in North Africa and Spain."
-  },
-  {
     "id": "q_23497ee6",
     "difficulty": "medium",
     "topic": "Post-Islam · Islamic Spain",
@@ -1276,42 +1654,6 @@
     "explain": "",
     "source": "prophets.xlsx",
     "explanation": "Muhammad bin Tumart claimed to be the Imam Mahdi, a prophesied redeemer in Islam who is expected to restore justice and true faith before the Day of Judgment. His claim helped him unite followers and establish the Almohad movement in North Africa and Spain."
-  },
-  {
-    "id": "q_d0f2a992",
-    "difficulty": "medium",
-    "topic": "Post-Islam · Islamic Spain",
-    "world": 5,
-    "sort": 20061,
-    "q": "Who succeeded Muhammad bin Tumart as leader of the Almohads?",
-    "opts": [
-      "A. His son",
-      "B. Abdul Mumin",
-      "C. Abu Yaqub Yusuf",
-      "D. Abu Yusuf Mansur"
-    ],
-    "correct": 1,
-    "explain": "",
-    "source": "prophets.xlsx",
-    "explanation": "After Muhammad bin Tumart's death, Abdul Mumin became the leader of the Almohads, successfully uniting the movement and expanding their control in North Africa and Spain, solidifying the Almohad Caliphate's power."
-  },
-  {
-    "id": "q_e5cf1cd6",
-    "difficulty": "medium",
-    "topic": "Post-Islam · Islamic Spain",
-    "world": 5,
-    "sort": 20062,
-    "q": "Which Almohad Caliph defeated the Christians at the Battle of Alarcos in 591 AH (1195 CE)?",
-    "opts": [
-      "A. Abu Yaqub Yusuf",
-      "B. Abu Yusuf Mansur",
-      "C. Abu Abdullah Muhammad (Nasir)",
-      "D. Abdul Mumin"
-    ],
-    "correct": 1,
-    "explain": "",
-    "source": "prophets.xlsx",
-    "explanation": "Abu Yusuf Mansur was the Almohad Caliph who led Muslim forces to victory against the Christians at the Battle of Alarcos in 591 AH (1195 CE), halting the Christian Reconquista temporarily and demonstrating Almohad military strength in Iberia."
   },
   {
     "id": "q_e8f5859d",
@@ -1348,24 +1690,6 @@
     "explain": "",
     "source": "prophets.xlsx",
     "explanation": "Muslim soldiers' treachery and desertion weakened their forces during the Battle of Al-Uqab, leading to disorganization and loss of morale, which ultimately caused their defeat. Loyalty and unity are crucial in battle, and their absence contributed significantly to the Muslim army's failure."
-  },
-  {
-    "id": "q_4084c030",
-    "difficulty": "medium",
-    "topic": "Post-Islam · Islamic Spain",
-    "world": 5,
-    "sort": 20065,
-    "q": "Who founded the Nasrid dynasty in Granada?",
-    "opts": [
-      "A. Muhammad bin Yusuf bin Hud",
-      "B. Ibn al-Ahmar (Muhammad I)",
-      "C. Yusuf I",
-      "D. Muhammad V"
-    ],
-    "correct": 1,
-    "explain": "",
-    "source": "prophets.xlsx",
-    "explanation": "Ibn al-Ahmar, also known as Muhammad I, founded the Nasrid dynasty in Granada in the 13th century. He established the last Muslim kingdom in Spain, which became a significant cultural and political center until the Reconquista."
   },
   {
     "id": "q_839b8559",
@@ -1420,24 +1744,6 @@
     "explain": "",
     "source": "prophets.xlsx",
     "explanation": "Abdur Rahman I was the first Abbasid caliph to establish a separate Umayyad rule in Spain by fleeing the Abbasid overthrow in the East and founding the Emirate of Córdoba, thus preserving Umayyad authority in the Iberian Peninsula independently from the Abbasid Caliphate."
-  },
-  {
-    "id": "q_9de29087",
-    "difficulty": "medium",
-    "topic": "Post-Islam · Islamic Spain",
-    "world": 5,
-    "sort": 20068,
-    "q": "Which Nasrid Sultan won the miraculous Battle of Albirah in 719 AH with only 5,500 soldiers against 200,000 Christians?",
-    "opts": [
-      "A. Yusuf I",
-      "B. Abul Waleed (Ismail I)",
-      "C. Muhammad V",
-      "D. Yusuf III"
-    ],
-    "correct": 1,
-    "explain": "",
-    "source": "prophets.xlsx",
-    "explanation": "Abul Waleed (Ismail I) was the Nasrid Sultan who led a vastly outnumbered force to victory at the Battle of Albirah in 719 AH, demonstrating strategic brilliance and inspiring his troops despite facing a much larger Christian army. This battle highlighted the resilience of Islamic Spain during that period."
   },
   {
     "id": "q_554bb237",
@@ -1548,24 +1854,6 @@
     "explanation": "The Murabitun, also known as the Almoravids, were a North African Berber dynasty that came to the aid of Muslim Spain in the 11th century to resist Christian Reconquista advances, helping to preserve Islamic rule in parts of the Iberian Peninsula."
   },
   {
-    "id": "q_38ea92ab",
-    "difficulty": "medium",
-    "topic": "Post-Islam · Islamic Spain",
-    "world": 5,
-    "sort": 20074,
-    "q": "Who was the last Muslim ruler of Granada?",
-    "opts": [
-      "A. Abu Abdullah Muhammad XII (Boabdil)",
-      "B. Yusuf III",
-      "C. Muhammad VII",
-      "D. Abu al-Hasan Ali"
-    ],
-    "correct": 0,
-    "explain": "",
-    "source": "prophets.xlsx",
-    "explanation": "Abu Abdullah Muhammad XII, known as Boabdil, was the last Muslim ruler of Granada. He surrendered the Emirate of Granada to the Catholic Monarchs in 1492, marking the end of Muslim rule in Spain and the conclusion of the Reconquista."
-  },
-  {
     "id": "q_edc3a38f",
     "difficulty": "medium",
     "topic": "Post-Islam · Islamic Spain",
@@ -1602,24 +1890,6 @@
     "explanation": "The Treaty of Granada (Capitulations) was an agreement signed in 1491 that guaranteed religious freedom and protection of rights for Muslims in Granada after its conquest by the Catholic Monarchs, ensuring their safety and cultural practices despite the political change."
   },
   {
-    "id": "q_08a41433",
-    "difficulty": "medium",
-    "topic": "Post-Islam · Islamic Spain",
-    "world": 5,
-    "sort": 20077,
-    "q": "Who founded the Idrisid dynasty in Morocco?",
-    "opts": [
-      "A. Idris I",
-      "B. Idris II",
-      "C. Musa bin Nusayr",
-      "D. Uqba bin Nafi"
-    ],
-    "correct": 0,
-    "explain": "",
-    "source": "prophets.xlsx",
-    "explanation": "Idris I founded the Idrisid dynasty in Morocco around 788 CE, establishing one of the first Islamic states in the region. He was a descendant of the Prophet Muhammad and played a key role in spreading Islam in North Africa."
-  },
-  {
     "id": "q_7b2b4db8",
     "difficulty": "medium",
     "topic": "Post-Islam · Islamic Spain",
@@ -1636,24 +1906,6 @@
     "explain": "",
     "source": "prophets.xlsx",
     "explanation": "Idris I was poisoned by an Abbasid agent because the Abbasid Caliphate saw him as a political threat after he established an independent state in Morocco. His death was an attempt to eliminate his influence and prevent the spread of his rule."
-  },
-  {
-    "id": "q_2dd595f1",
-    "difficulty": "medium",
-    "topic": "Post-Islam · Islamic Spain",
-    "world": 5,
-    "sort": 20079,
-    "q": "Which Aghlabid ruler conquered the island of Sicily?",
-    "opts": [
-      "A. Ibrahim bin Aghlab",
-      "B. Ziyadatullah I",
-      "C. Abul Abbas Muhammad",
-      "D. Ibrahim bin Ahmad"
-    ],
-    "correct": 1,
-    "explain": "",
-    "source": "prophets.xlsx",
-    "explanation": "Ziyadatullah I was the Aghlabid ruler who initiated the conquest of Sicily in the 9th century, marking the beginning of Muslim rule on the island. His leadership expanded Islamic influence into the central Mediterranean region."
   },
   {
     "id": "q_cd06f3a2",
@@ -1798,42 +2050,6 @@
     "explain": "",
     "source": "prophets.xlsx",
     "explanation": "The Fatimid dynasty ended in 567 AH (1171 CE) when Saladin abolished the Fatimid Caliphate and established the Ayyubid dynasty in Egypt. This marked the end of Fatimid rule and the rise of Sunni dominance in the region."
-  },
-  {
-    "id": "q_a8efb2b9",
-    "difficulty": "medium",
-    "topic": "Post-Islam · Islamic Spain",
-    "world": 5,
-    "sort": 20088,
-    "q": "Who was the founder of the Qaramatian sect in Bahrain?",
-    "opts": [
-      "A. Hamdan Qarmat",
-      "B. Abu Tahir Sulaiman",
-      "C. Abu Sa'id al-Jannabi",
-      "D. Hasan bin Sabbah"
-    ],
-    "correct": 0,
-    "explain": "",
-    "source": "prophets.xlsx",
-    "explanation": "Hamdan Qarmat founded the Qaramatian sect in Bahrain, known for its radical Ismaili beliefs and social reforms. His leadership marked a significant challenge to the Abbasid Caliphate during the 9th and 10th centuries."
-  },
-  {
-    "id": "q_85db32fa",
-    "difficulty": "medium",
-    "topic": "Post-Islam · Islamic Spain",
-    "world": 5,
-    "sort": 20089,
-    "q": "What did Abu Tahir al-Qarmati do in 317 AH (930 CE) that shocked the Muslim world?",
-    "opts": [
-      "A. He conquered Baghdad",
-      "B. He attacked Makkah, killed pilgrims, and stole the Black Stone",
-      "C. He declared himself Caliph",
-      "D. He destroyed the Ka'bah"
-    ],
-    "correct": 1,
-    "explain": "",
-    "source": "prophets.xlsx",
-    "explanation": "In 317 AH (930 CE), Abu Tahir al-Qarmati led a violent raid on Makkah, killing many pilgrims during the Hajj and stealing the Black Stone from the Kaaba, an act that deeply shocked and outraged the Muslim world due to the sacredness of the site and the stone."
   },
   {
     "id": "q_d37db65f",
@@ -2106,42 +2322,6 @@
     "explanation": "When the Mongols sacked Baghdad in 1258, they destroyed many cultural treasures, including books from its libraries, by throwing them into the Tigris River, symbolizing the loss of knowledge and the city's decline as a center of learning."
   },
   {
-    "id": "q_d0332bb3",
-    "difficulty": "hard",
-    "topic": "Post-Islam · Islamic Spain",
-    "world": 5,
-    "sort": 20105,
-    "q": "Which Mamluk Sultan defeated the Mongols at the Battle of Ain Jalut in 658 AH (1260 CE)?",
-    "opts": [
-      "A. Qutuz",
-      "B. Baybars",
-      "C. Saifuddin",
-      "D. Al-Mansur"
-    ],
-    "correct": 0,
-    "explain": "",
-    "source": "prophets.xlsx",
-    "explanation": "Sultan Qutuz led the Mamluk forces to victory at the Battle of Ain Jalut in 1260 CE, halting the Mongol advance into the Muslim world. His leadership was crucial in preserving Islamic civilization in the region."
-  },
-  {
-    "id": "q_8cd2defa",
-    "difficulty": "hard",
-    "topic": "Post-Islam · Islamic Spain",
-    "world": 5,
-    "sort": 20106,
-    "q": "Who founded the Saffarid dynasty in Persia?",
-    "opts": [
-      "A. Amr bin Laith",
-      "B. Yaqub bin Laith al-Saffar",
-      "C. Tahir bin Husain",
-      "D. Ismail Samani"
-    ],
-    "correct": 1,
-    "explain": "",
-    "source": "prophets.xlsx",
-    "explanation": "Yaqub bin Laith al-Saffar founded the Saffarid dynasty in the 9th century in Persia, rising from a coppersmith to a powerful military leader who challenged Abbasid authority and established an independent state in the region."
-  },
-  {
     "id": "q_1562e3ee",
     "difficulty": "hard",
     "topic": "Post-Islam · Islamic Spain",
@@ -2176,24 +2356,6 @@
     "explain": "",
     "source": "prophets.xlsx",
     "explanation": "Alptigin, a former Turkish slave and military commander, founded the Ghaznavid dynasty in the 10th century after establishing control over Ghazni (in present-day Afghanistan). His leadership laid the foundation for the dynasty's expansion under his successors, notably Mahmud of Ghazni."
-  },
-  {
-    "id": "q_9660e9dd",
-    "difficulty": "hard",
-    "topic": "Post-Islam · Islamic Spain",
-    "world": 5,
-    "sort": 20109,
-    "q": "Which famous Ghaznavid Sultan invaded India 17 times?",
-    "opts": [
-      "A. Sabuktigin",
-      "B. Mahmud of Ghazni",
-      "C. Mas'ud I",
-      "D. Ibrahim"
-    ],
-    "correct": 1,
-    "explain": "",
-    "source": "prophets.xlsx",
-    "explanation": "Mahmud of Ghazni was a prominent Ghaznavid Sultan known for his 17 invasions into India between the 11th and 12th centuries, aiming to expand his empire and acquire wealth, especially targeting temples and cities. His campaigns significantly influenced the spread of Islam in the Indian subcontinent."
   },
   {
     "id": "q_05a135ff",
@@ -2466,24 +2628,6 @@
     "explanation": "The Great Bombard, also known as the Basilica, was a massive cannon used by Mehmed II during the 1453 siege of Constantinople. Its powerful bombardment helped breach the city's formidable walls, leading to the fall of Byzantium and the rise of the Ottoman Empire."
   },
   {
-    "id": "q_f46567c9",
-    "difficulty": "hard",
-    "topic": "Post-Islam · Islamic Spain",
-    "world": 5,
-    "sort": 20125,
-    "q": "What was the name of the Byzantine Emperor who died defending Constantinople?",
-    "opts": [
-      "A. Constantine XI Palaiologos",
-      "B. Justinian",
-      "C. Heraclius",
-      "D. Alexios Komnenos"
-    ],
-    "correct": 0,
-    "explain": "",
-    "source": "prophets.xlsx",
-    "explanation": "Constantine XI Palaiologos was the last Byzantine Emperor who died heroically defending Constantinople during its fall to the Ottoman Turks in 1453, marking the end of the Byzantine Empire and a significant turning point in Islamic and world history."
-  },
-  {
     "id": "q_a290e2f1",
     "difficulty": "hard",
     "topic": "Post-Islam · Islamic Spain",
@@ -2536,60 +2680,6 @@
     "explain": "",
     "source": "prophets.xlsx",
     "explanation": "The civil war among Bayazid II's sons occurred because they each wanted to succeed their father as sultan, leading to a power struggle. This rivalry for the throne was common in Ottoman succession, as there was no fixed rule, often resulting in conflicts among princes."
-  },
-  {
-    "id": "q_bacd08b7",
-    "difficulty": "hard",
-    "topic": "Post-Islam · Islamic Spain",
-    "world": 5,
-    "sort": 20129,
-    "q": "Who was Selim I's main rival for the throne?",
-    "opts": [
-      "A. His father Bayazid II",
-      "B. His brother Ahmed",
-      "C. His son Suleiman",
-      "D. The Safavid Shah Ismail"
-    ],
-    "correct": 1,
-    "explain": "",
-    "source": "prophets.xlsx",
-    "explanation": "Selim I's main rival for the throne was his brother Ahmed, as succession disputes among Ottoman princes were common, often leading to conflicts to secure the sultanate. This rivalry was part of the broader Ottoman practice of fratricide to prevent civil war and ensure a stable rule."
-  },
-  {
-    "id": "q_55b7f859",
-    "difficulty": "hard",
-    "topic": "Post-Islam · Islamic Spain",
-    "world": 5,
-    "sort": 20130,
-    "q": "Which Safavid ruler did Selim I defeat at the Battle of Chaldiran in 920 AH (1514 CE)?",
-    "opts": [
-      "A. Shah Abbas",
-      "B. Shah Ismail I",
-      "C. Shah Tahmasp",
-      "D. Shah Safi"
-    ],
-    "correct": 1,
-    "explain": "",
-    "source": "prophets.xlsx",
-    "explanation": "Selim I defeated Shah Ismail I, the founder of the Safavid dynasty, at the Battle of Chaldiran in 1514 CE. This victory was significant as it established Ottoman dominance over eastern Anatolia and northern Iraq, limiting Safavid expansion."
-  },
-  {
-    "id": "q_23ecdc78",
-    "difficulty": "hard",
-    "topic": "Post-Islam · Islamic Spain",
-    "world": 5,
-    "sort": 20131,
-    "q": "Why did Selim I defeat the Safavids despite being outnumbered?",
-    "opts": [
-      "A. The Safavid army was poorly trained",
-      "B. Selim had better artillery (firearms and cannons)",
-      "C. Shah Ismail was sick",
-      "D. The Safavids ran out of food"
-    ],
-    "correct": 1,
-    "explain": "",
-    "source": "prophets.xlsx",
-    "explanation": "Selim I's victory over the Safavids was due to his superior use of artillery, including firearms and cannons, which gave his smaller army a significant technological advantage in battle, allowing them to overcome the larger Safavid forces."
   },
   {
     "id": "q_584b3cbf",
@@ -2772,24 +2862,6 @@
     "explanation": "Hajjaj bin Yusuf was the Umayyad governor who led the siege of Makkah to suppress Abdullah bin Zubair's rebellion during his caliphate. His military campaign was crucial in reestablishing Umayyad control over the region."
   },
   {
-    "id": "q_3d7b8c06",
-    "difficulty": "easy",
-    "topic": "Post-Islam · Islamic History",
-    "world": 5,
-    "sort": 30010,
-    "q": "What happened to the Ka'bah during the siege of Makkah?",
-    "opts": [
-      "A. It was completely destroyed",
-      "B. Its walls were broken and roof caved in due to catapult stones",
-      "C. It remained completely unharmed",
-      "D. It was set on fire"
-    ],
-    "correct": 1,
-    "explain": "",
-    "source": "prophets.xlsx",
-    "explanation": "During the siege of Makkah, the Ka'bah was severely damaged as the attacking forces used catapult stones, causing its walls to break and the roof to collapse. This event highlighted the intense conflict before the peaceful conquest of Makkah by the Muslims."
-  },
-  {
     "id": "q_5d564410",
     "difficulty": "easy",
     "topic": "Post-Islam · Islamic History",
@@ -2824,24 +2896,6 @@
     "explain": "",
     "source": "prophets.xlsx",
     "explanation": "Umar bin Abdul Aziz served as caliph for 2 years, 5 months, and 4 days, a relatively short but impactful period during which he implemented significant reforms based on justice and Islamic principles. His brief rule is noted for its emphasis on piety and governance according to the Quran and Sunnah."
-  },
-  {
-    "id": "q_6d99d9d9",
-    "difficulty": "easy",
-    "topic": "Post-Islam · Islamic History",
-    "world": 5,
-    "sort": 30013,
-    "q": "What significant change did Umar bin Abdul Aziz make regarding the treatment of Ali (رضي الله عنه)?",
-    "opts": [
-      "A. He cursed Ali in the sermons",
-      "B. He ordered that nobody should talk badly of Ali",
-      "C. He removed Ali's name from all records",
-      "D. He declared Ali as the only rightful caliph"
-    ],
-    "correct": 1,
-    "explain": "",
-    "source": "prophets.xlsx",
-    "explanation": "Umar bin Abdul Aziz emphasized respect for Ali (رضي الله عنه) by prohibiting any negative speech about him, promoting unity and honoring the Prophet’s family. This policy helped reduce sectarian tensions and reinforced Ali’s esteemed status in Islamic history."
   },
   {
     "id": "q_753de0a6",
@@ -3186,24 +3240,6 @@
     "explanation": "Caliph Ameen was captured and executed by the forces of Tahir ibn Husayn during a civil war for control of the Abbasid Caliphate. His death marked the end of his reign and solidified Tahir's influence in the region."
   },
   {
-    "id": "q_964873aa",
-    "difficulty": "medium",
-    "topic": "Post-Islam · Islamic History",
-    "world": 5,
-    "sort": 30036,
-    "q": "Who did Mamoon Rasheed designate as his heir apparent, causing controversy with the Abbasids?",
-    "opts": [
-      "A. His son Abbas",
-      "B. His brother Motasim",
-      "C. Imam Ali Rida (Ali al-Rida)",
-      "D. Ibrahim bin Mehdi"
-    ],
-    "correct": 2,
-    "explain": "",
-    "source": "prophets.xlsx",
-    "explanation": "Mamoon Rasheed designated Imam Ali Rida, a descendant of Prophet Muhammad, as his heir to reconcile the Abbasid caliphate with the Shia community, causing controversy because it challenged the traditional Abbasid succession and political authority. This move aimed to unify Muslims but faced opposition from Abbasid elites."
-  },
-  {
     "id": "q_b7f3f343",
     "difficulty": "medium",
     "topic": "Post-Islam · Islamic History",
@@ -3420,24 +3456,6 @@
     "explanation": "The Tulunid dynasty, founded by Ahmad ibn Tulun in 254 AH (868 CE), established autonomous rule over Egypt and Syria as Abbasid central authority weakened, marking the first independent Muslim dynasty in Egypt and laying foundations for regional governance separate from Baghdad."
   },
   {
-    "id": "q_b639bed4",
-    "difficulty": "medium",
-    "topic": "Post-Islam · Islamic History",
-    "world": 5,
-    "sort": 30049,
-    "q": "Who was the founder of the Saffarid dynasty that captured Khorasan and Iran?",
-    "opts": [
-      "A. Amr bin Laith",
-      "B. Yaqub bin Laith Saffar",
-      "C. Tahir bin Husain",
-      "D. Ismail Samani"
-    ],
-    "correct": 1,
-    "explain": "",
-    "source": "prophets.xlsx",
-    "explanation": "Yaqub bin Laith Saffar founded the Saffarid dynasty in the 9th century, rising from a coppersmith to a powerful ruler who captured Khorasan and parts of Iran, marking a significant shift in regional power during the post-Islamic period."
-  },
-  {
     "id": "q_53f09812",
     "difficulty": "medium",
     "topic": "Post-Islam · Islamic History",
@@ -3526,24 +3544,6 @@
     "explain": "",
     "source": "prophets.xlsx",
     "explanation": "Nizamul Mulk Toosi was a renowned Seljuq vizier known for his administrative skills and support of education, founding institutions like the Nizamiyya madrasas that promoted Islamic scholarship and learning across the empire."
-  },
-  {
-    "id": "q_6521c3fe",
-    "difficulty": "hard",
-    "topic": "Post-Islam · Islamic History",
-    "world": 5,
-    "sort": 30055,
-    "q": "Which Qaramatian leader committed atrocities in Makkah in 317 AH, including removing the Black Stone?",
-    "opts": [
-      "A. Abu Tahir Sulaiman",
-      "B. Hamdan Qaramata",
-      "C. Abu Sayeed Janani",
-      "D. Zikrwaih"
-    ],
-    "correct": 0,
-    "explain": "",
-    "source": "prophets.xlsx",
-    "explanation": "Abu Tahir Sulaiman, leader of the Qaramatians in 317 AH, is known for his attack on Makkah where his forces desecrated the Kaaba and removed the Black Stone, causing great shock and outrage among Muslims. This event highlighted the Qaramatians' extreme opposition to mainstream Islamic authority."
   },
   {
     "id": "q_4310d02e",
