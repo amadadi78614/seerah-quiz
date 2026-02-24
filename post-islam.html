@@ -292,6 +292,7 @@
       <span id="q-counter" style="font-size:0.85rem;color:#888"></span>
       <span id="q-diff" class="badge" style="font-size:0.75rem"></span>
     </div>
+    <div class="context-box" id="q-context" style="display:none;background:#1e2a3a;border-left:3px solid #4a9eff;padding:12px 16px;border-radius:6px;margin-bottom:16px;font-size:0.9rem;color:#b0c8e8;line-height:1.6;"></div>
     <div class="question-text" id="q-text"></div>
     <div id="q-options"></div>
     <div class="explain-box" id="q-explain" style="display:none"></div>
@@ -749,6 +750,13 @@ function renderQuestion() {
   const diffEl = document.getElementById('q-diff');
   diffEl.className = 'badge badge-' + (q.difficulty || 'medium');
   diffEl.textContent = (q.difficulty || 'medium').charAt(0).toUpperCase() + (q.difficulty || 'medium').slice(1);
+  const ctxEl = document.getElementById('q-context');
+  if (q.context) {
+    ctxEl.textContent = q.context;
+    ctxEl.style.display = 'block';
+  } else {
+    ctxEl.style.display = 'none';
+  }
   document.getElementById('q-text').textContent = q.q;
   document.getElementById('q-explain').style.display = 'none';
   document.getElementById('q-next-btn').style.display = 'none';

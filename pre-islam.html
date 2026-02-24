@@ -292,6 +292,7 @@
       <span id="q-counter" style="font-size:0.85rem;color:#888"></span>
       <span id="q-diff" class="badge" style="font-size:0.75rem"></span>
     </div>
+    <div class="context-box" id="q-context" style="display:none;background:#1e2a3a;border-left:3px solid #4a9eff;padding:12px 16px;border-radius:6px;margin-bottom:16px;font-size:0.9rem;color:#b0c8e8;line-height:1.6;"></div>
     <div class="question-text" id="q-text"></div>
     <div id="q-options"></div>
     <div class="explain-box" id="q-explain" style="display:none"></div>
@@ -607,7 +608,7 @@ const LEVELS = [
     {id:"q_2e31f00b",q:"According to the hadith about Adam and Musa (Moses) meeting, why did Adam defeat Musa in their argument?",opts:["A. Adam had more knowledge of the Torah","B. Adam argued that his sin was predestined by Allah before he was created, and blaming him was like blaming Allah for His own decree","C. Musa was not a prophet at the time of the debate","D. Adam had already repented, so his sin was erased"],correct:1,difficulty:"medium",explain:"Adam defeated Musa in their argument because he explained that his sin was part of Allah\'s divine decree established before his creation, so holding him accountable would mean blaming Allah for His own predetermined plan, highlighting the concept of predestination in Islamic theology."},
     {id:"q_3e28a510",q:"What did Negus say after hearing the recitation?",opts:["A. \"This is magic\"","B. \"This and the Torah of Musa are radiations from the same Heavenly Light\"","C. \"I don\'t understand\"","D. \"You are lying\""],correct:1,difficulty:"easy",explain:"Negus recognized the Quran\'s divine origin by comparing it to the Torah of Musa, indicating both scriptures come from the same heavenly source. This shows his respect for the message of Islam and its connection to earlier revelations."},
     {id:"q_d6fe3e56",q:"What did the Prophet say to Ali when he followed the army to complain about rumors?",opts:["A. \"Go back, you are to me as Harun was to Musa, except that there will be no Prophet after me\"","B. \"You are my successor\"","C. \"Why did you come?\"","D. \"You are right to be angry\""],correct:0,difficulty:"medium",explain:"The Prophet Muhammad told Ali, \"Go back, you are to me as Harun was to Musa, except that there will be no Prophet after me,\" highlighting Ali\'s close support and role, similar to Aaron\'s to Moses, while emphasizing that prophethood ended with Muhammad. This affirmed Ali\'s importance without implying succession of prophethood."},
-    {id:"q_aaac57b7",q:"How many sons did the Prophet have, and what happened to them?",opts:["A. Three (Qasim, Abdullah, Ibrahim); all died in infancy","B. Two (Qasim and Abdullah); both died young","C. Four; all lived","D. One; he died young"],correct:0,difficulty:"hard",explain:"The Prophet Muhammad had three sons: Qasim, Abdullah, and Ibrahim. Unfortunately, all of them died in infancy, which was a common hardship in that era and deeply affected the Prophet and his family."},
+    {id:"q_aaac57b7",q:"How many sons did the Prophet have, and what happened to them?",opts:["A. Three (Qasim, Abdullah, Ibrahim); all died in infancy","B. Two (Qasim and Abdullah); both died young","C. Four; all lived","D. One; he died young"],correct:0,difficulty:"hard",explain:"The Prophet Muhammad had three sons: Qasim, Abdullah, and Ibrahim. Unfortunately, all of them died in infancy, which was a common hardship in that era and deeply affected the Prophet and his family.",context:"Before the advent of Islam, the Prophet Muhammad ﷺ had children from his marriage to Khadijah رضي الله عنها. This question concerns the number of his sons and their fate."},
     {id:"q_0ec3516a",q:"How is the word \"Caliph\" (Khalifah) used in the Qur\'an according to the text?",opts:["A. Only for prophets","B. For ruler or successor on earth (e.g., Adam, Dawud)","C. For angels","D. For all believers"],correct:1,difficulty:"hard",explain:"In the Qur\'an, \"Caliph\" (Khalifah) refers to a representative or successor on earth, entrusted with stewardship and leadership, as seen with figures like Adam and Dawud. It signifies a divinely appointed role to govern and maintain justice, rather than a specific political title."},
     {id:"q_726d7ce3",q:"Who led the Muslim forces in the conquest of Africa (Tunisia, etc.)?",opts:["A. Amr bin Al-As","B. Abdullah bin Sa\'d bin Abu Sarh","C. Mu\'awiyah","D. Abu Musa Ash\'ari"],correct:1,difficulty:"hard",explain:"Abdullah bin Sa\'d bin Abu Sarh was appointed by Caliph Uthman to lead the Muslim forces in the conquest of North Africa, including Tunisia. His leadership helped expand the Islamic state into the region, establishing Muslim control and spreading Islam in Africa."},
     {id:"q_02f62537",q:"What did the Prophet say to Ali during the Tabuk expedition?",opts:["A. \"You are useless\"","B. \"You are to me as Harun was to Musa, except that there will be no Prophet after me\"","C. \"Stay here and guard the city\"","D. \"Come with me\""],correct:1,difficulty:"hard",explain:"The Prophet Muhammad said this to Ali during the Tabuk expedition to highlight Ali\'s close relationship and importance to him, similar to that of Harun (Aaron) to Musa (Moses), while emphasizing that prophethood ends with Muhammad, so Ali would not be a prophet."},
@@ -1211,6 +1212,13 @@ function renderQuestion() {
   const diffEl = document.getElementById('q-diff');
   diffEl.className = 'badge badge-' + (q.difficulty || 'medium');
   diffEl.textContent = (q.difficulty || 'medium').charAt(0).toUpperCase() + (q.difficulty || 'medium').slice(1);
+  const ctxEl = document.getElementById('q-context');
+  if (q.context) {
+    ctxEl.textContent = q.context;
+    ctxEl.style.display = 'block';
+  } else {
+    ctxEl.style.display = 'none';
+  }
   document.getElementById('q-text').textContent = q.q;
   document.getElementById('q-explain').style.display = 'none';
   document.getElementById('q-next-btn').style.display = 'none';

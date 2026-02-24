@@ -2427,7 +2427,8 @@
     "correct": 1,
     "explain": "",
     "source": "seerah.xlsx",
-    "explanation": "After the incident at At-Ta'if, the blood-money (diyya) in Arabia was increased from 10 to 100 camels to emphasize the seriousness of causing harm and to provide greater compensation to victims, reflecting a move towards more just and stringent social laws."
+    "explanation": "After the incident at At-Ta'if, the blood-money (diyya) in Arabia was increased from 10 to 100 camels to emphasize the seriousness of causing harm and to provide greater compensation to victims, reflecting a move towards more just and stringent social laws.",
+    "context": "Context: After the incident of the Prophet ﷺ being stoned in At-Ta'if, changes were made to the laws of blood-money (diyya) in Arabia to increase its value as a deterrent and form of justice."
   },
   {
     "id": "q_376f8786",
@@ -6368,7 +6369,8 @@
     "correct": 1,
     "explain": "",
     "source": "prophets.xlsx",
-    "explanation": "This event, known as the cleansing of the Prophet's (PBUH) heart, occurred in Makkah during his childhood while he was playing with other boys, as narrated by Imam Muslim. It symbolizes the purification of his soul in preparation for prophethood."
+    "explanation": "This event, known as the cleansing of the Prophet's (PBUH) heart, occurred in Makkah during his childhood while he was playing with other boys, as narrated by Imam Muslim. It symbolizes the purification of his soul in preparation for prophethood.",
+    "context": "This question refers to the event of the Prophet Muhammad’s (PBUH) chest being opened and purified by two angels during his childhood. The incident is described in a hadith narrated by Imam Muslim. \n\nThe Prophet ﷺ said: \"When I was a boy, two men in white garments came to me while I was playing with the boys in the courtyard of Makkah. They split open my chest, took out a blood clot from it, and washed my heart with Zamzam water.\" (Narrated by Muslim)"
   },
   {
     "id": "q_fb155d54",
