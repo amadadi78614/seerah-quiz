@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foundations of Faith — Seerah Quiz</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  :root { --accent:#d4a017; --bg:#2a1a0a; }
+
+  /* ── Timeline ── */
+  .timeline-wrap {
+    overflow-x: auto;
+    padding: 12px 0 20px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) transparent;
+  }
+  .timeline {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    min-width: max-content;
+    padding: 0 20px;
+  }
+  .tl-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+  }
+  .tl-node.locked { cursor: not-allowed; opacity: 0.45; }
+  .tl-node.active .tl-dot { border-color: var(--accent); box-shadow: 0 0 0 4px rgba(255,255,255,0.15); }
+  .tl-dot {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    border: 3px solid #555;
+    background: #1e1e2e;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ccc;
+    transition: all 0.3s;
+    z-index: 1;
+  }
+  .tl-node.completed .tl-dot {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #000;
+  }
+  .tl-node.active .tl-dot {
+    background: #2a2a3e;
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .tl-label {
+    font-size: 0.62rem;
+    color: #888;
+    margin-top: 6px;
+    text-align: center;
+    max-width: 70px;
+    line-height: 1.2;
+    white-space: normal;
+  }
+  .tl-node.completed .tl-label { color: var(--accent); }
+  .tl-node.active .tl-label { color: #fff; font-weight: 600; }
+  .tl-line {
+    width: 30px; height: 3px;
+    background: #333;
+    flex-shrink: 0;
+    margin-bottom: 22px;
+  }
+  .tl-line.done { background: var(--accent); }
+
+  /* ── Level card (home screen) ── */
+  .level-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 18px 22px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .level-card:hover:not(.locked) { background: rgba(255,255,255,0.1); transform: translateX(4px); }
+  .level-card.locked { opacity: 0.4; cursor: not-allowed; }
+  .level-card.active { border-color: var(--accent); background: rgba(255,255,255,0.08); }
+  .level-card.completed { border-color: var(--accent); }
+  .level-num {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    border: 2px solid #555;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 1rem;
+    flex-shrink: 0;
+    color: #888;
+  }
+  .level-card.completed .level-num { background: var(--accent); border-color: var(--accent); color: #000; }
+  .level-card.active .level-num { border-color: var(--accent); color: var(--accent); }
+  .level-info { flex: 1; }
+  .level-title { font-weight: 600; font-size: 0.95rem; color: #eee; }
+  .level-meta { font-size: 0.78rem; color: #888; margin-top: 2px; }
+  .level-badge { font-size: 0.75rem; padding: 3px 10px; border-radius: 20px; }
+  .badge-done { background: rgba(76,175,80,0.2); color: #4caf50; border: 1px solid #4caf50; }
+  .badge-locked { background: rgba(100,100,100,0.2); color: #888; border: 1px solid #555; }
+  .badge-active { background: rgba(255,255,255,0.1); color: var(--accent); border: 1px solid var(--accent); }
+
+  /* ── Quiz screen ── */
+  .quiz-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 0; margin-bottom: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .level-title-bar {
+    font-size: 0.8rem; color: #aaa;
+    text-align: center; margin-bottom: 8px;
+  }
+  .progress-bar { height: 4px; background: #2a2a3e; border-radius: 2px; margin-bottom: 20px; }
+  .progress-fill { height: 100%; background: var(--accent); border-radius: 2px; transition: width 0.4s; }
+  .question-text { font-size: 1.1rem; line-height: 1.6; margin-bottom: 22px; color: #f0f0f0; }
+  .opt-btn {
+    display: flex; align-items: center; gap: 14px;
+    width: 100%; padding: 14px 18px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px; margin-bottom: 10px;
+    cursor: pointer; color: #ddd;
+    font-size: 0.95rem; text-align: left;
+    transition: all 0.15s;
+  }
+  .opt-btn:hover:not(:disabled) { background: rgba(255,255,255,0.1); border-color: var(--accent); }
+  .opt-btn.correct { background: rgba(76,175,80,0.25); border-color: #4caf50; color: #fff; }
+  .opt-btn.wrong   { background: rgba(239,83,80,0.25);  border-color: #ef5350; color: #fff; }
+  .opt-letter {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.8rem; flex-shrink: 0;
+  }
+  .explain-box {
+    background: rgba(255,255,255,0.05);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+    font-size: 0.88rem; color: #bbb;
+    margin: 12px 0;
+  }
+  .btn-next {
+    background: var(--accent); color: #000;
+    border: none; border-radius: 10px;
+    padding: 12px 32px; font-size: 1rem; font-weight: 700;
+    cursor: pointer; margin-top: 8px;
+    transition: opacity 0.2s;
+  }
+  .btn-next:hover { opacity: 0.85; }
+
+  /* ── Results screen ── */
+  .result-ring {
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    border: 6px solid var(--accent);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+  }
+  .result-pct { font-size: 2rem; font-weight: 800; color: var(--accent); }
+  .result-label { font-size: 0.7rem; color: #888; }
+  .result-msg { text-align: center; font-size: 1rem; color: #ddd; margin-bottom: 20px; }
+  .result-stats { display: flex; gap: 20px; justify-content: center; margin-bottom: 24px; }
+  .stat-box { text-align: center; }
+  .stat-num { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+  .stat-lbl { font-size: 0.75rem; color: #888; }
+  .btn-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn { padding: 12px 24px; border-radius: 10px; font-size: 0.95rem; font-weight: 600; cursor: pointer; border: none; transition: opacity 0.2s; }
+  .btn:hover { opacity: 0.85; }
+  .btn-primary { background: var(--accent); color: #000; }
+  .btn-outline { background: transparent; border: 2px solid var(--accent); color: var(--accent); }
+  .btn-grey { background: rgba(255,255,255,0.1); color: #ccc; border: 1px solid #444; }
+  .unlock-banner {
+    background: linear-gradient(135deg, rgba(76,175,80,0.2), rgba(76,175,80,0.05));
+    border: 1px solid #4caf50;
+    border-radius: 12px;
+    padding: 14px 18px;
+    text-align: center;
+    margin-bottom: 20px;
+    display: none;
+  }
+  .unlock-banner.show { display: block; }
+  .unlock-banner .unlock-title { color: #4caf50; font-weight: 700; font-size: 1rem; }
+  .unlock-banner .unlock-sub { color: #aaa; font-size: 0.85rem; margin-top: 4px; }
+
+  /* ── Certificate modal ── */
+  .modal-overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: none; align-items: center; justify-content: center;
+    z-index: 1000; padding: 20px;
+  }
+  .modal-overlay.show { display: flex; }
+  .modal-box {
+    background: #1a1a2e;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 16px;
+    padding: 28px;
+    max-width: 480px; width: 100%;
+    text-align: center;
+  }
+  .modal-box h2 { color: var(--accent); margin-bottom: 8px; }
+  .modal-box p { color: #aaa; font-size: 0.9rem; margin-bottom: 20px; }
+  .name-input {
+    width: 100%; padding: 12px 16px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px; color: #fff;
+    font-size: 1rem; margin-bottom: 16px;
+    box-sizing: border-box;
+  }
+  #cert-canvas { display: none; }
+
+  /* ── Nav bar ── */
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; margin-bottom: 8px; }
+  .nav-back { color: var(--accent); text-decoration: none; font-size: 0.9rem; }
+  .nav-title { font-size: 1rem; font-weight: 700; color: #fff; }
+  .nav-score { font-size: 0.85rem; color: #888; }
+
+  .screen { display: none; }
+  .screen.active { display: block; }
+  .fade-in { animation: fadeIn 0.3s ease; }
+  @keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+
+  .world-hero { text-align: center; padding: 30px 0 20px; }
+  .world-emoji { font-size: 3rem; margin-bottom: 8px; }
+  .world-phase { font-size: 0.75rem; color: #888; text-transform: uppercase; letter-spacing: 2px; }
+  .world-name { font-size: 2rem; font-weight: 800; color: #fff; margin: 6px 0; }
+  .world-arabic { font-size: 1.3rem; color: var(--accent); font-family: serif; direction: rtl; }
+  .world-desc { color: #aaa; font-size: 0.9rem; margin-top: 10px; max-width: 500px; margin-left: auto; margin-right: auto; }
+  .world-stats { display: flex; gap: 20px; justify-content: center; margin: 16px 0; }
+  .wstat { text-align: center; }
+  .wstat-num { font-size: 1.4rem; font-weight: 700; color: var(--accent); }
+  .wstat-lbl { font-size: 0.72rem; color: #888; }
+
+  .section-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: #666; margin: 20px 0 10px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HOME SCREEN -->
+  <div id="screen-home" class="screen active fade-in">
+    <nav class="nav">
+      <a href="index.html" class="nav-back">← All Worlds</a>
+      <span class="nav-title">🕌 Seerah Quiz</span>
+      <span></span>
+    </nav>
+
+    <div class="world-hero">
+      <div class="world-emoji">🕌</div>
+      <div class="world-phase">Start Here</div>
+      <div class="world-name">Foundations of Faith</div>
+      <div class="world-arabic">أُسُسُ الإِيمَان</div>
+      <div class="world-desc">For new Muslims and reverts — Tawheed, the 3 Fundamental Principles, the 5 Pillars, the 6 Pillars of Eemaan, Taharah, Halal & Haram, and Islamic character.</div>
+      <div class="world-stats">
+        <div class="wstat"><div class="wstat-num">8</div><div class="wstat-lbl">Levels</div></div>
+        <div class="wstat"><div class="wstat-num">390</div><div class="wstat-lbl">Questions</div></div>
+        <div class="wstat"><div class="wstat-num">80%</div><div class="wstat-lbl">Pass Mark</div></div>
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="timeline-wrap">
+      <div class="timeline" id="timeline-nodes"></div>
+    </div>
+
+    <!-- Level list -->
+    <div class="section-title">Choose a Level</div>
+    <div id="level-list"></div>
+  </div>
+
+  <!-- QUIZ SCREEN -->
+  <div id="screen-quiz" class="screen">
+    <nav class="nav">
+      <a href="#" class="nav-back" onclick="goHome(); return false;">← Back</a>
+      <span class="nav-title">🕌 Seerah Quiz</span>
+      <span class="nav-score" id="nav-score">0/0</span>
+    </nav>
+    <div class="level-title-bar" id="quiz-level-title"></div>
+    <div class="progress-bar"><div class="progress-fill" id="q-progress-fill" style="width:0%"></div></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+      <span id="q-counter" style="font-size:0.85rem;color:#888"></span>
+      <span id="q-diff" class="badge" style="font-size:0.75rem"></span>
+    </div>
+    <div class="context-box" id="q-context" style="display:none;background:#1e2a3a;border-left:3px solid #4a9eff;padding:12px 16px;border-radius:6px;margin-bottom:16px;font-size:0.9rem;color:#b0c8e8;line-height:1.6;"></div>
+    <div class="question-text" id="q-text"></div>
+    <div id="q-options"></div>
+    <div class="explain-box" id="q-explain" style="display:none"></div>
+    <div style="text-align:right">
+      <button class="btn-next" id="q-next-btn" style="display:none" onclick="nextQuestion()">Next →</button>
+    </div>
+  </div>
+
+  <!-- RESULTS SCREEN -->
+  <div id="screen-results" class="screen">
+    <nav class="nav">
+      <a href="#" class="nav-back" onclick="goHome(); return false;">← Back</a>
+      <span class="nav-title">🕌 Seerah Quiz</span>
+      <span></span>
+    </nav>
+    <div style="text-align:center;padding:20px 0">
+      <div style="font-size:0.8rem;color:#888;margin-bottom:16px" id="res-level-name"></div>
+      <div class="result-ring">
+        <div class="result-pct" id="res-score">0%</div>
+        <div class="result-label">Score</div>
+      </div>
+      <div class="result-stats">
+        <div class="stat-box"><div class="stat-num" id="res-correct">0</div><div class="stat-lbl">Correct</div></div>
+        <div class="stat-box"><div class="stat-num" id="res-total">0</div><div class="stat-lbl">Total</div></div>
+        <div class="stat-box"><div class="stat-num" id="res-pass">—</div><div class="stat-lbl">Pass Mark</div></div>
+      </div>
+      <div class="result-msg" id="res-msg"></div>
+      <div class="unlock-banner" id="unlock-banner">
+        <div class="unlock-title">🔓 Level Unlocked!</div>
+        <div class="unlock-sub" id="unlock-sub"></div>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-outline" onclick="retryLevel()">↺ Retry</button>
+        <button class="btn btn-primary" onclick="goHome()">← Back to Levels</button>
+        <button class="btn btn-grey" id="cert-btn" style="display:none" onclick="showCertModal()">🏅 Certificate</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Certificate Modal -->
+<div class="modal-overlay" id="cert-modal">
+  <div class="modal-box">
+    <h2>🏅 Certificate of Completion</h2>
+    <p>Enter your name to generate your certificate for completing <strong id="cert-world-name">Foundations of Faith</strong>.</p>
+    <input type="text" class="name-input" id="cert-name-input" placeholder="Your full name" maxlength="60">
+    <div class="btn-row" style="justify-content:center">
+      <button class="btn btn-primary" onclick="generateCert()">Generate Certificate</button>
+      <button class="btn btn-grey" onclick="closeCertModal()">Cancel</button>
+    </div>
+    <canvas id="cert-canvas" width="900" height="640"></canvas>
+  </div>
+</div>
+
+<script src="assets/certificate.js"></script>
+<script>
+// ── Data ──────────────────────────────────────────────────────────────────
+const WORLD_ID   = 0;
+const WORLD_NAME = "Foundations of Faith";
+const WORLD_EMOJI= "🕌";
+const PASS_MARK  = 80;
+const STORAGE_KEY = 'seerah_world_0';
+
+const LEVELS = [
+  {id:0,topic:"Foundations · Who is Allah?",label:"Who is Allah?",questions:[
+    {id:"50de6d8c8be6",q:"What is the most fundamental belief in Islam regarding Allah?",opts:["That Allah is merciful","That Allah is One and has no partners","That Allah created the universe","That Allah is all-knowing"],correct:1,difficulty:"easy",explain:"The most fundamental belief is Tawheed, the Oneness of Allah, which means He has no partners in His Lordship, Worship, or Names and Attributes."},
+    {id:"978ab65be6e9",q:"What does \'La ilaha illallah\' primarily mean?",opts:["There is no god but Allah","There is no creator but Allah","There is no deity worthy of worship except Allah","There is no power but Allah"],correct:2,difficulty:"easy",explain:"\'La ilaha illallah\' means there is no deity truly worthy of worship except Allah, encompassing the rejection of all false gods and affirmation of Allah\'s sole right to worship."},
+    {id:"ec8dc573fab9",q:"Which of the following is NOT an attribute of Allah?",opts:["Al-Ahad (The One)","Al-Khaliq (The Creator)","Al-Walad (The Son)","Al-Ghaffar (The Forgiver)"],correct:2,difficulty:"easy",explain:"Allah is Al-Ahad, Al-Khaliq, and Al-Ghaffar. He does not have a son, as stated in the Quran."},
+    {id:"621107720dbb",q:"Why do Muslims worship Allah alone?",opts:["Because He is the strongest","Because He is the only One who deserves worship","Because He is the most beautiful","Because He is the most forgiving"],correct:1,difficulty:"easy",explain:"Muslims worship Allah alone because He is the sole Creator, Sustainer, and Provider, and therefore the only One truly deserving of worship."},
+    {id:"6fcd278838b8",q:"What is Tawheed ar-Ruboobiyyah (Oneness of Lordship)?",opts:["Believing Allah is the only one to be worshipped","Believing Allah is the only Creator, Sustainer, and Controller of the universe","Believing Allah has perfect names and attributes","Believing Allah is the most merciful"],correct:1,difficulty:"easy",explain:"Tawheed ar-Ruboobiyyah is the belief that Allah alone is the Creator, Sustainer, and Controller of all affairs in the universe."},
+    {id:"d3f6ee6ad0ea",q:"What is Tawheed al-Uloohiyyah (Oneness of Worship)?",opts:["Believing Allah is the only Creator","Believing Allah has no partners in His attributes","Directing all acts of worship solely to Allah","Believing Allah is all-powerful"],correct:2,difficulty:"easy",explain:"Tawheed al-Uloohiyyah means dedicating all forms of worship, such as prayer, fasting, and supplication, exclusively to Allah."},
+    {id:"22bee437b4bf",q:"What is Tawheed al-Asma was-Sifat (Oneness of Names and Attributes)?",opts:["Believing Allah has many names","Affirming Allah\'s names and attributes as they are in the Quran and Sunnah without distortion or denial","Believing Allah is the most knowledgeable","Believing Allah is unique"],correct:1,difficulty:"easy",explain:"Tawheed al-Asma was-Sifat involves affirming Allah\'s beautiful names and perfect attributes as mentioned in the Quran and authentic Sunnah, without denying, distorting, or likening them to creation."},
+    {id:"5c70f958b30c",q:"Which of Allah\'s names means \'The Creator\'?",opts:["Ar-Rahman","Al-Ghaffar","Al-Khaliq","Al-Ahad"],correct:2,difficulty:"easy",explain:"Al-Khaliq is one of Allah\'s beautiful names, meaning The Creator, the One who brings things into existence from nothing."},
+    {id:"6f754ad6d1a7",q:"Which of Allah\'s names means \'The Most Merciful\'?",opts:["Al-Ahad","Ar-Rahman","Al-Malik","As-Salam"],correct:1,difficulty:"easy",explain:"Ar-Rahman is one of Allah\'s names, signifying \'The Most Merciful,\' indicating His vast and encompassing mercy."},
+    {id:"33ffb861a3b0",q:"What is the opposite of Tawheed?",opts:["Jihad","Shirk","Zakat","Salah"],correct:1,difficulty:"easy",explain:"The opposite of Tawheed (Oneness of Allah) is Shirk, which means associating partners with Allah in His Lordship, Worship, or Names and Attributes."},
+    {id:"57082508740e",q:"What is the first thing a Muslim is called to believe in?",opts:["Prayer","Fasting","Tawheed","Charity"],correct:2,difficulty:"easy",explain:"The first and most important call in Islam is to Tawheed, the Oneness of Allah, as it is the foundation of all other acts of worship."},
+    {id:"ae70de1494a9",q:"How many beautiful names does Allah have?",opts:["77","88","99","100"],correct:2,difficulty:"easy",explain:"Allah has many beautiful names, and a well-known Hadith mentions that Allah has 99 names, and whoever enumerates them will enter Paradise."},
+    {id:"c98f68ed6b25",q:"What does \'Al-Ahad\' mean among Allah\'s names?",opts:["The First","The Last","The One","The Unique"],correct:2,difficulty:"easy",explain:"Al-Ahad means \'The One,\' emphasizing Allah\'s absolute singularity and indivisibility."},
+    {id:"a0c64ae0f36e",q:"Which of the following actions is considered Shirk (associating partners with Allah)?",opts:["Praying five times a day","Giving charity to the poor","Sacrificing to an idol","Fasting in Ramadan"],correct:2,difficulty:"easy",explain:"Sacrificing to an idol is an act of worship directed to other than Allah, which is a major form of Shirk."},
+    {id:"c938f4b6da39",q:"What is the primary purpose of human creation according to Islam?",opts:["To enjoy life","To worship Allah alone","To gain knowledge","To build civilizations"],correct:1,difficulty:"easy",explain:"The Quran states that Allah created jinn and mankind only that they might worship Him."},
+    {id:"5f28c385a99e",q:"Which attribute of Allah signifies His absolute power?",opts:["Al-Hakeem (The All-Wise)","Al-Qadeer (The All-Powerful)","As-Samee\' (The All-Hearing)","Al-Baseer (The All-Seeing)"],correct:1,difficulty:"easy",explain:"Al-Qadeer is one of Allah\'s names, meaning The All-Powerful, indicating His complete ability over all things."},
+    {id:"f35ae97ddde5",q:"What does \'Al-Ghaffar\' mean?",opts:["The Provider","The Forgiver","The Sustainer","The Judge"],correct:1,difficulty:"easy",explain:"Al-Ghaffar means \'The Forgiver,\' signifying Allah\'s abundant forgiveness for sins."},
+    {id:"f46bbebadfcf",q:"What is the meaning of \'Rabb\' (Lord) in the context of Tawheed ar-Ruboobiyyah?",opts:["The One who is worshipped","The One who forgives","The Creator, Owner, and Disposer of all affairs","The One who guides"],correct:2,difficulty:"easy",explain:"In Tawheed ar-Ruboobiyyah, \'Rabb\' refers to Allah as the sole Creator, Owner, and Disposer of all affairs in the universe."},
+    {id:"dea2e0a40f87",q:"Which of the following is an example of Tawheed al-Uloohiyyah?",opts:["Believing that Allah created the heavens and earth","Believing that Allah is All-Hearing","Making du\'a (supplication) only to Allah","Believing that Allah controls destiny"],correct:2,difficulty:"easy",explain:"Making du\'a (supplication) only to Allah is an act of worship directed solely to Him, which is an example of Tawheed al-Uloohiyyah."},
+    {id:"a54e5da32228",q:"What is the significance of knowing Allah\'s names and attributes?",opts:["To impress others with knowledge","To understand Allah better and increase in awe and love for Him","To argue with non-Muslims","To memorize them for exams"],correct:1,difficulty:"easy",explain:"Knowing Allah\'s names and attributes helps us understand His greatness, perfection, and power, leading to increased love, fear, and hope in Him."},
+    {id:"dd72f3905325",q:"Which of the following is NOT a category of Tawheed?",opts:["Tawheed ar-Ruboobiyyah","Tawheed al-Uloohiyyah","Tawheed al-Asma was-Sifat","Tawheed al-Jihad"],correct:3,difficulty:"easy",explain:"The three categories of Tawheed are Ruboobiyyah, Uloohiyyah, and Asma was-Sifat. Tawheed al-Jihad is not a recognized category."},
+    {id:"2d41bd19e16a",q:"What does \'Al-Hakeem\' mean?",opts:["The All-Knowing","The All-Wise","The All-Seeing","The All-Hearing"],correct:1,difficulty:"easy",explain:"Al-Hakeem means \'The All-Wise,\' indicating Allah\'s perfect wisdom in all His commands and creations."},
+    {id:"bc6d1714f69f",q:"What is the meaning of \'Ibadah\' (worship)?",opts:["Any good deed","Acts of obedience and submission to Allah, both inward and outward","Praying five times a day","Reading the Quran"],correct:1,difficulty:"easy",explain:"Ibadah encompasses all sayings and actions, inward and outward, that Allah loves and is pleased with."},
+    {id:"54ac830a282d",q:"What is the first principle mentioned in \'The Three Fundamental Principles\'?",opts:["Knowledge of the Prophet Muhammad (PBUH)","Knowledge of Islam","Knowledge of your Lord","Knowledge of the Day of Judgment"],correct:2,difficulty:"easy",explain:"The first fundamental principle is \'Knowledge of your Lord,\' which includes knowing His Oneness and attributes."},
+    {id:"42fc08c6ff10",q:"Which of Allah\'s names implies His ability to hear everything?",opts:["Al-Baseer","As-Samee\'","Al-Aleem","Al-Hameed"],correct:1,difficulty:"easy",explain:"As-Samee\' means \'The All-Hearing,\' indicating that Allah hears all sounds, whether loud or soft, secret or open."},
+    {id:"d297e7a54b2e",q:"What does \'Al-Baseer\' mean?",opts:["The All-Seeing","The All-Knowing","The All-Powerful","The All-Wise"],correct:0,difficulty:"easy",explain:"Al-Baseer means \'The All-Seeing,\' indicating that Allah sees all things, no matter how small or hidden."},
+    {id:"cb8f6b2a17bf",q:"What is the greatest sin in Islam?",opts:["Stealing","Lying","Shirk","Murder"],correct:2,difficulty:"easy",explain:"Shirk, associating partners with Allah, is considered the greatest sin in Islam, as it violates the fundamental principle of Tawheed."},
+    {id:"646eabe40f5a",q:"What is the meaning of \'Al-Malik\'?",opts:["The Creator","The King/Owner","The Judge","The Provider"],correct:1,difficulty:"easy",explain:"Al-Malik means \'The King\' or \'The Owner,\' signifying Allah\'s absolute sovereignty and dominion over all creation."},
+    {id:"997f1a91c085",q:"Why is it important to understand \'La ilaha illallah\'?",opts:["To speak Arabic fluently","It is the key to Paradise and the foundation of Islam","To understand Islamic history","To perform rituals correctly"],correct:1,difficulty:"easy",explain:"\'La ilaha illallah\' is the declaration of faith, the key to Paradise, and the very foundation upon which Islam is built."},
+    {id:"0db2bc62dd9c",q:"Which of Allah\'s names means \'The Provider\'?",opts:["Ar-Razzaq","Al-Ghaffar","Al-Hakeem","Al-Ahad"],correct:0,difficulty:"easy",explain:"Ar-Razzaq means \'The Provider,\' indicating that Allah is the sole Giver of sustenance to all creation."},
+    {id:"996ad2b66a96",q:"What is the purpose of Allah\'s attributes (Al-Asma wal-Sifat)?",opts:["To make Allah understandable to humans","To describe Allah\'s perfection and majesty","To make Allah seem more human-like","To limit Allah\'s power"],correct:1,difficulty:"easy",explain:"Allah\'s names and attributes describe His perfection, majesty, and uniqueness, helping us to know and worship Him correctly."},
+    {id:"1f519780170e",q:"What does \'Al-Aleem\' mean?",opts:["The All-Hearing","The All-Seeing","The All-Knowing","The All-Powerful"],correct:2,difficulty:"easy",explain:"Al-Aleem means \'The All-Knowing,\' indicating that Allah has complete knowledge of everything, past, present, and future."},
+    {id:"0d90770bc166",q:"What is the meaning of \'Al-Hayy\'?",opts:["The Living","The Eternal","The Sustainer","The Self-Subsisting"],correct:0,difficulty:"easy",explain:"Al-Hayy means \'The Ever-Living,\' indicating that Allah has perfect and eternal life, without beginning or end."},
+    {id:"9f6dde5440e2",q:"What does \'Al-Qayyum\' mean?",opts:["The Self-Subsisting, Sustainer of all","The Forgiver","The Creator","The Merciful"],correct:0,difficulty:"easy",explain:"Al-Qayyum means \'The Self-Subsisting, Sustainer of all,\' indicating that Allah exists by Himself and sustains everything else."},
+    {id:"05a9ec9e883a",q:"Which of the following is an example of major Shirk?",opts:["Showing off in prayer","Swearing by other than Allah","Seeking help from a deceased person","Wearing an amulet for protection"],correct:2,difficulty:"easy",explain:"Seeking help from a deceased person is an act of worship directed to other than Allah, which is major Shirk."},
+    {id:"a90d8ce5d78b",q:"What is the core message of all prophets and messengers?",opts:["To establish justice","To call people to worship Allah alone","To teach good manners","To build strong communities"],correct:1,difficulty:"easy",explain:"All prophets and messengers, from Adam to Muhammad, were sent with the core message of Tawheed: to call people to worship Allah alone and abandon all forms of Shirk."},
+    {id:"5a270ed92a1c",q:"What does \'As-Salam\' mean among Allah\'s names?",opts:["The Peace","The Giver of Peace","The Flawless","All of the above"],correct:3,difficulty:"easy",explain:"As-Salam encompasses meanings like The Peace, The Giver of Peace, and The Flawless, indicating Allah\'s perfection and freedom from all defects."},
+    {id:"4573580fa4d0",q:"What is the danger of not understanding Tawheed?",opts:["It leads to confusion in daily life","It can lead to Shirk and eternal punishment","It makes one less knowledgeable","It prevents one from being a good person"],correct:1,difficulty:"easy",explain:"Not understanding Tawheed can lead to falling into Shirk, which is the greatest sin and can lead to eternal punishment in the Hellfire."},
+    {id:"5e7047a37fb6",q:"What is the meaning of \'Al-Wahhab\'?",opts:["The Giver","The Bestower","The Donor","All of the above"],correct:3,difficulty:"easy",explain:"Al-Wahhab means \'The Bestower\' or \'The Giver,\' indicating that Allah grants His bounties and favors freely and abundantly."},
+    {id:"f22b56bf77be",q:"What is the importance of \'La ilaha illallah\' in a Muslim\'s life?",opts:["It is a phrase to be recited often","It defines their entire worldview and purpose","It is a secret password to Paradise","It is a historical statement"],correct:1,difficulty:"easy",explain:"\'La ilaha illallah\' is not just a phrase but a declaration that defines a Muslim\'s entire worldview, purpose in life, and relationship with their Creator."}
+  ]},
+  {id:1,topic:"Foundations · The Three Fundamental Principles",label:"The Three Fundamental Principles",questions:[
+    {id:"c53e566b8424",q:"Who is your Lord?",opts:["Allah, who created me, provides for me, and I worship Him alone.","Prophet Muhammad, who guided us to the straight path.","The angels, who carry out Allahs commands.","My parents, who raised and cared for me."],correct:0,difficulty:"medium",explain:"Allah is the sole Creator, Provider, and the only One worthy of worship."},
+    {id:"4a923d44bdcf",q:"What is the primary characteristic of Allah as our Lord?",opts:["He is the most powerful of all prophets.","He is the Creator and Sustainer of all things.","He is the leader of all angels.","He is the one who grants wishes to saints."],correct:1,difficulty:"medium",explain:"Allah is the Creator and Sustainer, providing for all creation."},
+    {id:"e28e74df6b0d",q:"What is the fundamental act of worship directed towards Allah?",opts:["Worshipping through intermediaries like saints.","Worshipping through the guidance of ancestors.","Worshipping Him alone without associating partners.","Worshipping through specific rituals invented by people."],correct:2,difficulty:"medium",explain:"The core of worshipping Allah is to worship Him alone, free from Shirk."},
+    {id:"20a83736289a",q:"What does it mean that Allah provides for you?",opts:["He only provides for those who are wealthy.","He provides only if you ask through a saint.","He provides only for Muslims.","He sustains and gives all provisions to His creation."],correct:3,difficulty:"medium",explain:"Allah is Ar-Razzaq, the Provider, sustaining all creation."},
+    {id:"76b2af783aa3",q:"What is the unique attribute of Allah regarding creation?",opts:["He is the sole Creator of everything in existence.","He created only humans and animals.","He created the universe with the help of angels.","He created only the heavens and the earth."],correct:0,difficulty:"medium",explain:"Allah is Al-Khaliq, the Creator of all things."},
+    {id:"a0f11229fa1f",q:"How does Allah provide for His creation?",opts:["He provides only for those who earn a lot of money.","He sustains all beings with their needs, seen and unseen.","He provides only for those who pray five times a day.","He provides only for those who are physically strong."],correct:1,difficulty:"medium",explain:"Allah is Ar-Razzaq, the Sustainer, providing for all creation without discrimination."},
+    {id:"29af78f71736",q:"What is the consequence of worshipping others alongside Allah?",opts:["It is a minor sin that Allah easily forgives.","It is a permissible act if done with good intention.","It is Shirk, the greatest sin, and negates ones Tawheed.","It is a way to get closer to Allah through intermediaries."],correct:2,difficulty:"medium",explain:"Associating partners with Allah (Shirk) is the only sin Allah does not forgive if one dies upon it."},
+    {id:"3750e615d20d",q:"What does the phrase \"I worship Him alone\" imply?",opts:["Worshipping Allah through prophets and saints.","Worshipping Allah by following ones desires.","Worshipping Allah only when it is convenient.","Directing all acts of worship solely to Allah without partners."],correct:3,difficulty:"medium",explain:"This emphasizes pure monotheism (Tawheed al-Uluhiyyah), directing all worship to Allah alone."},
+    {id:"3dbdd509245c",q:"What is the meaning of Allahs attribute Al-Ahad?",opts:["The One, the Unique, the Indivisible.","The Forgiver.","The Merciful.","The All-Hearing."],correct:0,difficulty:"medium",explain:"Al-Ahad emphasizes Allahs absolute Oneness and uniqueness."},
+    {id:"c2d812b646bd",q:"What is the greatest act of disobedience to Allah?",opts:["Stealing.","Shirk (associating partners with Him).","Lying.","Backbiting."],correct:1,difficulty:"medium",explain:"Shirk is the most severe sin in Islam."},
+    {id:"ce2defa47ba3",q:"What is the meaning of \"Allah, who created me\"?",opts:["My parents created me.","I created myself.","Allah is my Creator and brought me into existence.","Nature created me."],correct:2,difficulty:"medium",explain:"Allah is the sole Creator of all beings."},
+    {id:"d7721faed821",q:"What is the meaning of \"Allah, who provides for me\"?",opts:["My job provides for me.","My government provides for me.","My family provides for me.","Allah is the Sustainer and Giver of all provisions."],correct:3,difficulty:"medium",explain:"Allah is the ultimate Provider for all creation."},
+    {id:"584b362b7699",q:"What is the meaning of Allahs attribute Al-Khaliq?",opts:["The Creator, the Maker.","The Destroyer.","The Sustainer.","The Provider."],correct:0,difficulty:"medium",explain:"Al-Khaliq emphasizes Allahs role as the sole originator of creation."},
+    {id:"e911669bad23",q:"What is the consequence of attributing partners to Allah in His Lordship?",opts:["It is a minor error.","It is Shirk ar-Rububiyyah and a major sin.","It is permissible if one believes in Allah.","It is a form of respect for creation."],correct:1,difficulty:"medium",explain:"Shirk ar-Rububiyyah is to believe that others share in Allahs power to create, sustain, or control."},
+    {id:"2c36e4658cac",q:"What is the meaning of Islam?",opts:["Submission to Allah with Tawheed, obedience, and disavowal of Shirk.","Following the traditions of ones forefathers blindly.","Believing in multiple gods and goddesses.","Performing rituals without understanding their meaning."],correct:0,difficulty:"medium",explain:"Islam means complete submission to Allah, affirming His Oneness (Tawheed), obeying His commands, and rejecting polytheism (Shirk)."},
+    {id:"d5e73e2ac4de",q:"What is Tawheed in Islam?",opts:["Belief in three gods.","The belief in the Oneness of Allah and His sole right to be worshipped.","Belief in many gods and goddesses.","Belief that Allah shares His power with others."],correct:1,difficulty:"medium",explain:"Tawheed is the foundational principle of Islam, affirming Allahs absolute Oneness."},
+    {id:"ecf219fc574d",q:"What does disavowal of Shirk mean?",opts:["Accepting all forms of worship.","Believing that some idols can intercede with Allah.","Rejecting all forms of polytheism and associating partners with Allah.","Seeking help from deceased saints."],correct:2,difficulty:"medium",explain:"Shirk is the gravest sin in Islam, and a Muslim must disavow it completely."},
+    {id:"ab5f1db8f63a",q:"What is an essential component of Islam regarding Allahs commands?",opts:["Obedience to religious leaders above Allahs commands.","Obedience only to what one personally agrees with.","Obedience to cultural traditions over religious texts.","Obedience to His commands and prohibitions."],correct:3,difficulty:"medium",explain:"Obedience to Allahs commands is a fundamental aspect of submission in Islam."},
+    {id:"546b3b3885a8",q:"What is the meaning of \"submission to Allah\"?",opts:["To surrender ones will to Allah and obey His commands.","To submit to the will of religious scholars.","To submit to the traditions of ones culture.","To submit to the desires of ones heart."],correct:0,difficulty:"medium",explain:"Submission to Allah is the essence of Islam, meaning to obey Him in all matters."},
+    {id:"02aff07a9f95",q:"What is the opposite of obedience to Allah?",opts:["Following the Sunnah.","Disobedience and rebellion against His commands.","Performing good deeds.","Seeking knowledge."],correct:1,difficulty:"medium",explain:"Disobedience to Allah is a deviation from the path of Islam."},
+    {id:"5c1f4e532fa1",q:"What is the role of the Quran in Islam?",opts:["It is a book written by Prophet Muhammad.","It is a collection of stories and fables.","It is the literal word of Allah, a guide for all mankind.","It is a book that has been altered over time."],correct:2,difficulty:"medium",explain:"The Quran is the primary source of Islamic law and guidance."},
+    {id:"bc36414ffc3a",q:"What is the meaning of \"disavowal of Shirk\"?",opts:["To accept all beliefs as valid.","To tolerate Shirk in society.","To secretly practice Shirk.","To declare oneself free from all forms of polytheism and idol worship."],correct:3,difficulty:"medium",explain:"Disavowal of Shirk is a fundamental aspect of Tawheed and Islam."},
+    {id:"3b67bf2f51fa",q:"What are the two primary sources of Islam?",opts:["The Quran and the Sunnah.","The opinions of scholars and personal reasoning.","Cultural traditions and ancestral practices.","Dreams and visions."],correct:0,difficulty:"medium",explain:"The Quran and Sunnah are the ultimate sources of guidance in Islam."},
+    {id:"686f991aac29",q:"What is the importance of having pure intention in worship?",opts:["Intention does not matter as long as the act is performed.","Worship is only accepted by Allah if it is done sincerely for His sake alone.","Intention is only for personal benefit.","Intention is only for showing off to others."],correct:1,difficulty:"medium",explain:"Sincerity (Ikhlas) is crucial for the acceptance of deeds."},
+    {id:"a20a77842111",q:"What is the meaning of \"disavowal of Shirk\" in daily life?",opts:["Only avoiding idol worship.","Only avoiding magic.","Avoiding all actions, words, and beliefs that associate partners with Allah.","Only avoiding fortune-telling."],correct:2,difficulty:"medium",explain:"Disavowal of Shirk applies to all aspects of a Muslims life."},
+    {id:"cbd70c4530a4",q:"What is the role of a Muslim in society?",opts:["To isolate oneself from society.","To only focus on personal worship.","To blindly follow societal norms.","To enjoin good and forbid evil, and to be a good example."],correct:3,difficulty:"medium",explain:"Muslims are encouraged to be active and positive members of society."},
+    {id:"4c06bd30dc5e",q:"What is the meaning of \"obedience\" to Allah in the context of His commands?",opts:["To follow His injunctions and prohibitions as revealed in the Quran and Sunnah.","To follow the commands of any human authority.","To follow ones own interpretation of religion.","To follow only the easy parts of the religion."],correct:0,difficulty:"medium",explain:"Obedience to Allah is based on divine revelation."},
+    {id:"54c715639edb",q:"Who is your Prophet?",opts:["Muhammad ibn Abdullah ibn Abd al-Muttalib.","Isa ibn Maryam.","Musa ibn Imran.","Ibrahim al-Khalil."],correct:0,difficulty:"medium",explain:"Our Prophet is Muhammad, son of Abdullah."},
+    {id:"fb3a32121e67",q:"Where was Prophet Muhammad born?",opts:["Madinah.","Makkah.","Jerusalem.","Damascus."],correct:1,difficulty:"medium",explain:"Prophet Muhammad was born in the blessed city of Makkah."},
+    {id:"543cc9e9ed16",q:"To whom was Prophet Muhammad sent?",opts:["Only to the Arabs.","Only to the people of Makkah.","To all mankind.","Only to the Jews and Christians."],correct:2,difficulty:"medium",explain:"Prophet Muhammad was sent as a mercy and guide to all of humanity."},
+    {id:"3c88dce37c01",q:"What is the lineage of Prophet Muhammad?",opts:["Muhammad ibn Abu Bakr ibn Uthman.","Muhammad ibn Ali ibn Talib.","Muhammad ibn Umar ibn al-Khattab.","Muhammad ibn Abdullah ibn Abd al-Muttalib."],correct:3,difficulty:"medium",explain:"His full name and lineage are Muhammad ibn Abdullah ibn Abd al-Muttalib."},
+    {id:"7c7a8f5cc7f9",q:"What is the title given to Prophet Muhammad?",opts:["Seal of the Prophets (Khatam an-Nabiyyin).","The First Prophet.","The Greatest King.","The Wisest Philosopher."],correct:0,difficulty:"medium",explain:"Prophet Muhammad is the last prophet sent by Allah."},
+    {id:"d38f03ac8270",q:"What is the name of Prophet Muhammads mother?",opts:["Khadijah bint Khuwaylid.","Aminah bint Wahb.","Fatimah bint Muhammad.","Aisha bint Abi Bakr."],correct:1,difficulty:"medium",explain:"Aminah was the mother of Prophet Muhammad."},
+    {id:"9dfe96fe3a1c",q:"What is the name of Prophet Muhammads father?",opts:["Abu Talib.","Abu Bakr as-Siddiq.","Abdullah ibn Abd al-Muttalib.","Umar ibn al-Khattab."],correct:2,difficulty:"medium",explain:"Abdullah was the father of Prophet Muhammad."},
+    {id:"befdca4a1856",q:"What was the main message Prophet Muhammad conveyed?",opts:["The message of tribal unity.","The message of worldly power.","The message of personal enrichment.","The message of Tawheed, worshipping Allah alone."],correct:3,difficulty:"medium",explain:"The core of Prophet Muhammads message was Tawheed."},
+    {id:"bba058449d10",q:"What is the name of the cave where Prophet Muhammad received the first revelation?",opts:["Cave Hira.","Cave Thawr.","Cave Uhud.","Cave Badr."],correct:0,difficulty:"medium",explain:"The first revelation came to Prophet Muhammad in Cave Hira."},
+    {id:"2e80ff35261e",q:"What was the age of Prophet Muhammad when he received the first revelation?",opts:["25 years old.","40 years old.","30 years old.","50 years old."],correct:1,difficulty:"medium",explain:"Prophet Muhammad received prophethood at the age of 40."},
+    {id:"df5d0724a89a",q:"What is the significance of the Prophet Muhammads migration (Hijra) to Madinah?",opts:["It was a journey for trade.","It was a personal vacation.","It marked the beginning of the Islamic calendar and the establishment of the first Islamic state.","It was a forced exile with no religious significance."],correct:2,difficulty:"medium",explain:"The Hijra was a turning point in Islamic history."},
+    {id:"6909b88a1ae0",q:"What is the Arabic term for the sayings and actions of Prophet Muhammad?",opts:["Hadith.","Fiqh.","Aqidah.","Sunnah."],correct:3,difficulty:"medium",explain:"The Sunnah comprises the teachings and practices of the Prophet."},
+    {id:"7bbba844d729",q:"What is the name of the angel who brought revelations to Prophet Muhammad?",opts:["Jibreel (Gabriel).","Mikaeel.","Israfeel.","Malik."],correct:0,difficulty:"medium",explain:"Angel Jibreel was the messenger of revelation to Prophet Muhammad."}
+  ]},
+  {id:2,topic:"Foundations · The 5 Pillars of Islam",label:"The 5 Pillars of Islam",questions:[
+    {id:"417ddad1f837",q:"What is the second part of the Shahadah?",opts:["And Muhammad is His Messenger","And Salah is obligatory","And Zakah is due","And Hajj is a duty"],correct:0,difficulty:"medium",explain:"The second part of the Shahadah is \'Muhammadun Rasulullah\', meaning \'and Muhammad is His Messenger\'."},
+    {id:"c9d71ed7af44",q:"What is the ruling on fasting for a woman during her menstrual period?",opts:["She must fast","She must fast and make up the days later","She is not allowed to fast and must make up the days later","She is not allowed to fast and does not need to make up the days"],correct:2,difficulty:"medium",explain:"A woman is not allowed to fast during her menstrual period and must make up the missed days later."},
+    {id:"5d8cc21dfb21",q:"What is the minimum age for a Muslim to start praying?",opts:["5 years old","7 years old","10 years old","15 years old"],correct:1,difficulty:"medium",explain:"Children are generally encouraged to start praying at age 7 and are commanded to at age 10."},
+    {id:"4e0cbcaa8450",q:"What is the call to prayer called?",opts:["Iqamah","Adhan","Tasbeeh","Du\'a"],correct:1,difficulty:"medium",explain:"The Adhan is the Islamic call to prayer, recited by the muezzin."},
+    {id:"fb4dba2902a2",q:"What is the general rate of Zakah on wealth?",opts:["1.5%","2.0%","2.5%","3.0%"],correct:2,difficulty:"medium",explain:"The general rate of Zakah on wealth (gold, silver, cash, trade goods) is 2.5%."},
+    {id:"0f4c45ff51f4",q:"What is the state of ritual consecration for Hajj called?",opts:["Salah","Ihram","Zakah","Sawm"],correct:1,difficulty:"medium",explain:"Ihram is the sacred state a Muslim must enter to perform Hajj or Umrah."},
+    {id:"5f233be93209",q:"What is the significance of the Kaaba during Hajj?",opts:["It is the tomb of a prophet","It is the first house of worship built for Allah","It is a place for trade","It is a place for resting"],correct:1,difficulty:"medium",explain:"The Kaaba is the first house of worship built for Allah and the central point of worship for Muslims worldwide."},
+    {id:"f09a3cf8d137",q:"Who is exempted from fasting in Ramadan?",opts:["Healthy adults","Travelers and the sick","Children above puberty","Anyone who doesn\'t feel like it"],correct:1,difficulty:"medium",explain:"Travelers, the sick, and other specific categories are exempted from fasting, with conditions for making up missed days."},
+    {id:"67e1b8c8a871",q:"What is the running between Safa and Marwah called?",opts:["Tawaf","Wuquf","Sa\'i","Ramy"],correct:2,difficulty:"medium",explain:"Sa\'i is the ritual of walking/running seven times between the hills of Safa and Marwah."},
+    {id:"05649f9ee8c3",q:"Which of these is a condition for Salah?",opts:["Eating a meal","Being in a state of ritual purity (Wudu)","Sleeping","Talking to others"],correct:1,difficulty:"medium",explain:"Performing Wudu (ablution) is a necessary condition for Salah."},
+    {id:"89e81e4da22b",q:"What is the pre-dawn meal before fasting called?",opts:["Iftar","Suhoor","Eid","Tarawih"],correct:1,difficulty:"medium",explain:"Suhoor is the meal consumed before dawn during Ramadan."},
+    {id:"130526d7fb21",q:"What is the second part of the Shahadah?",opts:["And Muhammad is His Messenger","And Salah is obligatory","And Zakah is due","And Hajj is a duty"],correct:0,difficulty:"medium",explain:"The second part of the Shahadah is \'Muhammadun Rasulullah\', meaning \'and Muhammad is His Messenger\'."},
+    {id:"d1701e354a5a",q:"What is the meal to break the fast after sunset called?",opts:["Suhoor","Iftar","Eid","Zakah"],correct:1,difficulty:"medium",explain:"Iftar is the meal eaten after sunset to break the fast."},
+    {id:"525f0fc1fa11",q:"What is the standing at Mount Arafat called?",opts:["Tawaf","Wuquf","Sa\'i","Ramy"],correct:1,difficulty:"medium",explain:"Wuquf (standing) at Mount Arafat is the most important ritual of Hajj."},
+    {id:"0d5e449c617a",q:"What is the first pillar of Islam?",opts:["Salah","Zakah","Shahadah","Sawm"],correct:2,difficulty:"medium",explain:"The Shahadah is the declaration of faith and the first of the five pillars of Islam."},
+    {id:"92d520f94c7a",q:"Reciting the Shahadah sincerely makes one a:",opts:["Scholar","Muslim","Leader","Rich person"],correct:1,difficulty:"medium",explain:"Sincere recitation of the Shahadah is the fundamental step to becoming a Muslim."},
+    {id:"933f9dac5355",q:"What is the Arabic term for prayer?",opts:["Zakah","Sawm","Salah","Hajj"],correct:2,difficulty:"medium",explain:"Salah is the Arabic term for the ritual prayer in Islam."},
+    {id:"fe7b258cbf52",q:"What is the primary purpose of Sawm?",opts:["To lose weight","To feel hunger","To gain piety and self-restraint","To save money"],correct:2,difficulty:"medium",explain:"Fasting is primarily for gaining piety (taqwa) and developing self-restraint."},
+    {id:"49a0ffae34f3",q:"What is the primary purpose of Zakah?",opts:["To make the rich poorer","To purify wealth and help the needy","To fund wars","To build monuments"],correct:1,difficulty:"medium",explain:"Zakah purifies the wealth of the giver and provides assistance to the less fortunate."},
+    {id:"0b162719320d",q:"What is Sawm?",opts:["Daily prayer","Pilgrimage to Makkah","Fasting during Ramadan","Giving charity"],correct:2,difficulty:"medium",explain:"Sawm refers to fasting, particularly during the month of Ramadan."},
+    {id:"ad883f678bfd",q:"What is the symbolic stoning of the pillars called?",opts:["Tawaf","Wuquf","Sa\'i","Ramy"],correct:3,difficulty:"medium",explain:"Ramy is the symbolic stoning of the pillars (Jamarat) during Hajj."},
+    {id:"e25ce99c303d",q:"What is the first prayer of the day?",opts:["Dhuhr","Fajr","Asr","Isha"],correct:1,difficulty:"medium",explain:"Fajr is the dawn prayer, the first of the five daily prayers."},
+    {id:"ffa632beb515",q:"What breaks the fast during Sawm?",opts:["Sleeping","Reading Quran","Eating or drinking intentionally","Taking a shower"],correct:2,difficulty:"medium",explain:"Eating or drinking intentionally breaks the fast."},
+    {id:"ba392fb4a2de",q:"What is the purpose of Salah?",opts:["To exercise","To socialize","To remember Allah and worship Him","To earn money"],correct:2,difficulty:"medium",explain:"Salah is a direct form of worship and remembrance of Allah."},
+    {id:"ce80f0ba1d90",q:"What is the Arabic term for prayer?",opts:["Zakah","Sawm","Salah","Hajj"],correct:2,difficulty:"medium",explain:"Salah is the Arabic term for the ritual prayer in Islam."},
+    {id:"3b9d5e118964",q:"What is the primary purpose of Sawm?",opts:["To lose weight","To feel hunger","To gain piety and self-restraint","To save money"],correct:2,difficulty:"medium",explain:"Fasting is primarily for gaining piety (taqwa) and developing self-restraint."},
+    {id:"9c3862974ed1",q:"Which prayer is performed in the late afternoon?",opts:["Fajr","Dhuhr","Asr","Maghrib"],correct:2,difficulty:"medium",explain:"Asr is the late afternoon prayer."},
+    {id:"f7c2205f3033",q:"During which Islamic month is fasting obligatory?",opts:["Muharram","Rajab","Ramadan","Shawwal"],correct:2,difficulty:"medium",explain:"Fasting is obligatory during the holy month of Ramadan."},
+    {id:"854b1713babc",q:"What is the primary purpose of Zakah?",opts:["To make the rich poorer","To purify wealth and help the needy","To fund wars","To build monuments"],correct:1,difficulty:"medium",explain:"Zakah purifies the wealth of the giver and provides assistance to the less fortunate."},
+    {id:"dd384f0eaa8b",q:"Who is obligated to pay Zakah?",opts:["All Muslims","Only the poor","Muslims who meet the nisab threshold","Only scholars"],correct:2,difficulty:"medium",explain:"Zakah is obligatory for Muslims whose wealth reaches or exceeds the nisab threshold."},
+    {id:"1e0ed9991e60",q:"What is the first pillar of Islam?",opts:["Salah","Zakah","Shahadah","Sawm"],correct:2,difficulty:"medium",explain:"The Shahadah is the declaration of faith and the first of the five pillars of Islam."},
+    {id:"e585e85744c8",q:"To whom is Zakah distributed?",opts:["Only family members","Only mosques","Specific categories of needy people","Anyone who asks"],correct:2,difficulty:"medium",explain:"Zakah is distributed to specific categories of recipients mentioned in the Quran, such as the poor and needy."},
+    {id:"903f2b697ece",q:"What is one of the pillars of Hajj?",opts:["Visiting Madinah","Performing Tawaf around the Kaaba","Fasting for three days","Giving a large sum of money"],correct:1,difficulty:"medium",explain:"Tawaf (circumambulation) around the Kaaba is one of the essential pillars of Hajj."},
+    {id:"861200b337ce",q:"How many obligatory prayers are there in a day?",opts:["Three","Four","Five","Six"],correct:2,difficulty:"medium",explain:"Muslims are obligated to perform five daily prayers."},
+    {id:"14fa5d079be8",q:"When is Zakah typically due?",opts:["Monthly","Annually, after a lunar year passes on the wealth","Only during Ramadan","When one dies"],correct:1,difficulty:"medium",explain:"Zakah is typically due annually, after a lunar year has passed on the wealth that meets the nisab."},
+    {id:"dd37c1e0e297",q:"What does \'La ilaha illallah\' mean?",opts:["There is no god but Allah","Allah is the greatest","Praise be to Allah","Allah is One"],correct:0,difficulty:"medium",explain:"\'La ilaha illallah\' translates to \'There is no god worthy of worship except Allah\'."},
+    {id:"05f1ee7ac0fe",q:"Who is Muhammad (peace be upon him)?",opts:["A prophet before Jesus","The last prophet of Allah","A companion of Jesus","A king of Arabia"],correct:1,difficulty:"medium",explain:"Muhammad (peace be upon him) is the final prophet sent by Allah to guide mankind."},
+    {id:"e333d4f12d69",q:"Which of the following is NOT part of the Shahadah?",opts:["Belief in angels","Belief in Allah","Belief in Muhammad as His Messenger","Belief in the Day of Judgment"],correct:0,difficulty:"medium",explain:"While belief in angels is an article of faith, it is not explicitly part of the Shahadah declaration itself."},
+    {id:"3a5ad38b05b1",q:"The Shahadah is recited to enter Islam and to:",opts:["Gain worldly possessions","Perform Hajj","Affirm one\'s faith daily","Become a ruler"],correct:2,difficulty:"medium",explain:"Muslims affirm their faith daily by reciting the Shahadah."},
+    {id:"5c017d96b28a",q:"Which prayer is performed after sunset?",opts:["Fajr","Dhuhr","Asr","Maghrib"],correct:3,difficulty:"medium",explain:"Maghrib prayer is performed after sunset."},
+    {id:"dd45cb68cc41",q:"Which prayer is performed in the early afternoon?",opts:["Fajr","Dhuhr","Asr","Isha"],correct:1,difficulty:"medium",explain:"Dhuhr is the noon prayer, performed in the early afternoon."},
+    {id:"799424e51f45",q:"Which prayer is performed at night?",opts:["Fajr","Dhuhr","Asr","Isha"],correct:3,difficulty:"medium",explain:"Isha is the night prayer, performed after Maghrib."},
+    {id:"2778e92af5c6",q:"What is Zakah?",opts:["Optional charity","Annual obligatory charity","A type of prayer","A pilgrimage"],correct:1,difficulty:"medium",explain:"Zakah is an obligatory annual charity paid by eligible Muslims."},
+    {id:"6740dcdea11c",q:"What is \'nisab\' in Zakah?",opts:["The amount of Zakah to pay","The minimum threshold of wealth for Zakah to be obligatory","The recipient of Zakah","The time Zakah is due"],correct:1,difficulty:"medium",explain:"Nisab is the minimum amount of wealth a Muslim must possess before being obliged to pay Zakah."},
+    {id:"b7b190ae7008",q:"Is Zakah paid on all types of wealth?",opts:["Yes, on everything","No, only on gold and silver","No, only on specific types of wealth that meet conditions","Only on property"],correct:2,difficulty:"medium",explain:"Zakah is paid on specific types of wealth like gold, silver, cash, trade goods, and livestock, provided they meet certain conditions."},
+    {id:"3a8bf6a1d8be",q:"What is Hajj?",opts:["Daily prayer","Fasting in Ramadan","Pilgrimage to Makkah","Giving charity"],correct:2,difficulty:"medium",explain:"Hajj is the annual pilgrimage to Makkah, an obligation for able Muslims."},
+    {id:"d5c66737ed18",q:"How often is Hajj obligatory for a Muslim?",opts:["Once a year","Once in a lifetime, if able","Every five years","Never"],correct:1,difficulty:"medium",explain:"Hajj is obligatory once in a lifetime for those who are physically and financially able."},
+    {id:"faac84faf6b7",q:"Where does Hajj take place?",opts:["Jerusalem","Madinah","Makkah","Cairo"],correct:2,difficulty:"medium",explain:"Hajj takes place in the holy city of Makkah, Saudi Arabia."},
+    {id:"e446967d7625",q:"Who is obligated to perform Hajj?",opts:["All Muslims","Only men","Muslims who are physically and financially able","Only the elderly"],correct:2,difficulty:"medium",explain:"Hajj is obligatory for adult Muslims who possess the physical and financial means."}
+  ]},
+  {id:3,topic:"Foundations · The 6 Pillars of Eemaan",label:"The 6 Pillars of Eemaan",questions:[
+    {id:"ab2edd22decc",q:"What is the first and most fundamental pillar of Eemaan (faith)?",opts:["Belief in His Books","Belief in Allah","Belief in His Prophets","Belief in the Last Day"],correct:1,difficulty:"medium",explain:"The belief in Allah is the foundation of all other beliefs in Islam, as it establishes the existence and oneness of the Creator."},
+    {id:"16414c674f4f",q:"Which of the following is NOT a name of Allah mentioned in the Quran and Sunnah?",opts:["Ar-Rahman (The Most Merciful)","Al-Ghafoor (The Forgiving)","Al-Khaaliq (The Creator)","Al-Mubtadi\' (The Innovator)"],correct:3,difficulty:"medium",explain:"Allah has many beautiful names and attributes, but \'Al-Mubtadi\'\' is not among them. His names are perfect and describe His perfect attributes."},
+    {id:"b11c6ebafb9b",q:"What does \'Tawheed ar-Ruboobiyyah\' mean?",opts:["Belief in Allah\'s exclusive right to be worshipped","Belief in Allah\'s oneness in His Lordship, creation, and sustenance","Belief in Allah\'s names and attributes","Belief in Allah\'s prophets and messengers"],correct:1,difficulty:"medium",explain:"Tawheed ar-Ruboobiyyah is the belief that Allah alone is the Creator, Sustainer, and Controller of all affairs."},
+    {id:"9ed67ef7c234",q:"What is the purpose of Allah sending prophets and messengers?",opts:["To entertain mankind with stories","To guide mankind to the worship of Allah alone","To establish earthly kingdoms","To teach people how to farm"],correct:1,difficulty:"medium",explain:"Prophets and messengers were sent by Allah to call people to His worship and to clarify the path of guidance."},
+    {id:"9663a9136bad",q:"Which of the following is a characteristic of Allah\'s attributes?",opts:["They are similar to human attributes","They are metaphorical and not real","They are perfect and unlike creation","They are limited and imperfect"],correct:2,difficulty:"medium",explain:"Allah\'s attributes are unique, perfect, and transcend any resemblance to His creation."},
+    {id:"152fa398e0ac",q:"What is the meaning of \'Al-Ahad\' as a name of Allah?",opts:["The All-Hearing","The One, the Unique","The All-Seeing","The Most Just"],correct:1,difficulty:"medium",explain:"Al-Ahad signifies Allah\'s absolute oneness and uniqueness, having no partners or equals."},
+    {id:"3528faae874e",q:"What is the second pillar of Eemaan?",opts:["Belief in the Last Day","Belief in His Books","Belief in His Angels","Belief in His Prophets"],correct:2,difficulty:"medium",explain:"After belief in Allah, the next pillar is belief in His angels, who are His obedient servants."},
+    {id:"e982f6008a62",q:"What are angels created from?",opts:["Clay","Fire","Light","Water"],correct:2,difficulty:"medium",explain:"Angels are created from light, as mentioned in authentic Islamic texts."},
+    {id:"b9cb11337360",q:"Which angel is responsible for bringing down revelation to the prophets?",opts:["Israfeel","Mika\'eel","Jibreel","Malik al-Mawt"],correct:2,difficulty:"medium",explain:"Jibreel (Gabriel) is the chief of angels and the one entrusted with delivering divine messages to the prophets."},
+    {id:"7d6dfbf9d76c",q:"Can angels disobey Allah?",opts:["Yes, sometimes","Only if they are tempted","No, they are perfectly obedient","Only the rebellious ones"],correct:2,difficulty:"medium",explain:"Angels are created to be perfectly obedient to Allah and never disobey His commands."},
+    {id:"2c84cbd6f972",q:"What is the role of the angel Mika\'eel?",opts:["To blow the trumpet on the Last Day","To bring down rain and sustenance","To take souls at death","To guard Hellfire"],correct:1,difficulty:"medium",explain:"Mika\'eel is responsible for the distribution of provisions and rain by Allah\'s command."},
+    {id:"1f68a27afadd",q:"What is the name of the angel responsible for taking souls at death?",opts:["Jibreel","Israfeel","Malik al-Mawt (Angel of Death)","Ridwan"],correct:2,difficulty:"medium",explain:"Malik al-Mawt, commonly known as the Angel of Death, is tasked with taking the souls of the deceased."},
+    {id:"0ed94277ab1a",q:"How many wings did Prophet Muhammad (peace be upon him) see Jibreel with?",opts:["Two","Four","Six hundred","One thousand"],correct:2,difficulty:"medium",explain:"The Prophet Muhammad (PBUH) saw Jibreel in his true form with six hundred wings."},
+    {id:"0b0c553b5870",q:"What is the third pillar of Eemaan?",opts:["Belief in His Prophets","Belief in His Books","Belief in the Last Day","Belief in Qadar"],correct:1,difficulty:"medium",explain:"Belief in Allah\'s revealed Books is the third pillar of faith, acknowledging the divine guidance sent to humanity."},
+    {id:"a821a5ecb2a9",q:"Which of the following is NOT one of the divinely revealed books mentioned in Islam?",opts:["The Torah (Tawrat)","The Gospel (Injeel)","The Psalms (Zaboor)","The Vedas"],correct:3,difficulty:"medium",explain:"The Vedas are sacred texts in Hinduism and are not considered divinely revealed books in Islam."},
+    {id:"e74c3a2f3449",q:"What is the final and most complete revealed book from Allah?",opts:["The Torah","The Psalms","The Gospel","The Quran"],correct:3,difficulty:"medium",explain:"The Quran is the final revelation from Allah, abrogating previous scriptures and serving as a guide for all mankind until the Last Day."},
+    {id:"a136d761682d",q:"Who was the Torah revealed to?",opts:["Prophet Isa (Jesus)","Prophet Musa (Moses)","Prophet Dawud (David)","Prophet Muhammad"],correct:1,difficulty:"medium",explain:"The Torah was revealed to Prophet Musa (Moses) as guidance for the Children of Israel."},
+    {id:"84a89db3f2c5",q:"What does belief in Allah\'s Books entail?",opts:["Reading them all in their original form","Believing that they are all from Allah, even if corrupted","Believing in their original divine origin and following the Quran","Rejecting all books except the Quran"],correct:2,difficulty:"medium",explain:"Belief in the Books means affirming their divine origin and recognizing that the Quran is the final, preserved, and complete revelation."},
+    {id:"e4a7f92e5d86",q:"Which prophet received the Zaboor (Psalms)?",opts:["Prophet Ibrahim (Abraham)","Prophet Nuh (Noah)","Prophet Dawud (David)","Prophet Sulaiman (Solomon)"],correct:2,difficulty:"medium",explain:"The Zaboor (Psalms) was revealed to Prophet Dawud (David)."},
+    {id:"e91951db3cd7",q:"What is the fourth pillar of Eemaan?",opts:["Belief in the Last Day","Belief in Qadar","Belief in His Prophets","Belief in His Books"],correct:2,difficulty:"medium",explain:"Belief in Allah\'s prophets and messengers is the fourth pillar, acknowledging their role in conveying divine messages."},
+    {id:"42f51b325224",q:"Who was the first prophet sent by Allah?",opts:["Prophet Nuh (Noah)","Prophet Adam","Prophet Ibrahim (Abraham)","Prophet Idris"],correct:1,difficulty:"medium",explain:"Prophet Nuh (Noah) was the first messenger sent to his people after widespread polytheism began."},
+    {id:"a80b94bf4cf4",q:"Who is the seal of the prophets, meaning the last prophet sent by Allah?",opts:["Prophet Isa (Jesus)","Prophet Musa (Moses)","Prophet Muhammad","Prophet Ibrahim (Abraham)"],correct:2,difficulty:"medium",explain:"Prophet Muhammad (peace be upon him) is the final prophet, and no prophet will come after him."},
+    {id:"05bb6672892c",q:"What is the primary message of all prophets?",opts:["To build great civilizations","To call people to worship Allah alone","To establish political power","To teach advanced sciences"],correct:1,difficulty:"medium",explain:"All prophets, from Adam to Muhammad, called their people to the pure monotheistic worship of Allah alone."},
+    {id:"a2ab1e594501",q:"Which prophet was given the miracle of bringing the dead back to life by Allah\'s permission?",opts:["Prophet Musa (Moses)","Prophet Isa (Jesus)","Prophet Yusuf (Joseph)","Prophet Sulaiman (Solomon)"],correct:1,difficulty:"medium",explain:"Prophet Isa (Jesus) was granted the miracle of reviving the dead, among others, by Allah\'s will."},
+    {id:"3a1bed961c97",q:"What does it mean to believe in the prophets?",opts:["To only believe in Prophet Muhammad","To believe in all of them without distinction and follow the last one","To believe in only the ones mentioned in the Quran","To believe in them but not necessarily follow their teachings"],correct:1,difficulty:"medium",explain:"Belief in the prophets means affirming all of them as true messengers of Allah and following the teachings of the final prophet, Muhammad."},
+    {id:"bb5430e98946",q:"What is the fifth pillar of Eemaan?",opts:["Belief in Qadar","Belief in His Books","Belief in the Last Day","Belief in His Angels"],correct:2,difficulty:"medium",explain:"Belief in the Last Day encompasses all events after death, including resurrection, judgment, and the afterlife."},
+    {id:"53a82963f6c2",q:"What is the Arabic term for the Day of Judgment?",opts:["Yawm al-Jumu\'ah","Yawm al-Eid","Yawm al-Qiyamah","Yawm al-Arafah"],correct:2,difficulty:"medium",explain:"Yawm al-Qiyamah is the Day of Resurrection and Judgment, when all humanity will be accounted for their deeds."},
+    {id:"ef98bb49bffa",q:"What happens to people after they die and before the Day of Judgment?",opts:["They cease to exist","They are immediately judged and sent to Heaven or Hell","They are in Barzakh (the grave life)","They are reincarnated"],correct:2,difficulty:"medium",explain:"After death, souls enter the state of Barzakh, an intermediate stage between this life and the afterlife."},
+    {id:"a41a03ee6151",q:"What is the \'Sirat\' (bridge) on the Day of Judgment?",opts:["A path to Paradise for everyone","A bridge over Hellfire that people must cross","A river in Paradise","A mountain where deeds are weighed"],correct:1,difficulty:"medium",explain:"The Sirat is a bridge over Hellfire that believers will attempt to cross to reach Paradise."},
+    {id:"b909a2785972",q:"What is the ultimate reward for righteous believers in the afterlife?",opts:["Wealth and power","Eternal life in Paradise (Jannah)","A long and healthy life on Earth","Fame and recognition"],correct:1,difficulty:"medium",explain:"The ultimate reward for righteous believers is eternal bliss in Jannah, where they will enjoy countless blessings and Allah\'s pleasure."},
+    {id:"cf48df2d1a4d",q:"What is the \'Hawd\' (pond) of Prophet Muhammad (PBUH) on the Day of Judgment?",opts:["A place for ablution","A pond where believers will drink before entering Paradise","A place for sinners to be purified","A lake in Hellfire"],correct:1,difficulty:"medium",explain:"The Hawd is a blessed pond from which the Prophet Muhammad will quench the thirst of his followers before they enter Paradise."},
+    {id:"68e89e7e7947",q:"What is the sixth pillar of Eemaan?",opts:["Belief in His Books","Belief in Qadar (Divine Decree)","Belief in His Prophets","Belief in His Angels"],correct:1,difficulty:"medium",explain:"Belief in Qadar, both its good and bad aspects, is the final pillar of faith, acknowledging Allah\'s perfect knowledge and power."},
+    {id:"d43b646b1020",q:"What does \'Qadar\' mean in Islam?",opts:["Free will and choice","Divine decree and pre-ordainment","Random chance and luck","Human effort alone"],correct:1,difficulty:"medium",explain:"Qadar refers to Allah\'s divine decree, His knowledge, writing, will, and creation of all things."},
+    {id:"7e2aeeeb3e46",q:"Which of the following is NOT a level of Qadar?",opts:["Knowledge (Al-\'Ilm)","Writing (Al-Kitabah)","Will (Al-Mashiyyah)","Regret (An-Nadam)"],correct:3,difficulty:"medium",explain:"The four levels of Qadar are Knowledge, Writing, Will, and Creation. Regret is a human emotion, not a level of divine decree."},
+    {id:"862c5e5b367c",q:"Does belief in Qadar negate human free will and accountability?",opts:["Yes, completely","No, humans have limited free will and are accountable","Only for certain actions","Only for non-Muslims"],correct:1,difficulty:"medium",explain:"Belief in Qadar does not negate human free will; Allah has given humans the ability to choose, and they are accountable for their choices."},
+    {id:"6aa9de9a0b3a",q:"What should a Muslim\'s attitude be towards Qadar, both good and bad?",opts:["To complain about the bad and boast about the good","To accept it with patience and gratitude","To try and change everything bad","To ignore it and focus only on the present"],correct:1,difficulty:"medium",explain:"A Muslim should accept Allah\'s decree with patience (sabr) in adversity and gratitude (shukr) in prosperity."},
+    {id:"544e6bdac685",q:"Who has knowledge of the unseen and what will happen in the future?",opts:["Only prophets","Only angels","Only Allah","Only righteous people"],correct:2,difficulty:"medium",explain:"Only Allah possesses complete knowledge of the unseen and what is yet to come."},
+    {id:"b34a4bf0f6d3",q:"What is the meaning of \'Al-Qadaa\' wal-Qadar\'?",opts:["Fate and destiny","Justice and fairness","Mercy and forgiveness","Guidance and misguidance"],correct:0,difficulty:"medium",explain:"Al-Qadaa\' wal-Qadar refers to the divine decree and pre-ordainment of all things by Allah."},
+    {id:"ef45c4970326",q:"If something bad happens, how should a Muslim react according to the belief in Qadar?",opts:["Blame others","Become angry and despair","Be patient and seek reward from Allah","Believe it was pure bad luck"],correct:2,difficulty:"medium",explain:"When faced with adversity, a Muslim should be patient, seek Allah\'s help, and trust in His decree, knowing there is wisdom behind it."},
+    {id:"4f00cf44a0b5",q:"What is the benefit of believing in Qadar?",opts:["It makes one lazy and inactive","It leads to despair and hopelessness","It brings peace of mind and reliance on Allah","It encourages recklessness"],correct:2,difficulty:"medium",explain:"Belief in Qadar brings tranquility to the heart, knowing that everything happens by Allah\'s will, and encourages reliance upon Him."},
+    {id:"069780984028",q:"Which of the following is an example of believing in Allah\'s Books?",opts:["Only reading the Quran and rejecting others","Believing that the Torah and Injeel are still in their original form","Affirming that all divine books were sent by Allah and following the Quran","Believing only in the books mentioned by name in the Quran"],correct:2,difficulty:"medium",explain:"Belief in Allah\'s Books means acknowledging the divine origin of all previously revealed scriptures and adhering to the final and preserved revelation, the Quran."}
+  ]},
+  {id:4,topic:"Foundations · Taharah & Salah",label:"Taharah & Salah",questions:[
+    {id:"652be662850b",q:"What is the first obligatory step of Wudu?",opts:["Washing the face","Washing the hands","Making the intention","Wiping the head"],correct:2,difficulty:"medium",explain:"The intention is the first obligatory step of Wudu, distinguishing it from a mere wash."},
+    {id:"c5fc3fc3b447",q:"Which part of the arm must be washed during Wudu?",opts:["To the wrist","To the elbow","To the shoulder","Only the hands"],correct:1,difficulty:"medium",explain:"The arms must be washed up to and including the elbows."},
+    {id:"eb7719ef3d38",q:"Which of the following actions nullifies Wudu?",opts:["Eating food","Reciting Quran","Passing wind","Smiling during prayer"],correct:2,difficulty:"medium",explain:"Passing wind is one of the actions that nullifies Wudu."},
+    {id:"9b8eef945141",q:"What is the ruling on touching private parts without a barrier during Wudu?",opts:["It is disliked but does not nullify Wudu","It nullifies Wudu","It is permissible and does not affect Wudu","It is only for men"],correct:1,difficulty:"medium",explain:"Touching ones private parts directly without a barrier nullifies Wudu."},
+    {id:"57427b740420",q:"When is Ghusl (ritual bath) required for a woman after childbirth?",opts:["After every prayer","After menses","After nifas (postnatal bleeding)","Once a week"],correct:2,difficulty:"medium",explain:"Ghusl is required for a woman after nifas (postnatal bleeding) ceases."},
+    {id:"47e09a3e554e",q:"Which of the following is a condition for Tayammum to be permitted?",opts:["Having plenty of water","Being able to find water within a short distance","Lack of water or inability to use it","Preferring Tayammum over Wudu"],correct:2,difficulty:"medium",explain:"Tayammum is permitted when there is a lack of water or one is unable to use it due to illness or other valid reasons."},
+    {id:"fd1e4a9e6673",q:"What is the time for the Fajr prayer?",opts:["After sunset","Midday","From true dawn until sunrise","Late afternoon"],correct:2,difficulty:"medium",explain:"Fajr prayer time begins from true dawn and extends until sunrise."},
+    {id:"45f055a1621f",q:"Which of the following is a condition for the validity of Salah?",opts:["Wearing new clothes","Reciting the entire Quran","Facing the Qiblah","Praying in a mosque"],correct:2,difficulty:"medium",explain:"Facing the Qiblah (direction of the Kaaba) is a condition for the validity of Salah."},
+    {id:"8efd0e420e9a",q:"What is the ruling on covering the Awrah during Salah?",opts:["It is optional","It is a sunnah act","It is a condition for the validity of Salah","It is only for women"],correct:2,difficulty:"medium",explain:"Covering the Awrah (parts of the body that must be covered) is a condition for the validity of Salah."},
+    {id:"c62d4cc04def",q:"Which of the following is a pillar of Salah?",opts:["Raising hands before Ruku","Saying Ameen loudly","Reciting Surah Al-Fatiha","Making dua after Salah"],correct:2,difficulty:"medium",explain:"Reciting Surah Al-Fatiha is a pillar of Salah, without which the prayer is invalid."},
+    {id:"0cb85f7f7935",q:"What is the correct order of washing feet in Wudu?",opts:["Wash right foot then left foot","Wash left foot then right foot","Wash both feet simultaneously","Order does not matter"],correct:0,difficulty:"medium",explain:"The correct order is to wash the right foot first, then the left foot."},
+    {id:"b28b1b5e974b",q:"Which of these is NOT an obligatory step of Wudu?",opts:["Washing the face","Washing the ears","Washing the feet","Wiping the head"],correct:1,difficulty:"medium",explain:"Washing the ears is a Sunnah act, not an obligatory step of Wudu."},
+    {id:"fc085a1156f5",q:"What kind of sleep nullifies Wudu?",opts:["Light nap","Deep sleep","Sleep while sitting","Sleep while reciting Quran"],correct:1,difficulty:"medium",explain:"Deep sleep that causes one to lose awareness nullifies Wudu."},
+    {id:"7d608f2e9ead",q:"When is Ghusl required for a man?",opts:["After eating a meal","After janabah (major ritual impurity)","After every Wudu","After waking up"],correct:1,difficulty:"medium",explain:"Ghusl is required for a man after janabah, which includes seminal emission or sexual intercourse."},
+    {id:"f60d9ce97c70",q:"What is the time for the Dhuhr prayer?",opts:["After sunset","When the sun passes its zenith (midday)","Before sunrise","Late evening"],correct:1,difficulty:"medium",explain:"Dhuhr prayer time begins when the sun passes its zenith."},
+    {id:"4d797cba2277",q:"Which of the following is a condition for Salah related to purity?",opts:["Having a clean house","Purity of body, clothes, and place of prayer","Purity of intention only","Purity of speech only"],correct:1,difficulty:"medium",explain:"Purity of body, clothes, and the place of prayer are conditions for Salah."},
+    {id:"97182d95bf5e",q:"What is the pillar of Salah that involves bowing?",opts:["Sujood","Ruku","Qiyam","Tashahhud"],correct:1,difficulty:"medium",explain:"Ruku is the pillar of Salah that involves bowing."},
+    {id:"1ed1a84dbc48",q:"Which of the following is a pillar of Salah performed at the end?",opts:["Takbiratul Ihram","Tasleem","Qunut","Istighfar"],correct:1,difficulty:"medium",explain:"Tasleem (saying Assalamu Alaikum wa Rahmatullahi wa Barakatuh) is a pillar of Salah performed at the end."},
+    {id:"e34400299abd",q:"What is the meaning of \'intention\' in Wudu?",opts:["Saying Bismillah aloud","Having the purpose of performing Wudu for worship","Thinking about what to eat","Planning the day ahead"],correct:1,difficulty:"medium",explain:"Intention in Wudu means having the purpose of performing Wudu for the sake of worship."},
+    {id:"55a93f04fd41",q:"Which of these nullifies Wudu?",opts:["Crying during prayer","Eating a small snack","Deep sleep","Talking during Wudu"],correct:2,difficulty:"medium",explain:"Deep sleep is one of the actions that nullifies Wudu."},
+    {id:"a501d0d93180",q:"When is Ghusl required for a woman due to menstruation?",opts:["Before menstruation begins","During menstruation","After menstruation ends","Only if she prays during menstruation"],correct:2,difficulty:"medium",explain:"Ghusl is required for a woman after her menstruation ends."},
+    {id:"11e93a02a2ee",q:"What is Tayammum?",opts:["A type of prayer","A ritual purification using water","A ritual purification using clean earth or dust","A form of fasting"],correct:2,difficulty:"medium",explain:"Tayammum is a ritual purification using clean earth or dust when water is unavailable or cannot be used."},
+    {id:"f170ff23f5ee",q:"What is the time for the Asr prayer?",opts:["From midday until sunset","From late afternoon until sunset","From sunset until midnight","From true dawn until sunrise"],correct:1,difficulty:"medium",explain:"Asr prayer time begins when the shadow of an object is twice its length plus the length of its shadow at noon, and extends until sunset."},
+    {id:"9000f526f598",q:"Which of the following is a condition for Salah related to time?",opts:["Praying at any time of the day","Praying only after Isha","Performing Salah within its prescribed time","Praying only in congregation"],correct:2,difficulty:"medium",explain:"Performing Salah within its prescribed time is a condition for its validity."},
+    {id:"0a1637e3a451",q:"What is the pillar of Salah that involves prostration?",opts:["Ruku","Qiyam","Sujood","Julus"],correct:2,difficulty:"medium",explain:"Sujood is the pillar of Salah that involves prostration."},
+    {id:"b0ebff18014a",q:"Which of the following is a pillar of Salah that involves sitting for supplication?",opts:["Ruku","Sujood","Tashahhud","Qiyam"],correct:2,difficulty:"medium",explain:"Tashahhud is a pillar of Salah that involves sitting for supplication and declarations of faith."},
+    {id:"71db81b182de",q:"What is the correct sequence of obligatory steps in Wudu?",opts:["Face, hands, intention, head, feet","Intention, face, arms, head, feet, order","Arms, face, intention, feet, head","Head, face, arms, feet, intention"],correct:1,difficulty:"medium",explain:"The correct order of obligatory steps in Wudu is intention, washing the face, washing the arms to the elbows, wiping the head, washing the feet, and maintaining this order."},
+    {id:"88b9ea8e74c3",q:"Which of these does NOT nullify Wudu?",opts:["Eating meat","Urine","Stool","Passing wind"],correct:0,difficulty:"medium",explain:"Eating meat does not nullify Wudu, unlike urine, stool, and passing wind."},
+    {id:"b9fe0967e65a",q:"What is the time for the Maghrib prayer?",opts:["After midday","After sunset until the disappearance of twilight","Before sunrise","Late morning"],correct:1,difficulty:"medium",explain:"Maghrib prayer time begins after sunset and lasts until the disappearance of the red twilight."},
+    {id:"ab656723c887",q:"Which of the following is a condition for Salah related to intention?",opts:["Intending to pray for worldly gain","Intending to pray for Allah alone","Intending to pray for people to see","Intending to pray for a specific person"],correct:1,difficulty:"medium",explain:"The intention for Salah must be to pray for Allah alone, sincerely seeking His pleasure."},
+    {id:"615358fe3c76",q:"What is the pillar of Salah that involves standing?",opts:["Ruku","Sujood","Qiyam","Julus"],correct:2,difficulty:"medium",explain:"Qiyam is the pillar of Salah that involves standing, if one is able."},
+    {id:"7ca60038b7b5",q:"Which of the following is a condition for Tayammum to be valid?",opts:["Using any type of dust","Using clean earth or dust","Using sand from the beach","Using dirty soil"],correct:1,difficulty:"medium",explain:"Tayammum must be performed using clean earth or dust."},
+    {id:"c6a905c4733e",q:"What is the time for the Isha prayer?",opts:["From midday until sunset","From the disappearance of twilight until midnight or true dawn","From sunrise until midday","From late afternoon until sunset"],correct:1,difficulty:"medium",explain:"Isha prayer time begins from the disappearance of the red twilight and extends until midnight or true dawn, depending on the school of thought."},
+    {id:"e8ca4487b182",q:"Which of the following is a condition for Salah related to purity?",opts:["Having a clean car","Purity from major and minor ritual impurity","Purity of thoughts only","Purity of wealth only"],correct:1,difficulty:"medium",explain:"Purity from both major (janabah) and minor (hadath) ritual impurity is a condition for Salah."},
+    {id:"90dba85c759c",q:"What is the pillar of Salah that involves saying \'Allahu Akbar\' at the beginning?",opts:["Ruku","Sujood","Takbiratul Ihram","Tasleem"],correct:2,difficulty:"medium",explain:"Takbiratul Ihram (the opening Allahu Akbar) is a pillar of Salah."},
+    {id:"25d82696b2f4",q:"Which of these is an obligatory step of Wudu?",opts:["Washing the neck","Washing the face","Washing the ears","Washing the hair"],correct:1,difficulty:"medium",explain:"Washing the face is an obligatory step of Wudu."},
+    {id:"d5d32d30f981",q:"What is the ruling on passing urine during Wudu?",opts:["It is disliked but does not nullify Wudu","It nullifies Wudu","It is permissible and does not affect Wudu","It is only for women"],correct:1,difficulty:"medium",explain:"Passing urine nullifies Wudu."},
+    {id:"63903833f1ed",q:"When is Ghusl required after sexual intercourse?",opts:["Only if ejaculation occurs","Only if there is penetration","After any sexual intercourse (janabah)","Only if one feels impure"],correct:2,difficulty:"medium",explain:"Ghusl is required after any sexual intercourse, regardless of ejaculation, as it causes janabah."},
+    {id:"763d35d034c8",q:"Which of the following is a condition for Salah related to facing the Qiblah?",opts:["Facing any direction","Facing the direction of the Kaaba in Makkah","Facing the direction of Jerusalem","Facing the direction of the sun"],correct:1,difficulty:"medium",explain:"Facing the Qiblah, the direction of the Kaaba in Makkah, is a condition for Salah."},
+    {id:"8f30ddb434ce",q:"What is the pillar of Salah that involves saying \'Subhana Rabbiyal Adheem\' in bowing?",opts:["Sujood","Ruku","Qiyam","Tashahhud"],correct:1,difficulty:"medium",explain:"Saying \'Subhana Rabbiyal Adheem\' is part of the Ruku, which is a pillar of Salah."}
+  ]},
+  {id:5,topic:"Foundations · Halal & Haram",label:"Halal & Haram",questions:[
+    {id:"f984b5073290",q:"Which of the following foods is explicitly forbidden in Islam?",opts:["Beef","Lamb","Pork","Chicken"],correct:2,difficulty:"medium",explain:"The Quran explicitly forbids the consumption of pork."},
+    {id:"daa1b10991ad",q:"What is the Islamic ruling on consuming alcoholic beverages?",opts:["Strictly forbidden","Permissible for medicinal purposes","Discouraged but not forbidden","Permissible in moderation"],correct:0,difficulty:"medium",explain:"The Quran clearly states that intoxicants are an abomination of Satan\'s handiwork and are strictly forbidden."},
+    {id:"978c7d6dd31a",q:"Which type of blood is generally forbidden for consumption in Islam?",opts:["Blood from liver and spleen","Blood from fish","Flowing blood","Blood from locusts"],correct:2,difficulty:"medium",explain:"The Quran forbids flowing blood. However, the Prophet (PBUH) clarified that liver and spleen are permissible, as are the blood of fish and locusts."},
+    {id:"db8c600a6057",q:"What is the Islamic term for an animal that dies of natural causes and is forbidden to eat?",opts:["Dhabihah","Kosher","Halal","Carrion (Maytah)"],correct:3,difficulty:"medium",explain:"Carrion (Maytah) refers to an animal that dies without proper Islamic slaughter and is forbidden for consumption."},
+    {id:"d9dd17bde41b",q:"What is \'Riba\' in Islam, which is strictly forbidden?",opts:["Trade","Interest or Usury","Gift","Charity"],correct:1,difficulty:"medium",explain:"Riba refers to interest or usury, which is prohibited in Islam due to its exploitative nature."},
+    {id:"a9825262bb6e",q:"Which of the following activities is considered forbidden earnings in Islam?",opts:["Working a lawful job","Receiving a gift","Investing in ethical businesses","Gambling"],correct:3,difficulty:"medium",explain:"Gambling is forbidden in Islam as it involves uncertainty, often leads to addiction, and can cause financial ruin."},
+    {id:"57fd20a777a4",q:"Is lying permissible in Islam?",opts:["Yes, in certain situations","No, it is generally forbidden","Only if it avoids greater harm","Yes, if it benefits you"],correct:1,difficulty:"medium",explain:"Lying is generally forbidden in Islam, as truthfulness is a core virtue. There are very specific, limited exceptions, but the general principle is prohibition."},
+    {id:"f7a2b0f58349",q:"What is \'backbiting\' (Gheebah) in Islam?",opts:["Praising someone in their absence","Discussing someone\'s good deeds","Speaking ill of someone in their absence","Giving sincere advice"],correct:2,difficulty:"medium",explain:"Backbiting is speaking ill of someone in their absence, even if what is said is true, and it is likened to eating the flesh of one\'s dead brother."},
+    {id:"11db34f62296",q:"What does \'Zina\' refer to in Islam?",opts:["Legitimate trade","Unlawful sexual intercourse or fornication","Giving charity","Marriage"],correct:1,difficulty:"medium",explain:"Zina refers to unlawful sexual intercourse or fornication, which is a major sin in Islam."},
+    {id:"11afde05d2b3",q:"What is the Islamic ruling on unjustly taking a human life?",opts:["Permissible in war","Strictly forbidden and a major sin","Permissible in self-defense","Permissible if the person is an enemy"],correct:1,difficulty:"medium",explain:"Unjustly taking a human life is strictly forbidden and considered one of the gravest sins in Islam."},
+    {id:"fe8454bbfdea",q:"What is the general principle regarding things in Islam unless proven otherwise?",opts:["Everything is Makrooh (disliked)","Everything is Haram (forbidden)","Everything is Wajib (obligatory)","Everything is Halal (permissible)"],correct:3,difficulty:"medium",explain:"The general principle in Islam is that all things are considered permissible (Halal) unless there is a clear text from the Quran or Sunnah that explicitly forbids them."},
+    {id:"23934a08359b",q:"Which animal\'s meat is explicitly forbidden for Muslims to consume?",opts:["Camel","Cow","Goat","Swine (Pig)"],correct:3,difficulty:"medium",explain:"The consumption of swine (pig) is explicitly prohibited in the Quran."},
+    {id:"fd45365d3773",q:"What is the ruling on consuming any substance that intoxicates the mind?",opts:["Permissible if for medical reasons only","Permissible if not addicted","Permissible in small amounts","Forbidden"],correct:3,difficulty:"medium",explain:"All intoxicants are forbidden in Islam, as they impair judgment and lead to sin."},
+    {id:"7287fa5741e2",q:"Is taking or giving bribes permissible in Islam?",opts:["Yes, if it\'s a small amount","Yes, if it helps achieve a good outcome","Only if it\'s a gift","No, it is forbidden"],correct:3,difficulty:"medium",explain:"Bribery is forbidden in Islam as it corrupts justice and fairness."},
+    {id:"863155990a38",q:"What is the difference between backbiting and slander (Buhtan)?",opts:["Backbiting is false, slander is true","Backbiting is true, slander is false","Slander is only about actions, backbiting is about words","Both are the same"],correct:1,difficulty:"medium",explain:"Backbiting is speaking ill of someone with truth, while slander (Buhtan) is speaking ill of someone with falsehood."},
+    {id:"349bcd22addd",q:"Who has the sole right to declare something Halal or Haram?",opts:["Allah (SWT)","Community consensus","Scholars","Governments"],correct:0,difficulty:"medium",explain:"Only Allah (SWT) has the ultimate authority to declare something lawful (Halal) or unlawful (Haram)."},
+    {id:"9659b351234c",q:"What is the ruling on consuming meat from an animal that was not slaughtered according to Islamic rites (Dhabihah)?",opts:["Permissible if it\'s cooked well","Permissible if it\'s from People of the Book","Permissible if no other meat is available","Forbidden"],correct:3,difficulty:"medium",explain:"Meat from animals not slaughtered Islamically is generally forbidden, except for specific exceptions like the meat of the People of the Book under certain conditions."},
+    {id:"f9e1eec79bbd",q:"Is it permissible to deceive customers in trade to make more profit?",opts:["No, it is forbidden","Yes, if the customer doesn\'t notice","Only if the product is of good quality","Yes, if it\'s common practice"],correct:0,difficulty:"medium",explain:"Deception and fraud in trade are strictly forbidden in Islam."},
+    {id:"8c04913fd5b9",q:"What is the Islamic ruling on bearing false witness?",opts:["Strictly forbidden and a major sin","Permissible if it\'s a minor issue","Permissible if it helps a friend","Permissible if under duress"],correct:0,difficulty:"medium",explain:"Bearing false witness is a major sin in Islam, as it undermines justice and truth."},
+    {id:"507f5bd88d49",q:"Under what extreme circumstance might a forbidden item become permissible to consume?",opts:["When there is dire necessity to save one\'s life","When one is traveling","When it\'s a small amount","When it\'s offered as a gift"],correct:0,difficulty:"medium",explain:"In dire necessity, such as to save one\'s life from starvation, forbidden items may become permissible to consume."},
+    {id:"6705ddd73a13",q:"Apart from fish and locusts, what is the general ruling on eating animals that have died naturally?",opts:["Permissible if cooked thoroughly","Forbidden","Discouraged","Permissible"],correct:1,difficulty:"medium",explain:"Generally, animals that die naturally (carrion) are forbidden, with the exceptions of fish and locusts."},
+    {id:"701380293fec",q:"What is another term for Riba, which is forbidden in Islam?",opts:["Usury","Profit","Investment","Loan"],correct:0,difficulty:"medium",explain:"Usury is another term for Riba, which refers to excessive or exploitative interest and is forbidden."},
+    {id:"a59a0d73680e",q:"Is stealing permissible in Islam?",opts:["Only if you return it later","Yes, if you are poor","Yes, if the owner is rich","No, it is forbidden"],correct:3,difficulty:"medium",explain:"Stealing is strictly forbidden in Islam as it violates the rights of others and disrupts societal order."},
+    {id:"f84bbffc1962",q:"For something to be considered Haram, what is required?",opts:["A scholar\'s opinion","Clear evidence from Quran or Sunnah","A majority vote","A strong cultural tradition"],correct:1,difficulty:"medium",explain:"For something to be considered Haram, there must be clear and unambiguous evidence from the Quran or authentic Sunnah."},
+    {id:"e8bf6da08f94",q:"Which type of land animals are generally forbidden to eat due to having fangs or claws?",opts:["Birds of prey","Carnivores","Herbivores","Omnivores"],correct:1,difficulty:"medium",explain:"Carnivorous animals with fangs (like lions, tigers) and birds of prey with talons (like eagles, hawks) are generally forbidden to eat."},
+    {id:"cfeb57f6f3f6",q:"Is hoarding essential goods to drive up prices permissible in Islam?",opts:["No, it is forbidden","Only if it\'s for a short period","Yes, if there\'s high demand","Yes, if it\'s good business strategy"],correct:0,difficulty:"medium",explain:"Hoarding essential goods to create artificial scarcity and drive up prices is forbidden in Islam."},
+    {id:"7290b7f82672",q:"What is the Islamic stance on spreading rumors or gossip?",opts:["Forbidden","Permissible if it\'s entertaining","Permissible if it\'s about public figures","Permissible if it\'s true"],correct:0,difficulty:"medium",explain:"Spreading rumors or gossip is forbidden in Islam as it harms reputations and creates discord."},
+    {id:"1143596e6e2a",q:"What is a general principle in Islam regarding actions that cause harm to oneself or others?",opts:["They are permissible if unintentional","They are neutral","They are forbidden","They are encouraged"],correct:2,difficulty:"medium",explain:"A fundamental principle in Islam is \'La darar wa la dirar\' (no harm, no reciprocating harm), meaning actions that cause harm are forbidden."},
+    {id:"03449dc7e394",q:"What is the ruling on consuming meat from an animal sacrificed to idols or other deities?",opts:["Forbidden","Permissible if it\'s the only food available","Permissible if you don\'t believe in the idols","Permissible if it\'s offered as a gift"],correct:0,difficulty:"medium",explain:"Meat from animals sacrificed to other than Allah is strictly forbidden in Islam."},
+    {id:"d9de08526246",q:"Are contracts that involve injustice or exploitation permissible in Islam?",opts:["Yes, if it\'s legally binding","Yes, if both parties agree","No, they are forbidden","Only if it\'s a small injustice"],correct:2,difficulty:"medium",explain:"Contracts involving injustice or exploitation are forbidden in Islam, as fairness and equity are paramount."},
+    {id:"b5c7b5567105",q:"Is feeling envy (Hasad) towards others permissible in Islam?",opts:["Yes, if it\'s kept secret","Only if it\'s for worldly possessions","Yes, if it motivates you to do better","No, it is forbidden"],correct:3,difficulty:"medium",explain:"Envy (Hasad) is forbidden in Islam as it involves wishing ill upon others and dissatisfaction with Allah\'s decree."},
+    {id:"1d2a88cdab69",q:"What is a general principle in Islam regarding religious rulings, aiming to make things easy for believers?",opts:["Rigidity and inflexibility","Complexity and difficulty","Ease and facilitation","Strictness and hardship"],correct:2,difficulty:"medium",explain:"Islam is a religion of ease and facilitation, and its rulings are generally designed to avoid undue hardship for believers."},
+    {id:"0757be92c27f",q:"Which dead animals are permissible to eat, as an exception to the general rule of carrion?",opts:["Dead insects","Dead fish","Dead land animals","Dead birds"],correct:1,difficulty:"medium",explain:"Dead fish are permissible to eat, as an exception to the general prohibition of carrion."},
+    {id:"b6fc6aeb869a",q:"Is taking someone\'s property without their consent or lawful right permissible?",opts:["Yes, if they are rich","Only if you intend to return it later","No, it is forbidden","Yes, if you need it more"],correct:2,difficulty:"medium",explain:"Taking someone\'s property unjustly is forbidden in Islam."},
+    {id:"32e1a4169b67",q:"What is the Islamic ruling on spreading discord or mischief (Fitnah) in society?",opts:["Permissible if it\'s a small issue","Permissible if it leads to change","Strictly forbidden","Permissible if it\'s for a good cause"],correct:2,difficulty:"medium",explain:"Spreading discord or mischief (Fitnah) is strictly forbidden in Islam, as it disrupts peace and unity."},
+    {id:"57cb400a754d",q:"What is often the underlying reason for Islamic prohibitions (Haram)?",opts:["To make life difficult","To show Allah\'s power","To protect individuals and society from harm","To test obedience without reason"],correct:2,difficulty:"medium",explain:"Islamic prohibitions are generally established to protect individuals and society from harm, both spiritual and worldly."},
+    {id:"a4b4d8e4c6a3",q:"Are animals that are venomous or harmful to humans permissible to eat?",opts:["Yes, if the venom is removed","Yes, if cooked properly","No, they are generally forbidden","Only if there\'s no other food"],correct:2,difficulty:"medium",explain:"Animals that are venomous or harmful to humans are generally forbidden to eat due to the principle of avoiding harm."},
+    {id:"e2f864b5d52a",q:"Is it permissible to cheat in weights and measures when selling goods?",opts:["Yes, if the customer doesn\'t notice","Yes, if it\'s a small amount","No, it is forbidden","Only if it\'s to recover losses"],correct:2,difficulty:"medium",explain:"Cheating in weights and measures is strictly forbidden in Islam, as it involves dishonesty and injustice."},
+    {id:"9caa3b1038f2",q:"Is it permissible to mock or ridicule other people in Islam?",opts:["Only if they are not Muslim","Yes, if they deserve it","Yes, if it\'s a joke","No, it is forbidden"],correct:3,difficulty:"medium",explain:"Mocking or ridiculing others is forbidden in Islam, as it causes hurt and disrespect."},
+    {id:"2e83bfa2c674",q:"What is a highly encouraged act in Islam regarding earning a living?",opts:["Relying solely on charity","Seeking lawful (Halal) provision","Begging","Seeking unlawful earnings"],correct:1,difficulty:"medium",explain:"Seeking lawful (Halal) provision is highly encouraged in Islam and is considered an act of worship."}
+  ]},
+  {id:6,topic:"Foundations · Islamic Character & Daily Practice",label:"Islamic Character & Daily Practice",questions:[
+    {id:"5d1a13248b91",q:"What did the Prophet (ﷺ) say about modesty when he saw a man admonishing his brother about it?",opts:["Modesty is a sign of weakness.","Modesty is a part of Iman (faith).","Modesty is only for women.","Modesty is not important in Islam."],correct:1,difficulty:"medium",explain:"The Prophet (ﷺ) explicitly stated that modesty is a part of Iman, emphasizing its importance in a Muslim\'s character."},
+    {id:"366ffad2b0e2",q:"According to the Prophet (ﷺ), what is considered the most evil act among people on the Day of Resurrection regarding marital relations?",opts:["Divorcing one\'s spouse.","Publicizing the private secrets of one\'s spouse.","Not spending enough on one\'s family.","Having multiple wives."],correct:1,difficulty:"medium",explain:"The Prophet (ﷺ) warned against publicizing the private secrets of one\'s spouse, highlighting the sanctity of marital privacy."},
+    {id:"bd57af242b04",q:"Which of the following is NOT mentioned as a sign of a hypocrite by the Prophet (ﷺ)?",opts:["When he speaks, he lies.","When he makes a promise, he breaks it.","When he is trusted, he betrays his trust.","When he prays, he does so loudly."],correct:3,difficulty:"medium",explain:"The Prophet (ﷺ) mentioned lying, breaking promises, and betraying trust as signs of a hypocrite, but not praying loudly."},
+    {id:"e89009a73ba4",q:"When asked about the best act in Islam, what did the Prophet (ﷺ) reply regarding greetings?",opts:["To greet only those you know.","To greet everyone, whether you know them or not.","To greet only other Muslims.","To greet only your family."],correct:1,difficulty:"medium",explain:"The Prophet (ﷺ) encouraged greeting everyone, known or unknown, as one of the best acts in Islam, promoting unity and love."},
+    {id:"8c628490bdbf",q:"What did the Prophet (ﷺ) say would happen if Muslims promote greetings amongst themselves?",opts:["They will become wealthy.","They will love one another.","They will have long lives.","They will gain worldly power."],correct:1,difficulty:"medium",explain:"The Prophet (ﷺ) stated that promoting greetings among Muslims would lead to mutual love, which is a prerequisite for entering Jannah."},
+    {id:"a7d02af230a0",q:"What is the reward for saying \'As-Salamu \'Alaikum wa Rahmatullahi wa Barakatuhu\' when greeting someone?",opts:["Ten good deeds.","Twenty good deeds.","Thirty good deeds.","Forty good deeds."],correct:2,difficulty:"medium",explain:"The Prophet (ﷺ) indicated that adding \'wa Rahmatullahi wa Barakatuhu\' to the greeting increases the reward to thirty good deeds."},
+    {id:"035f75661948",q:"What should a Muslim say before starting to eat, according to the Prophet (ﷺ)?",opts:["Alhamdulillah.","Subhanallah.","Bismillah.","Allahu Akbar."],correct:2,difficulty:"medium",explain:"The Prophet (ﷺ) instructed to mention Allah\'s Name (Bismillah) before eating, and to eat with the right hand from what is near."},
+    {id:"3565ee166883",q:"If one forgets to say Bismillah at the beginning of a meal, what should they say when they remember?",opts:["Astaghfirullah.","Bismillah awwalahu wa akhirahu.","La ilaha illallah.","Hasbunallahu wa ni\'mal wakeel."],correct:1,difficulty:"medium",explain:"If one forgets to say Bismillah at the beginning, they should say \'Bismillah awwalahu wa akhirahu\' to invoke Allah\'s Name for the entire meal."},
+    {id:"6e2ff80b092a",q:"What happens if a person does not mention the Name of Allah upon entering his house or eating, according to the Prophet (ﷺ)?",opts:["Angels will enter his house.","Satan will find a place to spend the night and food.","He will be blessed with more food.","He will be protected from evil."],correct:1,difficulty:"medium",explain:"The Prophet (ﷺ) warned that if Allah\'s Name is not mentioned upon entering the house or eating, Satan will find an opportunity to share the dwelling and food."},
+    {id:"36c75a24d3e5",q:"What is the recommended sleeping position of the Prophet (ﷺ)?",opts:["On the left side.","On the back.","On the right side.","On the stomach."],correct:2,difficulty:"medium",explain:"The Prophet (ﷺ) used to lie down on his right side when going to bed, which is a recommended Sunnah."},
+    {id:"660d5a40fb51",q:"What should one do before sleeping, in addition to lying on the right side, according to the Prophet (ﷺ)?",opts:["Read a book.","Perform Wudu\' as for Salat.","Listen to music.","Talk on the phone."],correct:1,difficulty:"medium",explain:"The Prophet (ﷺ) advised performing Wudu\' as for Salat before going to bed, and then reciting a specific supplication."},
+    {id:"99499ff10974",q:"What supplication did the Prophet (ﷺ) recite when he lay down for sleep at night?",opts:["Subhanallah.","Alhamdulillah.","Allahumma bismika amutu wa ahya.","Allahu Akbar."],correct:2,difficulty:"medium",explain:"The Prophet (ﷺ) used to supplicate \'Allahumma bismika amutu wa ahya\' (O Allah, with Your Name will I die and live) before sleeping."},
+    {id:"911f8f2c63c7",q:"What is the supplication to say upon waking up, according to Fortress of the Muslim?",opts:["Subhanallah wa bihamdihi.","Alhamdulillahil-ladhi ahyaana ba\'da ma amatana, wa ilaihin-nushur.","La hawla wa la quwwata illa billah.","Allahu Akbar kabira."],correct:1,difficulty:"medium",explain:"The supplication upon waking up is \'Alhamdulillahil-ladhi ahyaana ba\'da ma amatana, wa ilaihin-nushur\' (All praise is due to Allah, Who has brought us back to life after He has caused us to die, and to Him is the return)."},
+    {id:"6be3f1f4af2a",q:"What should one say upon entering the home, according to Fortress of the Muslim?",opts:["Bismillah.","As-Salamu Alaykum.","Both A and B.","Neither A nor B."],correct:2,difficulty:"medium",explain:"Upon entering the home, it is recommended to say \'Bismillah\' and \'As-Salamu Alaykum\' to seek blessings and protection."},
+    {id:"9d3c2fea7821",q:"What should one say upon leaving the home, according to Fortress of the Muslim?",opts:["Subhanallah.","Bismillahi, tawakkaltu \'alallahi, wa la hawla wa la quwwata illa billah.","Alhamdulillah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"The supplication upon leaving the home is \'Bismillahi, tawakkaltu \'alallahi, wa la hawla wa la quwwata illa billah\' (In the Name of Allah, I have placed my trust in Allah, and there is no might or power except with Allah)."},
+    {id:"d4a728b095fc",q:"What is the ruling on criticizing food in Islam, according to the Prophet (ﷺ)?",opts:["It is encouraged to criticize bad food.","The Prophet (ﷺ) never found fault with food.","It is permissible to criticize food if it is truly bad.","One should always praise the food, even if it\'s bad."],correct:1,difficulty:"medium",explain:"The Prophet (ﷺ) never found fault with food; if he liked it, he ate it, and if he disliked it, he left it without criticism."},
+    {id:"1f4a0a191244",q:"What did the Prophet (ﷺ) say about vinegar when it was presented as the only sauce?",opts:["It is a poor sauce.","It is an excellent sauce.","It should be avoided.","It is only for the poor."],correct:1,difficulty:"medium",explain:"The Prophet (ﷺ) praised vinegar as an excellent sauce, showing contentment and appreciation for what was available."},
+    {id:"1ee4ee1e5f9d",q:"What is the etiquette when one is invited to a meal and is fasting?",opts:["He should break his fast and eat.","He should decline the invitation.","He should supplicate for the host and not eat.","He should eat a small amount to not offend the host."],correct:2,difficulty:"medium",explain:"If a fasting person is invited to a meal, they should accept the invitation but supplicate for the host instead of eating."},
+    {id:"4ac75bf5e71f",q:"What is the etiquette for eating from a dish when dining with others, as taught by the Prophet (ﷺ)?",opts:["Eat from any part of the dish.","Eat only from what is in front of you.","Eat from the middle of the dish first.","Wait for others to start eating first."],correct:1,difficulty:"medium",explain:"The Prophet (ﷺ) instructed to eat from what is in front of oneself, promoting good manners and consideration for others."},
+    {id:"9da3935c3fc0",q:"What is the reward for saying \'Al-hamdu lillahi-lladhi at\'amani hadha, wa razaqanihi min ghairi haulin minni wa la quwwatin\' after eating?",opts:["All past sins will be forgiven.","He will gain immense wealth.","He will be granted a long life.","He will be protected from all diseases."],correct:0,difficulty:"medium",explain:"The Prophet (ﷺ) stated that whoever says this supplication after eating will have all their past sins forgiven, highlighting the virtue of gratitude."},
+    {id:"13922f94515e",q:"What did the Prophet (ﷺ) say about the importance of giving food and greeting everyone?",opts:["These are optional acts.","These are the best acts in Islam.","These are only for special occasions.","These are only for close friends."],correct:1,difficulty:"medium",explain:"The Prophet (ﷺ) identified giving food and greeting everyone as among the best acts in Islam, emphasizing their communal and spiritual benefits."},
+    {id:"205a2f09c7dc",q:"What is the significance of saying \'As-Salamu \'Alaikum wa Rahmatullahi wa Barakatuhu\' compared to just \'As-Salamu \'Alaikum\'?",opts:["It has no additional significance.","It earns more good deeds.","It is only for elders.","It is a more formal greeting."],correct:1,difficulty:"medium",explain:"The Prophet (ﷺ) taught that adding \'wa Rahmatullahi wa Barakatuhu\' to the greeting increases the reward from ten to thirty good deeds, signifying greater blessings."},
+    {id:"851acc8e9a7f",q:"What was the Prophet\'s (ﷺ) practice regarding repeating his words and greetings?",opts:["He would never repeat his words.","He would repeat his words thrice to ensure understanding and greet a gathering thrice.","He would only repeat his words if asked.","He would only greet once."],correct:1,difficulty:"medium",explain:"The Prophet (ﷺ) used to repeat his words thrice so that the meaning would be fully understood, and he would greet a gathering thrice, ensuring his message was clear and heard by all."},
+    {id:"768632a89681",q:"What is the ruling on shaking hands when greeting someone?",opts:["It is prohibited.","It is disliked.","It is recommended.","It is only for men."],correct:2,difficulty:"medium",explain:"The Companions of the Prophet (ﷺ) used to shake hands, and the Prophet (ﷺ) affirmed this practice, indicating its recommendation in Islam."},
+    {id:"5d8229df3ffe",q:"What is the reward for two Muslims who meet and shake hands?",opts:["They will receive a gift.","Their sins will be forgiven before they depart.","They will have a long conversation.","They will become closer friends."],correct:1,difficulty:"medium",explain:"The Prophet (ﷺ) stated that when two Muslims meet and shake hands, their sins are forgiven before they part, highlighting the spiritual benefit of this act."},
+    {id:"816bcf328a22",q:"What did the Prophet (ﷺ) say about meeting one\'s brother with a cheerful face?",opts:["It is a minor act of kindness.","It is a good deed that should not be belittled.","It is only for special occasions.","It is not important."],correct:1,difficulty:"medium",explain:"The Prophet (ﷺ) advised not to belittle any good deed, even meeting one\'s brother with a cheerful face, emphasizing the importance of positive interactions."},
+    {id:"cebf00ab7ef4",q:"What did the Prophet (ﷺ) do when he saw Aqra\' bin Habis, who claimed he never kissed his ten children?",opts:["He praised him for his discipline.","He said, \'He who does not show mercy to others, will not be shown mercy.\'","He advised him to be stricter with his children.","He ignored his statement."],correct:1,difficulty:"medium",explain:"The Prophet (ﷺ) responded by saying, \'He who does not show mercy to others, will not be shown mercy,\' emphasizing the importance of compassion towards children."},
+    {id:"655dc9282364",q:"What is the recommended action when one yawns, according to the Prophet (ﷺ)?",opts:["To yawn loudly.","To put one\'s hand over one\'s mouth.","To ignore it.","To say \'Alhamdulillah\'."],correct:1,difficulty:"medium",explain:"The Prophet (ﷺ) instructed to put one\'s hand over one\'s mouth when yawning to prevent the devil from entering."},
+    {id:"580c421146f3",q:"What did the Prophet (ﷺ) say about shyness?",opts:["It is a weakness.","It brings nothing but good.","It is only for women.","It is a sign of arrogance."],correct:1,difficulty:"medium",explain:"The Prophet (ﷺ) said, \'Shyness does not bring anything except good,\' highlighting its positive impact on a person\'s character."},
+    {id:"7550ed160a69",q:"What is the uppermost branch of Iman (faith) according to the Prophet (ﷺ)?",opts:["Giving charity.","Performing Salat.","The Testimony of Faith: \'La ilaha illallah\'.","Fasting."],correct:2,difficulty:"medium",explain:"The Prophet (ﷺ) stated that the uppermost branch of Iman is the Testimony of Faith: \'La ilaha illallah\' (there is no true god except Allah)."},
+    {id:"45b308b7e57a",q:"How was the Prophet (ﷺ) described in terms of shyness?",opts:["He was not shy at all.","He was shier than a virgin behind her veil.","He was shy only with strangers.","He was shy only with women."],correct:1,difficulty:"medium",explain:"The Prophet (ﷺ) was described as being even shier than a virgin behind her veil, indicating his profound modesty."},
+    {id:"a9daeef87b40",q:"What is the etiquette when one is invited to a meal and is not fasting?",opts:["He should decline the invitation.","He should accept the invitation and eat.","He should only eat a small portion.","He should bring his own food."],correct:1,difficulty:"medium",explain:"If one is not fasting, they should accept the invitation and eat, as accepting invitations is a part of good manners in Islam."},
+    {id:"5c40ee88358d",q:"What is the recommended practice when putting on shoes?",opts:["Put on the left shoe first.","Put on the right shoe first.","It does not matter which shoe comes first.","Put on both shoes at the same time."],correct:1,difficulty:"medium",explain:"The Prophet (ﷺ) instructed to put on the right shoe first and take off the left shoe first, showing preference for the right side in good acts."},
+    {id:"3a45b5078bc9",q:"What did the Prophet (ﷺ) use his right hand for?",opts:["Eating, drinking, and wearing clothes.","Cleaning himself.","Shaking hands only.","All purposes."],correct:0,difficulty:"medium",explain:"The Prophet (ﷺ) used his right hand for eating, drinking, and wearing clothes, reserving his left hand for other purposes, particularly those considered less pure."},
+    {id:"687e6e20695b",q:"What is the general principle regarding using the right side for good acts?",opts:["It is only for Wudu\'.","It is disliked.","It is recommended to begin with the right side for good acts.","It is only for men."],correct:2,difficulty:"medium",explain:"The Prophet (ﷺ) liked to use his right hand in all matters, such as combing his hair, wearing shoes, and performing Wudu\', establishing a general principle of favoring the right side for good acts."},
+    {id:"2c0f0453b7ae",q:"What is the supplication for when one is startled, according to Fortress of the Muslim?",opts:["Subhanallah.","La ilaha illallah.","Allahu Akbar.","A\'udhu billahi minash-shaitanir-rajeem."],correct:3,difficulty:"medium",explain:"When startled, it is recommended to say \'A\'udhu billahi minash-shaitanir-rajeem\' (I seek refuge in Allah from the accursed Satan) to seek protection."},
+    {id:"dc1b4a282f02",q:"What is the supplication for when one feels pain in the body, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Bismillah (three times), then A\'udhu billahi wa qudratihi min sharri ma ajidu wa uhadhiru (seven times).","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"When feeling pain, one should say \'Bismillah\' three times, then \'A\'udhu billahi wa qudratihi min sharri ma ajidu wa uhadhiru\' seven times (I seek refuge in Allah and His Power from the evil of what I find and what I fear)."},
+    {id:"3973e582d7fd",q:"What is the supplication for when one sees something pleasing, according to Fortress of the Muslim?",opts:["Subhanallah.","Alhamdulillah.","Alhamdulillahil-ladhi bi ni\'matihi tatimmus-salihat.","Allahu Akbar."],correct:2,difficulty:"medium",explain:"When seeing something pleasing, it is recommended to say \'Alhamdulillahil-ladhi bi ni\'matihi tatimmus-salihat\' (All praise is due to Allah, by whose grace good deeds are completed)."},
+    {id:"2148c92edf63",q:"What is the supplication for when one sees something disliked, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Subhanallah.","Alhamdulillah \'ala kulli hal.","Allahu Akbar."],correct:2,difficulty:"medium",explain:"When seeing something disliked, it is recommended to say \'Alhamdulillah \'ala kulli hal\' (All praise is due to Allah in every circumstance)."},
+    {id:"b5f59043f4ff",q:"What is the supplication for when one hears a rooster crow, according to Fortress of the Muslim?",opts:["Seek refuge from Satan.","Ask Allah for His bounty.","Both A and B.","Neither A nor B."],correct:1,difficulty:"medium",explain:"When hearing a rooster crow, one should ask Allah for His bounty, as the rooster has seen an angel."},
+    {id:"56d229edfa50",q:"What is the supplication for when one hears a donkey bray, according to Fortress of the Muslim?",opts:["Ask Allah for His bounty.","Seek refuge from Satan.","Say \'Alhamdulillah\'.","Say \'Allahu Akbar\'."],correct:1,difficulty:"medium",explain:"When hearing a donkey bray, one should seek refuge from Satan, as the donkey has seen a devil."},
+    {id:"050d41ba5280",q:"What is the supplication for when one sneezes and praises Allah, according to Riyad al-Salihin?",opts:["Yarhamuk-Allah.","Alhamdulillah.","Subhanallah.","Allahu Akbar."],correct:0,difficulty:"medium",explain:"When someone sneezes and says \'Alhamdulillah\', others should respond with \'Yarhamuk-Allah\' (may Allah have mercy on you)."},
+    {id:"625d8b370026",q:"What should the person who sneezed and was told \'Yarhamuk-Allah\' respond with?",opts:["Alhamdulillah.","Yahdikum-ullahu wa yuslihu balakum.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"The person who sneezed and was told \'Yarhamuk-Allah\' should respond with \'Yahdikum-ullahu wa yuslihu balakum\' (may Allah guide you and render sound your state of affairs)."},
+    {id:"737e4a174813",q:"What is the etiquette when a disbeliever praises Allah after sneezing?",opts:["Say \'Yarhamuk-Allah\'.","Say \'Yahdikum-ullahu wa yuslihu balakum\'.","Say nothing.","Say \'Alhamdulillah\'."],correct:1,difficulty:"medium",explain:"When a disbeliever praises Allah after sneezing, the response should be \'Yahdikum-ullahu wa yuslihu balakum\' (may Allah guide you and render sound your state of affairs), rather than \'Yarhamuk-Allah\'."},
+    {id:"90b6e16beb2b",q:"What did the Prophet (ﷺ) do when he sneezed?",opts:["He would sneeze loudly.","He would cover his mouth with his hand or a piece of cloth.","He would say \'Alhamdulillah\' loudly.","He would ignore it."],correct:1,difficulty:"medium",explain:"The Prophet (ﷺ) would cover his mouth with his hand or a piece of cloth when he sneezed, thereby suppressing the sound, demonstrating good manners."},
+    {id:"a3dda9e7347f",q:"What is the supplication for when one is afraid of a group of people, according to Fortress of the Muslim?",opts:["Hasbunallahu wa ni\'mal wakeel.","Allahumma inna naj\'aluka fi nuhurihim wa na\'udhu bika min shururihim.","La ilaha illallah.","Subhanallah."],correct:1,difficulty:"medium",explain:"When afraid of a group of people, one should say \'Allahumma inna naj\'aluka fi nuhurihim wa na\'udhu bika min shururihim\' (O Allah, we ask You to restrain them by their necks, and we seek refuge in You from their evil)."},
+    {id:"887d8a14abbe",q:"What is the supplication for when one is in distress, according to Fortress of the Muslim?",opts:["Alhamdulillah.","La ilaha illallahul-\'Azimul-Halim, La ilaha illallahu Rabbul-\'Arshil-\'Azim, La ilaha illallahu Rabbus-samawati wa Rabbul-ardi wa Rabbul-\'Arshil-Karim.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"The supplication for distress is \'La ilaha illallahul-\'Azimul-Halim, La ilaha illallahu Rabbul-\'Arshil-\'Azim, La ilaha illallahu Rabbus-samawati wa Rabbul-ardi wa Rabbul-\'Arshil-Karim\' (There is none worthy of worship but Allah, the All-Mighty, the Forbearing; there is none worthy of worship but Allah, Lord of the Magnificent Throne; there is none worthy of worship but Allah, Lord of the heavens and the earth, and Lord of the Noble Throne)."},
+    {id:"58620c2fd146",q:"What is the supplication for anxiety and sorrow, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Allahumma inni \'abduka, ibnu \'abdika, ibnu amatika, nasiyati bi yadika, madin fiyya hukmuka, \'adlun fiyya qada\'uka, as\'aluka bi kulli ismin huwa laka, sammayta bihi nafsaka, aw \'allamtahu ahadan min khalqika, aw anzaltahu fi kitabika, awista\'tharta bihi fi \'ilmil-ghaibi \'indaka, an taj\'alal-Qur\'ana rabi\'a qalbi, wa nura sadri, wa jala\'a huzni, wa dhahaba hammi.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"The supplication for anxiety and sorrow is \'Allahumma inni \'abduka, ibnu \'abdika, ibnu amatika, nasiyati bi yadika, madin fiyya hukmuka, \'adlun fiyya qada\'uka, as\'aluka bi kulli ismin huwa laka, sammayta bihi nafsaka, aw \'allamtahu ahadan min khalqika, aw anzaltahu fi kitabika, awista\'tharta bihi fi \'ilmil-ghaibi \'indaka, an taj\'alal-Qur\'ana rabi\'a qalbi, wa nura sadri, wa jala\'a huzni, wa dhahaba hammi\' (O Allah, I am Your slave, son of Your male slave, and son of Your female slave. My forelock is in Your Hand. Your Judgment upon me is assured, and Your Decree concerning me is just. I ask You by every Name belonging to You which You have named Yourself with, or revealed in Your Book, or taught to any of Your creation, or preserved in the knowledge of the unseen with You, that You make the Qur\'an the life of my heart and the light of my breast, and a departure for my sorrow and a release for my anxiety)."},
+    {id:"916d6124fb05",q:"What is the supplication for when one is afflicted with a calamity, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Inna lillahi wa inna ilaihi raji\'un, Allahumma ajirni fi musibati, wakhluf li khairan minha.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"When afflicted with a calamity, one should say \'Inna lillahi wa inna ilaihi raji\'un, Allahumma ajirni fi musibati, wakhluf li khairan minha\' (Indeed we belong to Allah, and indeed to Him we will return. O Allah, recompense me for my affliction and replace it for me with something better)."},
+    {id:"ec52b492341c",q:"What is the supplication for when one visits the sick, according to Fortress of the Muslim?",opts:["Alhamdulillah.","La ba\'sa tahurun insha\'Allah.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"When visiting the sick, it is recommended to say \'La ba\'sa tahurun insha\'Allah\' (No harm, may it be a purification, if Allah wills)."},
+    {id:"f4419246bd5c",q:"What is the supplication for when one sees someone in trial or tribulation, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Alhamdulillahil-ladhi \'afani mimma ibtalaka bihi, wa faddalani \'ala kathirin mimman khalaqa tafdila.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"When seeing someone in trial or tribulation, one should say \'Alhamdulillahil-ladhi \'afani mimma ibtalaka bihi, wa faddalani \'ala kathirin mimman khalaqa tafdila\' (All praise is due to Allah Who saved me from what He afflicted you with, and preferred me over much of what He created with [definite] preference)."},
+    {id:"1b036bb0a564",q:"What is the supplication for the expiation of sins, said at the conclusion of a sitting or gathering, according to Fortress of the Muslim?",opts:["Subhanallah.","Subhanakallahumma wa bihamdika, ashhadu an la ilaha illa anta, astaghfiruka wa atubu ilaika.","Alhamdulillah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"The supplication for the expiation of sins at the conclusion of a sitting or gathering is \'Subhanakallahumma wa bihamdika, ashhadu an la ilaha illa anta, astaghfiruka wa atubu ilaika\' (Glory be to You, O Allah, and praise be to You. I bear witness that there is no god but You. I seek Your forgiveness and repent to You)."},
+    {id:"f598e8763d7d",q:"What is the supplication for when one receives pleasing news, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Alhamdulillahil-ladhi bi ni\'matihi tatimmus-salihat.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"When receiving pleasing news, it is recommended to say \'Alhamdulillahil-ladhi bi ni\'matihi tatimmus-salihat\' (All praise is due to Allah, by whose grace good deeds are completed)."},
+    {id:"846967850af2",q:"What is the supplication for when one is afraid of shirk (associating partners with Allah), according to Fortress of the Muslim?",opts:["La ilaha illallah.","Allahumma inni a\'udhu bika an ushrika bika wa ana a\'lam, wa astaghfiruka lima la a\'lam.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"The supplication for fear of shirk is \'Allahumma inni a\'udhu bika an ushrika bika wa ana a\'lam, wa astaghfiruka lima la a\'lam\' (O Allah, I seek refuge in You from associating anything with You knowingly, and I seek Your forgiveness for what I do not know)."},
+    {id:"3e03f6f6f44e",q:"What is the supplication for when one is about to have sexual intercourse with their spouse, according to Fortress of the Muslim?",opts:["Bismillah.","Allahumma jannibnash-shaitana, wa jannibish-shaitana ma razaqtana.","Alhamdulillah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"The supplication before sexual intercourse is \'Allahumma jannibnash-shaitana, wa jannibish-shaitana ma razaqtana\' (O Allah, keep Satan away from us, and keep Satan away from what You have provided for us)."},
+    {id:"b80e781ee304",q:"What is the supplication for when one is angry, according to Fortress of the Muslim?",opts:["Alhamdulillah.","A\'udhu billahi minash-shaitanir-rajeem.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"When angry, one should seek refuge in Allah from Satan by saying \'A\'udhu billahi minash-shaitanir-rajeem\'."},
+    {id:"14111b353968",q:"What is the supplication for when one enters the market, according to Fortress of the Muslim?",opts:["Bismillah.","La ilaha illallahu wahdahu la sharika lahu, lahul-mulku wa lahul-hamdu, yuhyi wa yumitu, wa huwa hayyun la yamutu, bi yadihil-khairu, wa huwa \'ala kulli shai\'in qadir.","Alhamdulillah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"The supplication for entering the market is \'La ilaha illallahu wahdahu la sharika lahu, lahul-mulku wa lahul-hamdu, yuhyi wa yumitu, wa huwa hayyun la yamutu, bi yadihil-khairu, wa huwa \'ala kulli shai\'in qadir\' (There is none worthy of worship but Allah alone, He has no partner. To Him belongs the dominion and to Him belongs all praise. He gives life and causes death, and He is the Ever-Living who does not die. In His Hand is all good, and He is over all things competent)."},
+    {id:"6d5bc2b96d35",q:"What is the supplication for when one is returning from travel, according to Fortress of the Muslim?",opts:["Alhamdulillah.","A\'ibuna ta\'ibuna \'abiduna li Rabbina hamidun.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"When returning from travel, one should say \'A\'ibuna ta\'ibuna \'abiduna li Rabbina hamidun\' (We are returning, repenting, worshipping, and praising our Lord)."},
+    {id:"91de8f7219b6",q:"What is the supplication for when one is about to travel, according to Fortress of the Muslim?",opts:["Bismillah.","Allahu Akbar, Allahu Akbar, Allahu Akbar. Subhanalladhi sakhkhara lana hadha wa ma kunna lahu muqrinin, wa inna ila Rabbina lamunqalibun. Allahumma inna nas\'aluka fi safarina hadhal-birra wat-taqwa, wa minal-\'amali ma tarda. Allahumma hawwin \'alaina safarana hadha, watwi \'anna bu\'dahu. Allahumma antas-sahibu fis-safari, wal-khalifatu fil-ahli. Allahumma inni a\'udhu bika min wa\'tha\'is-safari, wa ka\'abatil-manzari, wa su\'il-munqalabi fil-mali wal-ahli.","Alhamdulillah.","Subhanallah."],correct:1,difficulty:"medium",explain:"The comprehensive supplication for travel includes seeking Allah\'s help, ease, and protection from difficulties during the journey and its return."},
+    {id:"bb4602ebc922",q:"What is the supplication for when one enters a town or village, according to Fortress of the Muslim?",opts:["Bismillah.","Allahumma Rabbas-samawatis-sab\'i wa ma azlalna, wa Rabbal-aradin-sab\'i wa ma aqlalna, wa Rabbash-shayatin wa ma adlalna, wa Rabbar-riyahi wa ma dharaina, as\'aluka khaira hadhihil-qaryati wa khaira ahliha, wa a\'udhu bika min sharriha wa sharri ahliha, wa sharri ma fiha.","Alhamdulillah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"Upon entering a town or village, one should supplicate to Allah, seeking its good and protection from its evil and the evil of its inhabitants."},
+    {id:"d7f6c7558679",q:"What is the supplication for when one is mounting an animal or any means of transport, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Bismillah, Alhamdulillah. Subhanalladhi sakhkhara lana hadha wa ma kunna lahu muqrinin, wa inna ila Rabbina lamunqalibun.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"When mounting a means of transport, one should say \'Bismillah, Alhamdulillah. Subhanalladhi sakhkhara lana hadha wa ma kunna lahu muqrinin, wa inna ila Rabbina lamunqalibun\' (In the Name of Allah, all praise is due to Allah. Glory be to Him Who has subjected this to us, and we were not able to do it. And indeed, to our Lord we will return)."},
+    {id:"17ad343698a5",q:"What is the supplication for when one sees the crescent moon, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Allahu Akbar. Allahumma ahillahu \'alaina bil-amni wal-iman, was-salamati wal-Islam, wat-tawfiqi lima tuhibbu wa tarda. Rabbuna wa Rabbukallah.","Subhanallah.","Bismillah."],correct:1,difficulty:"medium",explain:"Upon sighting the crescent moon, one should supplicate to Allah for security, faith, safety, Islam, and success in what Allah loves and is pleased with."},
+    {id:"1b986313b5b8",q:"What is the supplication for when it rains, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Allahumma sayyiban nafi\'a.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"When it rains, one should say \'Allahumma sayyiban nafi\'a\' (O Allah, [let it be] a beneficial rain)."},
+    {id:"921d0768ca09",q:"What is the supplication for after rainfall, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Mutirna bi fadlillahi wa rahmatihi.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"After rainfall, one should say \'Mutirna bi fadlillahi wa rahmatihi\' (We have been given rain by the grace of Allah and His mercy)."},
+    {id:"4c4b39b9eea1",q:"What is the supplication for asking for clear skies, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Allahumma hawalaina wa la \'alaina. Allahumma \'alal-akami waz-zirab, wa butunil-awdiyati, wa manabitish-shajar.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"When asking for clear skies, one should supplicate \'Allahumma hawalaina wa la \'alaina. Allahumma \'alal-akami waz-zirab, wa butunil-awdiyati, wa manabitish-shajar\' (O Allah, [let it rain] around us and not upon us. O Allah, [let it rain] on the hillocks, small mountains, bottoms of the valleys, and on the places where trees grow)."},
+    {id:"ce769761a574",q:"What is the supplication for when one hears thunder, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Subhanalladhi yusabbihur-ra\'du bihamdihi wal-mala\'ikatu min khifatihi.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"When hearing thunder, one should say \'Subhanalladhi yusabbihur-ra\'du bihamdihi wal-mala\'ikatu min khifatihi\' (Glory be to Him Whom the thunder glorifies with His praise, and the angels too for fear of Him)."},
+    {id:"b944c2ad7dc5",q:"What is the supplication for when one is about to break fast, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Dhahabaz-zama\'u, wabtallatil-\'uruqu, wa thabatal-ajru insha\'Allah.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"Upon breaking fast, one should say \'Dhahabaz-zama\'u, wabtallatil-\'uruqu, wa thabatal-ajru insha\'Allah\' (The thirst has gone, the veins are moistened, and the reward is confirmed, if Allah wills)."},
+    {id:"c3d8b3400cff",q:"What is the supplication for when one is about to eat, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Bismillah.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"Before eating, one should say \'Bismillah\' (In the Name of Allah)."},
+    {id:"f4441e9bdf37",q:"What is the supplication for when one has finished eating, according to Fortress of the Muslim?",opts:["Subhanallah.","Alhamdulillahil-ladhi at\'amana wa saqana wa ja\'alana minal-Muslimin.","Bismillah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"Upon completing the meal, one should say \'Alhamdulillahil-ladhi at\'amana wa saqana wa ja\'alana minal-Muslimin\' (All praise is due to Allah Who fed us and gave us drink and made us Muslims)."},
+    {id:"d0a4582a800c",q:"What is the supplication of the guest for the host, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Allahumma barik lahum fima razaqtahum, waghfir lahum warhamhum.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"The guest should supplicate for the host by saying \'Allahumma barik lahum fima razaqtahum, waghfir lahum warhamhum\' (O Allah, bless them in what You have provided for them, forgive them, and have mercy upon them)."},
+    {id:"b662d8def369",q:"What is the supplication for when one is about to enter the bathroom, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Allahumma inni a\'udhu bika minal-khubuthi wal-khaba\'ith.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"Before entering the bathroom, one should say \'Allahumma inni a\'udhu bika minal-khubuthi wal-khaba\'ith\' (O Allah, I seek refuge in You from the male and female evil spirits)."},
+    {id:"3eefabce73f1",q:"What is the supplication for when one leaves the bathroom, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Ghufranaka.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"Upon leaving the bathroom, one should say \'Ghufranaka\' (I seek Your forgiveness)."},
+    {id:"a1e5b1043284",q:"What is the supplication for before ablution, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Bismillah.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"Before ablution, one should say \'Bismillah\' (In the Name of Allah)."},
+    {id:"199ba9d2c5a8",q:"What is the supplication for upon completing the ablution, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Ashhadu an la ilaha illallahu wahdahu la sharika lahu, wa ashhadu anna Muhammadan \'abduhu wa Rasuluhu. Allahummaj\'alni minat-tawwabina waj\'alni minal-mutatahhirin.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"Upon completing ablution, one should say the Shahada and supplicate to Allah to be among those who repent and purify themselves."},
+    {id:"b35ad0074e1e",q:"What is the supplication for when going to the mosque, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Allahummaj\'al fi qalbi nura, wa fi lisani nura, waj\'al fi sam\'i nura, waj\'al fi basari nura, waj\'al min khalfi nura, wa min amami nura, waj\'al min fawqi nura, wa min tahti nura. Allahumma a\'tini nura.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"When going to the mosque, one should supplicate to Allah to fill their heart, tongue, hearing, sight, and surroundings with light."},
+    {id:"b49aafdb6a46",q:"What is the supplication for upon entering the mosque, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Bismillah was-salatu was-salamu \'ala Rasulillah. Allahummaghfir li dhunubi waftah li abwaba rahmatik.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"Upon entering the mosque, one should say \'Bismillah was-salatu was-salamu \'ala Rasulillah. Allahummaghfir li dhunubi waftah li abwaba rahmatik\' (In the Name of Allah, and blessings and peace be upon the Messenger of Allah. O Allah, forgive my sins and open for me the gates of Your mercy)."},
+    {id:"3f97e3c45563",q:"What is the supplication for upon leaving the mosque, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Bismillah was-salatu was-salamu \'ala Rasulillah. Allahummaghfir li dhunubi waftah li abwaba fadlik.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"Upon leaving the mosque, one should say \'Bismillah was-salatu was-salamu \'ala Rasulillah. Allahummaghfir li dhunubi waftah li abwaba fadlik\' (In the Name of Allah, and blessings and peace be upon the Messenger of Allah. O Allah, forgive my sins and open for me the gates of Your bounty)."},
+    {id:"3a4f9d484a26",q:"What is the supplication for when one is about to undress, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Bismillah.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"Before undressing, one should say \'Bismillah\' (In the Name of Allah) to seek protection from the jinn."},
+    {id:"f81008750fe0",q:"What is the supplication for when wearing a garment, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Alhamdulillahil-ladhi kasani hadha (ath-thawba) wa razaqanihi min ghairi hawlin minni wa la quwwah.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"When wearing a garment, one should say \'Alhamdulillahil-ladhi kasani hadha (ath-thawba) wa razaqanihi min ghairi hawlin minni wa la quwwah\' (All praise is due to Allah Who clothed me with this garment and provided it for me without any power or strength on my part)."},
+    {id:"7879202fa8a3",q:"What is the supplication for when wearing a new garment, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Allahumma lakal-hamdu anta kasawtanihi, as\'aluka khairahu wa khaira ma suni\'a lahu, wa a\'udhu bika min sharrihi wa sharri ma suni\'a lahu.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"When wearing a new garment, one should praise Allah, ask for its good and the good for which it was made, and seek refuge from its evil and the evil for which it was made."},
+    {id:"839044f74504",q:"What is the supplication for someone wearing a new garment, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Tubli wa yukhlifullahu ta\'ala.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"For someone wearing a new garment, one should say \'Tubli wa yukhlifullahu ta\'ala\' (May you wear it out and may Allah replace it with something better)."},
+    {id:"4dcaca3017fc",q:"What is the supplication for when one sees the early or premature fruit, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Allahumma barik lana fi thamarina, wa barik lana fi madinatina, wa barik lana fi sa\'ina, wa barik lana fi muddina. Allahumma inna Ibrahima \'abduka wa Khaliluka wa Nabiyyuka, wa inni \'abduka wa Nabiyyuka, wa innahu da\'aka li Makkah, wa inni ad\'uka li Madinah mithla ma da\'aka li Makkah, wa mithlahu ma\'ahu.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"Upon seeing early fruits, one should supplicate for blessings in the fruits, city, and measures, and ask Allah to bless Madinah as He blessed Makkah."},
+    {id:"35c8bd4d05d2",q:"What is the supplication for when one is about to slaughter or offer a sacrifice, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Bismillahi, Allahu Akbar. Allahumma hadha minka wa laka.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"When slaughtering or offering a sacrifice, one should say \'Bismillahi, Allahu Akbar. Allahumma hadha minka wa laka\' (In the Name of Allah, Allah is the Most Great. O Allah, this is from You and for You)."},
+    {id:"e440e847d105",q:"What is the supplication for warding off the plot of rebellious devils, according to Fortress of the Muslim?",opts:["Alhamdulillah.","A\'udhu bi kalimatillahit-tammati min sharri ma khalaq.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"To ward off rebellious devils, one should say \'A\'udhu bi kalimatillahit-tammati min sharri ma khalaq\' (I seek refuge in the perfect Words of Allah from the evil of what He has created)."},
+    {id:"8db90a853ff2",q:"What is the supplication for seeking forgiveness and repentance, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Astaghfirullahal-ladhi la ilaha illa Huwal-Hayyul-Qayyumu wa atubu ilaihi.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"The supplication for seeking forgiveness and repentance is \'Astaghfirullahal-ladhi la ilaha illa Huwal-Hayyul-Qayyumu wa atubu ilaihi\' (I seek forgiveness from Allah, besides Whom there is none worthy of worship, the Ever-Living, the Sustainer, and I repent to Him)."},
+    {id:"93aec3b4e027",q:"What is the supplication for when one is afflicted with doubt in their faith, according to Fortress of the Muslim?",opts:["Alhamdulillah.","A\'udhu billahi minash-shaitanir-rajeem. Amantu billahi wa Rusulihi.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"When afflicted with doubt in faith, one should seek refuge in Allah from Satan and affirm belief in Allah and His Messengers."},
+    {id:"d2afcec84733",q:"What is the supplication for settling a debt, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Allahumma ikfini bi halalika \'an haramika, wa aghnini bi fadlika \'amman siwaka.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"To settle a debt, one should supplicate \'Allahumma ikfini bi halalika \'an haramika, wa aghnini bi fadlika \'amman siwaka\' (O Allah, suffice me with Your lawful against Your unlawful, and make me independent of all others by Your grace)."},
+    {id:"bae1c879f46f",q:"What is the supplication for when one is afflicted by whisperings in prayer or recitation, according to Fortress of the Muslim?",opts:["Alhamdulillah.","A\'udhu billahi minash-shaitanir-rajeem.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"When afflicted by whisperings in prayer or recitation, one should seek refuge in Allah from Satan by saying \'A\'udhu billahi minash-shaitanir-rajeem\'."},
+    {id:"6097f0c42360",q:"What is the supplication for when one\'s affairs have become difficult, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Allahumma la sahla illa ma ja\'altahu sahla, wa anta taj\'alul-hazna idha shi\'ta sahla.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"When affairs become difficult, one should supplicate \'Allahumma la sahla illa ma ja\'altahu sahla, wa anta taj\'alul-hazna idha shi\'ta sahla\' (O Allah, there is no ease except in what You have made easy, and You make the difficult easy if You wish)."},
+    {id:"3eac293e0558",q:"What is the supplication for when one commits a sin, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Astaghfirullah.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"When one commits a sin, they should seek forgiveness from Allah by saying \'Astaghfirullah\'."},
+    {id:"a549077893af",q:"What is the supplication for when one is in fear of the ruler\'s injustice, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Allahumma Rabbas-samawatis-sab\'i wa Rabbul-\'Arshil-\'Azim, kun li jaran min fulanibni fulanin, wa ahzabihi min khala\'iqika, an yafruta \'alayya ahadun minhum aw yatgha, \'azza jaruka, wa jalla thana\'uka, wa la ilaha ghairuka.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"When fearing a ruler\'s injustice, one should supplicate to Allah, Lord of the seven heavens and the Magnificent Throne, to be their protector from the ruler and his party."},
+    {id:"378ea383201f",q:"What is the supplication against enemies, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Allahumma munzilal-kitab, sari\'al-hisab, ihzimil-ahzab. Allahumma ihzimhum wa zalzilhum.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"Against enemies, one should supplicate \'Allahumma munzilal-kitab, sari\'al-hisab, ihzimil-ahzab. Allahumma ihzimhum wa zalzilhum\' (O Allah, Revealer of the Book, Swift at reckoning, defeat the confederates. O Allah, defeat them and shake them)."},
+    {id:"f5981b0ede03",q:"What is the supplication for when one is at a sitting or gathering, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Subhanakallahumma wa bihamdika, ashhadu an la ilaha illa anta, astaghfiruka wa atubu ilaika.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"At a sitting or gathering, it is recommended to say \'Subhanakallahumma wa bihamdika, ashhadu an la ilaha illa anta, astaghfiruka wa atubu ilaika\' (Glory be to You, O Allah, and praise be to You. I bear witness that there is no god but You. I seek Your forgiveness and repent to You)."},
+    {id:"6f940386c858",q:"What is the supplication for when one is told \'May Allah bless you\', according to Fortress of the Muslim?",opts:["Alhamdulillah.","Wa fika barakallah.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"When someone says \'May Allah bless you\', the response should be \'Wa fika barakallah\' (And may Allah bless you too)."},
+    {id:"c0687127be66",q:"What is the supplication for when one is praised, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Allahumma la tu\'akhidhni bima yaqulun, waghfir li ma la ya\'lamun, waj\'alni khairan mimma yazunnun.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"When praised, one should supplicate \'Allahumma la tu\'akhidhni bima yaqulun, waghfir li ma la ya\'lamun, waj\'alni khairan mimma yazunnun\' (O Allah, do not hold me accountable for what they say, forgive me for what they do not know, and make me better than what they imagine)."},
+    {id:"669641845a4a",q:"What is the supplication for when one is told \'I love you for Allah\'s sake\', according to Fortress of the Muslim?",opts:["Alhamdulillah.","Ahabbakalladhi ahbabtani lahu.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"When someone says \'I love you for Allah\'s sake\', the response should be \'Ahabbakalladhi ahbabtani lahu\' (May the One for Whom you love me, love you)."},
+    {id:"2356cb0d0df5",q:"What is the supplication for when one is offered some wealth, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Barakallahu laka fi ahlika wa malika.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"When offered wealth, one should supplicate \'Barakallahu laka fi ahlika wa malika\' (May Allah bless you in your family and your wealth)."},
+    {id:"56489a64518a",q:"What is the supplication for the debtor when his debt is settled, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Barakallahu laka fi ahlika wa malika.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"When a debt is settled, the debtor should supplicate for the one who settled it by saying \'Barakallahu laka fi ahlika wa malika\' (May Allah bless you in your family and your wealth)."},
+    {id:"c1ea94c064b4",q:"What is the supplication for when one sees a good dream, according to Fortress of the Muslim?",opts:["Alhamdulillah.","Alhamdulillahil-ladhi ahyaana ba\'da ma amatana, wa ilaihin-nushur.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"When seeing a good dream, one should praise Allah and be happy, and not tell it to anyone but a beloved one."},
+    {id:"a28d4b84f58d",q:"What is the supplication for when one sees a bad dream, according to Fortress of the Muslim?",opts:["Alhamdulillah.","A\'udhu billahi minash-shaitanir-rajeem, wa min sharri ma ra\'aitu.","Subhanallah.","Allahu Akbar."],correct:1,difficulty:"medium",explain:"When seeing a bad dream, one should seek refuge in Allah from Satan and from the evil of what they saw, and turn to their left side three times, and spit lightly three times, and not tell anyone about it."}
+  ]},
+  {id:7,topic:"Foundations · Mixed Review",label:"Mixed Review",questions:[
+    {id:"020fc59b62e7",q:"What are the three questions every Muslim must know?",opts:["Who is your Lord What is your religion Who is your Prophet","What is your name Where are you from What do you do","How many prayers are there How much zakat is due When is Hajj","What is the Quran Who are the Sahabah What is the Sunnah"],correct:0,difficulty:"medium",explain:"The three fundamental principles are knowing your Lord, your religion, and your Prophet."},
+    {id:"4bb98f1961fb",q:"Belief in which of the following is NOT one of the Six Pillars of Eemaan (Faith)?",opts:["Allah","Angels","Jinn","Divine Decree (Qadar)"],correct:3,difficulty:"medium",explain:"Belief in Jinn is not one of the six pillars of Eemaan. The six pillars are belief in Allah, His Angels, His Books, His Messengers, the Last Day, and Divine Decree (Qadar)."},
+    {id:"a5aa8a4e4ce9",q:"Which of the following is considered Haram (forbidden) in Islam?",opts:["Eating halal meat","Giving charity","Consuming Riba (interest)","Praying five times a day"],correct:2,difficulty:"medium",explain:"Riba, or interest, is strictly forbidden in Islam as it is seen as an exploitative practice."},
+    {id:"c13957092bc7",q:"Which of the following is NOT one of the Five Pillars of Islam?",opts:["Shahadah (Declaration of Faith)","Salah (Prayer)","Sawm (Fasting in Ramadan)","Jihad (Striving)"],correct:1,difficulty:"medium",explain:"Jihad is an important concept in Islam but it is not considered one of the five pillars. The five pillars are Shahadah, Salah, Zakah, Sawm, and Hajj."},
+    {id:"d8c5e01d686b",q:"Which of the following is NOT one of Allahs beautiful names or attributes?",opts:["Ar-Rahman (The Most Merciful)","Al-Ahad (The One)","Al-Musawwir (The Fashioner)","Al-Ghafil (The Negligent)"],correct:2,difficulty:"medium",explain:"Al-Ghafil (The Negligent) is not one of Allahs names or attributes. Allah is perfect and free from all imperfections."},
+    {id:"de886178f51d",q:"What is the purpose of Wudu (ablution) before Salah?",opts:["To cleanse the body spiritually and physically for prayer","To cool down the body in hot weather","To drink water before prayer","To prepare for sleep"],correct:1,difficulty:"medium",explain:"Wudu is a ritual purification performed by Muslims before prayer to cleanse themselves physically and spiritually."},
+    {id:"6c25750f7583",q:"What is the Islamic greeting?",opts:["Hello","Good morning","Assalamu Alaikum","Hi there"],correct:0,difficulty:"medium",explain:"Assalamu Alaikum, meaning Peace be upon you, is the traditional Islamic greeting."},
+    {id:"1d023b3dc7b5",q:"Which of the following is considered Haram (forbidden) in Islam?",opts:["Eating halal meat","Giving charity","Consuming Riba (interest)","Praying five times a day"],correct:3,difficulty:"medium",explain:"Riba, or interest, is strictly forbidden in Islam as it is seen as an exploitative practice."},
+    {id:"6db88b01caa7",q:"What is the Islamic greeting?",opts:["Hello","Good morning","Assalamu Alaikum","Hi there"],correct:2,difficulty:"medium",explain:"Assalamu Alaikum, meaning Peace be upon you, is the traditional Islamic greeting."},
+    {id:"2f588aeded61",q:"Which of the following is considered Haram (forbidden) in Islam?",opts:["Eating halal meat","Giving charity","Consuming Riba (interest)","Praying five times a day"],correct:0,difficulty:"medium",explain:"Riba, or interest, is strictly forbidden in Islam as it is seen as an exploitative practice."},
+    {id:"1c08b431119c",q:"What are the three questions every Muslim must know?",opts:["Who is your Lord What is your religion Who is your Prophet","What is your name Where are you from What do you do","How many prayers are there How much zakat is due When is Hajj","What is the Quran Who are the Sahabah What is the Sunnah"],correct:3,difficulty:"medium",explain:"The three fundamental principles are knowing your Lord, your religion, and your Prophet."},
+    {id:"40aa40b5d8e1",q:"What is the Islamic greeting?",opts:["Hello","Good morning","Assalamu Alaikum","Hi there"],correct:1,difficulty:"medium",explain:"Assalamu Alaikum, meaning Peace be upon you, is the traditional Islamic greeting."},
+    {id:"108396da68d8",q:"Which of the following is NOT one of the Five Pillars of Islam?",opts:["Shahadah (Declaration of Faith)","Salah (Prayer)","Sawm (Fasting in Ramadan)","Jihad (Striving)"],correct:3,difficulty:"medium",explain:"Jihad is an important concept in Islam but it is not considered one of the five pillars. The five pillars are Shahadah, Salah, Zakah, Sawm, and Hajj."},
+    {id:"83164201cc43",q:"What is the purpose of Wudu (ablution) before Salah?",opts:["To cleanse the body spiritually and physically for prayer","To cool down the body in hot weather","To drink water before prayer","To prepare for sleep"],correct:0,difficulty:"medium",explain:"Wudu is a ritual purification performed by Muslims before prayer to cleanse themselves physically and spiritually."},
+    {id:"ac43a4e4d6ad",q:"Which of the following is considered Haram (forbidden) in Islam?",opts:["Eating halal meat","Giving charity","Consuming Riba (interest)","Praying five times a day"],correct:1,difficulty:"medium",explain:"Riba, or interest, is strictly forbidden in Islam as it is seen as an exploitative practice."},
+    {id:"0f7599f7bf2b",q:"Belief in which of the following is NOT one of the Six Pillars of Eemaan (Faith)?",opts:["Allah","Angels","Jinn","Divine Decree (Qadar)"],correct:2,difficulty:"medium",explain:"Belief in Jinn is not one of the six pillars of Eemaan. The six pillars are belief in Allah, His Angels, His Books, His Messengers, the Last Day, and Divine Decree (Qadar)."},
+    {id:"5741bbb20cd7",q:"What is the purpose of Wudu (ablution) before Salah?",opts:["To cleanse the body spiritually and physically for prayer","To cool down the body in hot weather","To drink water before prayer","To prepare for sleep"],correct:2,difficulty:"medium",explain:"Wudu is a ritual purification performed by Muslims before prayer to cleanse themselves physically and spiritually."},
+    {id:"2dd759270aac",q:"Which of the following is NOT one of the Five Pillars of Islam?",opts:["Shahadah (Declaration of Faith)","Salah (Prayer)","Sawm (Fasting in Ramadan)","Jihad (Striving)"],correct:3,difficulty:"medium",explain:"Jihad is an important concept in Islam but it is not considered one of the five pillars. The five pillars are Shahadah, Salah, Zakah, Sawm, and Hajj."},
+    {id:"65e70c3ee51f",q:"Which of the following is NOT one of the Five Pillars of Islam?",opts:["Shahadah (Declaration of Faith)","Salah (Prayer)","Sawm (Fasting in Ramadan)","Jihad (Striving)"],correct:1,difficulty:"medium",explain:"Jihad is an important concept in Islam but it is not considered one of the five pillars. The five pillars are Shahadah, Salah, Zakah, Sawm, and Hajj."},
+    {id:"6f7185f47c2a",q:"What is the purpose of Wudu (ablution) before Salah?",opts:["To cleanse the body spiritually and physically for prayer","To cool down the body in hot weather","To drink water before prayer","To prepare for sleep"],correct:0,difficulty:"medium",explain:"Wudu is a ritual purification performed by Muslims before prayer to cleanse themselves physically and spiritually."},
+    {id:"ecfc4fff7fbb",q:"Which of the following is considered Haram (forbidden) in Islam?",opts:["Eating halal meat","Giving charity","Consuming Riba (interest)","Praying five times a day"],correct:1,difficulty:"medium",explain:"Riba, or interest, is strictly forbidden in Islam as it is seen as an exploitative practice."},
+    {id:"d783cec0615b",q:"Which of the following is NOT one of the Five Pillars of Islam?",opts:["Shahadah (Declaration of Faith)","Salah (Prayer)","Sawm (Fasting in Ramadan)","Jihad (Striving)"],correct:2,difficulty:"medium",explain:"Jihad is an important concept in Islam but it is not considered one of the five pillars. The five pillars are Shahadah, Salah, Zakah, Sawm, and Hajj."},
+    {id:"e3ba852cb897",q:"What is the purpose of Wudu (ablution) before Salah?",opts:["To cleanse the body spiritually and physically for prayer","To cool down the body in hot weather","To drink water before prayer","To prepare for sleep"],correct:0,difficulty:"medium",explain:"Wudu is a ritual purification performed by Muslims before prayer to cleanse themselves physically and spiritually."},
+    {id:"309ba646eb98",q:"Belief in which of the following is NOT one of the Six Pillars of Eemaan (Faith)?",opts:["Allah","Angels","Jinn","Divine Decree (Qadar)"],correct:3,difficulty:"medium",explain:"Belief in Jinn is not one of the six pillars of Eemaan. The six pillars are belief in Allah, His Angels, His Books, His Messengers, the Last Day, and Divine Decree (Qadar)."},
+    {id:"c54b7c53ca20",q:"Which of the following is NOT one of Allahs beautiful names or attributes?",opts:["Ar-Rahman (The Most Merciful)","Al-Ahad (The One)","Al-Musawwir (The Fashioner)","Al-Ghafil (The Negligent)"],correct:1,difficulty:"medium",explain:"Al-Ghafil (The Negligent) is not one of Allahs names or attributes. Allah is perfect and free from all imperfections."},
+    {id:"05fc9d32329c",q:"Which of the following is considered Haram (forbidden) in Islam?",opts:["Eating halal meat","Giving charity","Consuming Riba (interest)","Praying five times a day"],correct:3,difficulty:"medium",explain:"Riba, or interest, is strictly forbidden in Islam as it is seen as an exploitative practice."},
+    {id:"66a847c88f6b",q:"What is the purpose of Wudu (ablution) before Salah?",opts:["To cleanse the body spiritually and physically for prayer","To cool down the body in hot weather","To drink water before prayer","To prepare for sleep"],correct:0,difficulty:"medium",explain:"Wudu is a ritual purification performed by Muslims before prayer to cleanse themselves physically and spiritually."},
+    {id:"2ea027bf0018",q:"Belief in which of the following is NOT one of the Six Pillars of Eemaan (Faith)?",opts:["Allah","Angels","Jinn","Divine Decree (Qadar)"],correct:2,difficulty:"medium",explain:"Belief in Jinn is not one of the six pillars of Eemaan. The six pillars are belief in Allah, His Angels, His Books, His Messengers, the Last Day, and Divine Decree (Qadar)."},
+    {id:"620e252de517",q:"Which of the following is considered Haram (forbidden) in Islam?",opts:["Eating halal meat","Giving charity","Consuming Riba (interest)","Praying five times a day"],correct:2,difficulty:"medium",explain:"Riba, or interest, is strictly forbidden in Islam as it is seen as an exploitative practice."},
+    {id:"53274359bf57",q:"What are the three questions every Muslim must know?",opts:["Who is your Lord What is your religion Who is your Prophet","What is your name Where are you from What do you do","How many prayers are there How much zakat is due When is Hajj","What is the Quran Who are the Sahabah What is the Sunnah"],correct:0,difficulty:"medium",explain:"The three fundamental principles are knowing your Lord, your religion, and your Prophet."},
+    {id:"69975d92d10e",q:"Which of the following is NOT one of Allahs beautiful names or attributes?",opts:["Ar-Rahman (The Most Merciful)","Al-Ahad (The One)","Al-Musawwir (The Fashioner)","Al-Ghafil (The Negligent)"],correct:3,difficulty:"medium",explain:"Al-Ghafil (The Negligent) is not one of Allahs names or attributes. Allah is perfect and free from all imperfections."},
+    {id:"f7b8c0d8091a",q:"Belief in which of the following is NOT one of the Six Pillars of Eemaan (Faith)?",opts:["Allah","Angels","Jinn","Divine Decree (Qadar)"],correct:1,difficulty:"medium",explain:"Belief in Jinn is not one of the six pillars of Eemaan. The six pillars are belief in Allah, His Angels, His Books, His Messengers, the Last Day, and Divine Decree (Qadar)."},
+    {id:"1916a55de2c5",q:"What is the purpose of Wudu (ablution) before Salah?",opts:["To cleanse the body spiritually and physically for prayer","To cool down the body in hot weather","To drink water before prayer","To prepare for sleep"],correct:2,difficulty:"medium",explain:"Wudu is a ritual purification performed by Muslims before prayer to cleanse themselves physically and spiritually."},
+    {id:"272f7a88fcaf",q:"Belief in which of the following is NOT one of the Six Pillars of Eemaan (Faith)?",opts:["Allah","Angels","Jinn","Divine Decree (Qadar)"],correct:0,difficulty:"medium",explain:"Belief in Jinn is not one of the six pillars of Eemaan. The six pillars are belief in Allah, His Angels, His Books, His Messengers, the Last Day, and Divine Decree (Qadar)."},
+    {id:"e1b4c00e05d0",q:"Belief in which of the following is NOT one of the Six Pillars of Eemaan (Faith)?",opts:["Allah","Angels","Jinn","Divine Decree (Qadar)"],correct:1,difficulty:"medium",explain:"Belief in Jinn is not one of the six pillars of Eemaan. The six pillars are belief in Allah, His Angels, His Books, His Messengers, the Last Day, and Divine Decree (Qadar)."},
+    {id:"ccf7f1d9e819",q:"What is the Islamic greeting?",opts:["Hello","Good morning","Assalamu Alaikum","Hi there"],correct:3,difficulty:"medium",explain:"Assalamu Alaikum, meaning Peace be upon you, is the traditional Islamic greeting."},
+    {id:"cb9b57097273",q:"Which of the following is NOT one of the Five Pillars of Islam?",opts:["Shahadah (Declaration of Faith)","Salah (Prayer)","Sawm (Fasting in Ramadan)","Jihad (Striving)"],correct:3,difficulty:"medium",explain:"Jihad is an important concept in Islam but it is not considered one of the five pillars. The five pillars are Shahadah, Salah, Zakah, Sawm, and Hajj."},
+    {id:"b5ffe51894f6",q:"What is the purpose of Wudu (ablution) before Salah?",opts:["To cleanse the body spiritually and physically for prayer","To cool down the body in hot weather","To drink water before prayer","To prepare for sleep"],correct:1,difficulty:"medium",explain:"Wudu is a ritual purification performed by Muslims before prayer to cleanse themselves physically and spiritually."},
+    {id:"2b14055d3286",q:"Belief in which of the following is NOT one of the Six Pillars of Eemaan (Faith)?",opts:["Allah","Angels","Jinn","Divine Decree (Qadar)"],correct:0,difficulty:"medium",explain:"Belief in Jinn is not one of the six pillars of Eemaan. The six pillars are belief in Allah, His Angels, His Books, His Messengers, the Last Day, and Divine Decree (Qadar)."},
+    {id:"30bbbfcc51c5",q:"Which of the following is NOT one of Allahs beautiful names or attributes?",opts:["Ar-Rahman (The Most Merciful)","Al-Ahad (The One)","Al-Musawwir (The Fashioner)","Al-Ghafil (The Negligent)"],correct:2,difficulty:"medium",explain:"Al-Ghafil (The Negligent) is not one of Allahs names or attributes. Allah is perfect and free from all imperfections."}
+  ]}
+];
+
+// ── State ─────────────────────────────────────────────────────────────────
+let CUR_LEVEL   = 0;
+let SESSION     = [];
+let CUR_Q       = 0;
+let SCORE       = 0;
+let ANSWERED    = false;
+
+// ── Storage helpers ───────────────────────────────────────────────────────
+function getProgress() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch(e) { return {}; }
+}
+function saveProgress(data) {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch(e) {}
+}
+function isUnlocked(levelIdx) {
+  if (levelIdx === 0) return true;
+  const prog = getProgress();
+  return prog['level_' + (levelIdx-1) + '_passed'] === true;
+}
+function isCompleted(levelIdx) {
+  const prog = getProgress();
+  return prog['level_' + levelIdx + '_passed'] === true;
+}
+function getBestScore(levelIdx) {
+  const prog = getProgress();
+  return prog['level_' + levelIdx + '_best'] || 0;
+}
+function markPassed(levelIdx, pct) {
+  const prog = getProgress();
+  prog['level_' + levelIdx + '_passed'] = true;
+  if (!prog['level_' + levelIdx + '_best'] || pct > prog['level_' + levelIdx + '_best']) {
+    prog['level_' + levelIdx + '_best'] = pct;
+  }
+  saveProgress(prog);
+}
+function allCompleted() {
+  return LEVELS.every((_, i) => isCompleted(i));
+}
+
+// ── Shuffle ───────────────────────────────────────────────────────────────
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length-1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i+1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+// ── Screens ───────────────────────────────────────────────────────────────
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => {
+    s.classList.remove('active');
+    s.style.display = 'none';
+  });
+  const el = document.getElementById('screen-' + id);
+  if (el) {
+    el.style.display = 'block';
+    el.classList.add('active', 'fade-in');
+    setTimeout(() => el.classList.remove('fade-in'), 400);
+  }
+}
+
+// ── Home screen ───────────────────────────────────────────────────────────
+function renderHome() {
+  renderTimeline();
+  renderLevelList();
+}
+
+function renderTimeline() {
+  const wrap = document.getElementById('timeline-nodes');
+  wrap.innerHTML = '';
+  LEVELS.forEach((lv, i) => {
+    const unlocked  = isUnlocked(i);
+    const completed = isCompleted(i);
+    const active    = unlocked && !completed;
+
+    // Connector line before node (except first)
+    if (i > 0) {
+      const line = document.createElement('div');
+      line.className = 'tl-line' + (isCompleted(i-1) ? ' done' : '');
+      wrap.appendChild(line);
+    }
+
+    const node = document.createElement('div');
+    node.className = 'tl-node' + (completed ? ' completed' : active ? ' active' : ' locked');
+    node.title = lv.label;
+    node.innerHTML = `
+      <div class="tl-dot">${completed ? '✓' : (i+1)}</div>
+      <div class="tl-label">${lv.label}</div>
+    `;
+    if (unlocked) node.onclick = () => startLevel(i);
+    wrap.appendChild(node);
+  });
+
+  // Scroll to active node
+  const activeNode = wrap.querySelector('.tl-node.active');
+  if (activeNode) setTimeout(() => activeNode.scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'}), 100);
+}
+
+function renderLevelList() {
+  const list = document.getElementById('level-list');
+  list.innerHTML = '';
+  LEVELS.forEach((lv, i) => {
+    const unlocked  = isUnlocked(i);
+    const completed = isCompleted(i);
+    const best      = getBestScore(i);
+    const active    = unlocked && !completed;
+
+    const card = document.createElement('div');
+    card.className = 'level-card' + (completed ? ' completed' : active ? ' active' : ' locked');
+
+    let badge = '';
+    if (completed) badge = `<span class="level-badge badge-done">✓ ${best}%</span>`;
+    else if (unlocked) badge = `<span class="level-badge badge-active">▶ Start</span>`;
+    else badge = `<span class="level-badge badge-locked">🔒 Locked</span>`;
+
+    card.innerHTML = `
+      <div class="level-num">${completed ? '✓' : (i+1)}</div>
+      <div class="level-info">
+        <div class="level-title">${lv.label}</div>
+        <div class="level-meta">${lv.questions.length} questions</div>
+      </div>
+      ${badge}
+    `;
+    if (unlocked) card.onclick = () => startLevel(i);
+    list.appendChild(card);
+  });
+}
+
+// ── Quiz ──────────────────────────────────────────────────────────────────
+function startLevel(levelIdx) {
+  CUR_LEVEL = levelIdx;
+  SESSION   = shuffle(LEVELS[levelIdx].questions);
+  CUR_Q     = 0;
+  SCORE     = 0;
+  ANSWERED  = false;
+  document.getElementById('quiz-level-title').textContent =
+    'Level ' + (levelIdx+1) + ' — ' + LEVELS[levelIdx].label;
+  showScreen('quiz');
+  renderQuestion();
+}
+
+function renderQuestion() {
+  if (CUR_Q >= SESSION.length) { showResults(); return; }
+  ANSWERED = false;
+  const q   = SESSION[CUR_Q];
+  // Shuffle options if not already done for this question in this session
+  if (q._shuffled === undefined) {
+    const correctText = q.opts[q.correct];
+    const shuffled = [...q.opts].sort(() => Math.random() - 0.5);
+    q._shuffled = shuffled;
+    q._shuffledCorrect = shuffled.indexOf(correctText);
+  }
+  const pct = Math.round((CUR_Q / SESSION.length) * 100);
+  document.getElementById('q-progress-fill').style.width = pct + '%';
+  document.getElementById('q-counter').textContent = (CUR_Q+1) + ' / ' + SESSION.length;
+  document.getElementById('nav-score').textContent  = SCORE + '/' + CUR_Q + ' correct';
+  const diffEl = document.getElementById('q-diff');
+  diffEl.className = 'badge badge-' + (q.difficulty || 'medium');
+  diffEl.textContent = (q.difficulty || 'medium').charAt(0).toUpperCase() + (q.difficulty || 'medium').slice(1);
+  const ctxEl = document.getElementById('q-context');
+  if (q.context) {
+    ctxEl.textContent = q.context;
+    ctxEl.style.display = 'block';
+  } else {
+    ctxEl.style.display = 'none';
+  }
+  document.getElementById('q-text').textContent = q.q;
+  document.getElementById('q-explain').style.display = 'none';
+  document.getElementById('q-next-btn').style.display = 'none';
+  const letters = ['A','B','C','D'];
+  document.getElementById('q-options').innerHTML = q._shuffled.map((opt, i) =>
+    `<button class="opt-btn" onclick="answer(${i})" id="opt-${i}">
+      <span class="opt-letter">${letters[i]}</span>
+      <span>${opt.replace(/^[A-Da-d][.)\s]\s*/,'')}</span>
+    </button>`
+  ).join('');
+}
+
+function answer(idx) {
+  if (ANSWERED) return;
+  ANSWERED = true;
+  const q = SESSION[CUR_Q];
+  const correctIdx = q._shuffledCorrect !== undefined ? q._shuffledCorrect : q.correct;
+  document.querySelectorAll('.opt-btn').forEach((b,i) => {
+    b.disabled = true;
+    if (i === correctIdx) b.classList.add('correct');
+    else if (i === idx)   b.classList.add('wrong');
+  });
+  if (idx === correctIdx) SCORE++;
+  if (idx !== correctIdx && q.explain) {
+    const el = document.getElementById('q-explain');
+    el.innerHTML = '<span style="color:#ffd700">💡 Did you know?</span> ' + q.explain;
+    el.style.display = 'block';
+  }
+  document.getElementById('q-next-btn').style.display = 'inline-block';
+}
+
+function nextQuestion() {
+  CUR_Q++;
+  renderQuestion();
+}
+
+function goHome() {
+  showScreen('home');
+  renderHome();
+}
+
+// ── Results ───────────────────────────────────────────────────────────────
+function showResults() {
+  showScreen('results');
+  const pct = Math.round((SCORE / SESSION.length) * 100);
+  const passed = pct >= PASS_MARK;
+
+  document.getElementById('res-score').textContent   = pct + '%';
+  document.getElementById('res-correct').textContent = SCORE;
+  document.getElementById('res-total').textContent   = SESSION.length;
+  document.getElementById('res-pass').textContent    = PASS_MARK + '%';
+  document.getElementById('res-level-name').textContent =
+    'Level ' + (CUR_LEVEL+1) + ' — ' + LEVELS[CUR_LEVEL].label;
+
+  document.getElementById('res-msg').textContent =
+    pct >= 90 ? "🌟 Excellent! Masha\'Allah!" :
+    pct >= 80 ? "✅ Well done! You passed!" :
+    pct >= 60 ? "📖 Good effort — retry to unlock the next level." :
+                "💪 Keep studying. You will get there!";
+
+  if (passed) markPassed(CUR_LEVEL, pct);
+
+  // Unlock banner
+  const banner   = document.getElementById('unlock-banner');
+  const nextIdx  = CUR_LEVEL + 1;
+  if (passed && nextIdx < LEVELS.length) {
+    const nextLabel = LEVELS[nextIdx] ? LEVELS[nextIdx].label : null;
+    if (nextLabel) {
+      banner.classList.add('show');
+      document.getElementById('unlock-sub').textContent = 'Next: ' + nextLabel;
+    }
+  } else {
+    banner.classList.remove('show');
+  }
+
+  // Certificate button — show only if ALL levels completed
+  document.getElementById('cert-btn').style.display = allCompleted() ? 'inline-block' : 'none';
+}
+
+function retryLevel() {
+  startLevel(CUR_LEVEL);
+}
+
+// ── Certificate ───────────────────────────────────────────────────────────
+function showCertModal() {
+  document.getElementById('cert-modal').classList.add('show');
+}
+function closeCertModal() {
+  document.getElementById('cert-modal').classList.remove('show');
+}
+function generateCert() {
+  const name = document.getElementById('cert-name-input').value.trim();
+  if (!name) { alert('Please enter your name.'); return; }
+  if (typeof drawCertificate === 'function') {
+    drawCertificate({
+      name: name,
+      world: WORLD_NAME,
+      emoji: WORLD_EMOJI,
+      date: new Date().toLocaleDateString('en-GB', {day:'numeric',month:'long',year:'numeric'}),
+      canvasId: 'cert-canvas',
+      accent: getComputedStyle(document.documentElement).getPropertyValue('--accent').trim()
+    });
+  }
+  closeCertModal();
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────
+(function init() {
+  showScreen('home');
+  renderHome();
+})();
+</script>
+</body>
+</html>

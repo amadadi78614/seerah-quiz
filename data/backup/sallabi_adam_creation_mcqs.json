@@ -1,0 +1,864 @@
+{
+  "book": "The Story of The Beginning of Creation and The Creation of Adam (peace be upon him)",
+  "author": "Dr. Ali Muhammad al-Sallabi",
+  "translator": "Abdulmalik ALDUGHAIM",
+  "total_questions": 50,
+  "chapters": {
+    "1": "Chapter One – Evidence of the Creator's Existence",
+    "2": "Chapter Two – The Beginning of Creation",
+    "3": "Chapter Three – The Creation of Adam (pbuh)"
+  },
+  "questions": [
+
+    {
+      "id": "q001",
+      "chapter": "1",
+      "topic": "La ilaha illa Allah",
+      "difficulty": "easy",
+      "q": "According to Dr. Sallabi, what is the FIRST word through which a person enters Islam and ascends in the stages of servitude?",
+      "opts": [
+        "A. Bismillah – beginning all deeds in Allah's name",
+        "B. 'There is no god but Allah, Muhammad is the Messenger of Allah' – the declaration of monotheism",
+        "C. The Shahada of prayer – Allahu Akbar",
+        "D. Seeking forgiveness – Astaghfirullah"
+      ],
+      "ans": 1,
+      "exp": "Dr. Sallabi states: 'The first word through which a person enters the gateway of Islam, reaches the levels of monotheism, and ascends in the stages of servitude, is the phrase: There is no god but Allah, Muhammad is the Messenger of Allah.' By this, the servant acknowledges Allah alone as deserving of worship.",
+      "src": "Chapter One, Section One – p.40-41"
+    },
+
+    {
+      "id": "q002",
+      "chapter": "1",
+      "topic": "La ilaha illa Allah",
+      "difficulty": "medium",
+      "q": "Dr. Sallabi cites the analogy of Wahb ibn Munabbih who was asked: 'Is La ilaha illa Allah the key to Paradise?' What was his answer?",
+      "opts": [
+        "A. Yes, it is the only key and nothing more is needed",
+        "B. Yes, but a key has teeth — if the key has teeth (conditions), it opens; otherwise it will not",
+        "C. No, because deeds must accompany the statement",
+        "D. It depends on whether it is said with the tongue or the heart"
+      ],
+      "ans": 1,
+      "exp": "Wahb ibn Munabbih said: 'Yes, but a key has teeth; if you bring a key with teeth, it will open for you, otherwise it will not.' These teeth are the SEVEN conditions of La ilaha illa Allah. Knowing the words alone is not enough — the conditions must be fulfilled.",
+      "src": "Chapter One, Section One – p.54"
+    },
+
+    {
+      "id": "q003",
+      "chapter": "1",
+      "topic": "La ilaha illa Allah – Conditions",
+      "difficulty": "medium",
+      "q": "What are the SEVEN conditions of La ilaha illa Allah according to scholars, as cited by Dr. Sallabi?",
+      "opts": [
+        "A. Faith, Prayer, Fasting, Zakat, Hajj, Jihad, Remembrance",
+        "B. Knowledge, Certainty, Acceptance, Submission, Truthfulness, Sincerity, Love",
+        "C. Belief, Action, Intention, Consistency, Patience, Gratitude, Trust",
+        "D. Tawhid, Prophethood, Angels, Books, Day of Judgment, Qadr, Resurrection"
+      ],
+      "ans": 1,
+      "exp": "The 7 conditions are: (1) Knowledge — negating ignorance; (2) Certainty — negating doubt; (3) Acceptance with heart and tongue; (4) Submission — negating abandonment; (5) Truthfulness — negating falsehood/hypocrisy; (6) Sincerity — negating shirk in intention; (7) Love — for Allah and hatred of what contradicts it.",
+      "src": "Chapter One, Section One – pp.54-59"
+    },
+
+    {
+      "id": "q004",
+      "chapter": "1",
+      "topic": "La ilaha illa Allah – Virtues",
+      "difficulty": "hard",
+      "q": "Dr. Sallabi cites the famous hadith of the 'card' (Bitaqah) about the Day of Judgment. What does this hadith prove about La ilaha illa Allah?",
+      "opts": [
+        "A. That scrolls of good deeds outweigh sins always",
+        "B. That 99 scrolls of sins were outweighed by one small card bearing 'La ilaha illa Allah, Muhammad is His servant and Messenger' — nothing is heavier than the name of Allah",
+        "C. That sins are forgiven if a person says La ilaha illa Allah once before death",
+        "D. That the testimony must be on a written record for it to be accepted on the Day of Judgment"
+      ],
+      "ans": 1,
+      "exp": "The hadith narrated by Al-Tirmidhi: Allah will bring out a card bearing 'I testify La ilaha illa Allah and that Muhammad is His servant and Messenger.' The man will say: 'What good is this card next to these 99 scrolls [of sins]?' Allah will say: 'You shall not be wronged.' The scrolls will be placed on one pan and the card on the other — the scrolls will be light, and the card will be heavy. 'Nothing is heavier than the name of Allah.'",
+      "src": "Chapter One, Section One – pp.49-50"
+    },
+
+    {
+      "id": "q005",
+      "chapter": "1",
+      "topic": "La ilaha illa Allah – Effects",
+      "difficulty": "medium",
+      "q": "Dr. Sallabi lists 9 effects of believing in La ilaha illa Allah on a person's life. Which of these is listed as effect number 7 — about bravery?",
+      "opts": [
+        "A. The believer avoids all sins due to consciousness of Allah",
+        "B. Belief removes two causes of cowardice: love of worldly things, and fear that someone other than Allah can cause death — making the believer the bravest person",
+        "C. The believer becomes humble without humiliation and elevated without arrogance",
+        "D. The believer does not fall into despair because Allah holds the treasures of heaven and earth"
+      ],
+      "ans": 1,
+      "exp": "Effect 7: 'This phrase encourages a person and fills their heart with bravery, because cowardice has two causes: love for oneself/wealth/family AND belief that someone other than Allah can cause death. La ilaha illa Allah removes both fears. Therefore, there is no one braver than the one who believes in Allah — unshaken by armies, drawn swords, flying bullets, or raining bombs.'",
+      "src": "Chapter One, Section One – p.75"
+    },
+
+    {
+      "id": "q006",
+      "chapter": "1",
+      "topic": "Evidence for Creator's Existence",
+      "difficulty": "easy",
+      "q": "How does the Holy Qur'an primarily approach proving Allah's existence, according to Dr. Sallabi?",
+      "opts": [
+        "A. Through philosophical debate and logical syllogisms",
+        "B. Not through explicit rational debate, but through signs in the horizons and within oneself — because the Qur'an treats the universe as an exhibition of faith",
+        "C. By debating atheists and polytheists with direct argumentation in every surah",
+        "D. By quoting scientific proofs from chemistry and physics"
+      ],
+      "ans": 1,
+      "exp": "Dr. Sallabi notes: 'The Holy Qur'an did not engage in an explicit discussion with those who deny the Creator... The Holy Qur'an treats the entire universe as an exhibition of signs of faith and its evidence, a page open to the senses and hearts.' The proofs in Qur'an were mostly used to establish other matters like Oneness, prophethood, and resurrection.",
+      "src": "Chapter One, Section Two – pp.77-79"
+    },
+
+    {
+      "id": "q007",
+      "chapter": "1",
+      "topic": "Evidence of Creation (Proof 1)",
+      "difficulty": "medium",
+      "q": "Dr. Sallabi quotes the verse: {Or were they created by nothing, or were they the creators of themselves?} [At-Tur: 35]. Imam Abu Hanifa used a similar argument with atheists. What was his illustration?",
+      "opts": [
+        "A. He asked them to look at a book — can it write itself?",
+        "B. He described a ship sailing in a turbulent sea without a captain and asked if this is reasonable — just as the world cannot exist without a Creator",
+        "C. He asked them to consider how seeds grow into trees without any planter",
+        "D. He challenged them to produce something from nothing to prove their claim"
+      ],
+      "ans": 1,
+      "exp": "Imam Abu Hanifa asked: 'What do you say about a ship loaded with goods, sailing smoothly through turbulent waves without a captain or guide — is this reasonable?' They replied: 'No.' He said: 'Glory be to Allah! If a ship cannot sail without a captain, how can this vast world with all its conditions exist without a Creator or Sustainer?' They all wept and repented.",
+      "src": "Chapter One, Section Two – pp.80-81"
+    },
+
+    {
+      "id": "q008",
+      "chapter": "1",
+      "topic": "Evidence of Innate Nature (Proof 2)",
+      "difficulty": "medium",
+      "q": "What does the Qur'anic term 'FITRAH' mean in the verse: {[Adhere to] the fitrah of Allah upon which He has created all people} [Ar-Rum: 30], according to Dr. Sallabi?",
+      "opts": [
+        "A. The natural physical form Allah gave humans",
+        "B. Islam and the inherent disposition toward monotheism that Allah has created all people upon",
+        "C. The covenant that was taken from all humans before creation",
+        "D. The conscience that guides humans toward good and away from evil"
+      ],
+      "ans": 1,
+      "exp": "Dr. Sallabi states: 'The term fitrah here refers to Islam. Allah Almighty has created people with an inherent disposition toward Islam and monotheism.' The Prophet ﷺ said: 'Every child is born with a true faith of Islam and his parents convert him to Judaism, Christianity, or Magianism, as an animal delivers a perfect baby animal.'",
+      "src": "Chapter One, Section Two – pp.82-83"
+    },
+
+    {
+      "id": "q009",
+      "chapter": "1",
+      "topic": "Evidence from the Horizons (Proof 3)",
+      "difficulty": "hard",
+      "q": "Dr. Sallabi discusses 6 scientific miracles as signs from the horizons. Which of the following is one of them?",
+      "opts": [
+        "A. The Qur'an describes the Earth as flat, matching ancient geography",
+        "B. The Qur'an indicated oxygen decreases at high altitudes [Al-An'am: 125], the movement of stars in orbits [Ya-Sin: 40], and a barrier between two salty seas discovered in 1962 [Ar-Rahman: 19-22]",
+        "C. The Qur'an predicted the invention of the internet and telecommunications",
+        "D. The Qur'an described the Earth revolving around the sun before Galileo"
+      ],
+      "ans": 1,
+      "exp": "The 6 scientific miracles cited include: (1) Decrease of oxygen at high altitudes; (2) Stars and planets moving in orbits; (3) Earth and mountains rotating; (4) A barrier between two salty seas (discovered 1962); (5) Earth quivering and swelling with rain; (6) The spider's web being the weakest of homes — all confirmed by modern science.",
+      "src": "Chapter One, Section Two – pp.87-91"
+    },
+
+    {
+      "id": "q010",
+      "chapter": "1",
+      "topic": "Evidence of Guidance (Proof 5)",
+      "difficulty": "medium",
+      "q": "Dr. Sallabi uses the bee as an example of Allah's guidance (Proof 5). What UNIQUE fact does he mention about the queen bee — which mirrors how Allah guides His creation?",
+      "opts": [
+        "A. The queen bee is the only bee that can sting multiple times",
+        "B. The queen produces all the honey alone while other bees merely collect pollen",
+        "C. The queen manages the hive like a king managing subjects — it commands, they obey; it stands at the entrance ensuring no bee crowds another, one by one without crowding",
+        "D. The queen bee lives 10 times longer than other bees due to a special protein"
+      ],
+      "ans": 2,
+      "exp": "Dr. Sallabi writes: 'The bee has a queen called 'queen bee' without whom there is no departure, return, work, or pasture... When bees return to their homes, the queen stands at the entrance ensuring no bee crowds another — they pass one by one without crowding, just as a leader does when his army reaches a narrow crossing.' Allah guided them: {Follow the ways of your Lord laid down for you} [An-Nahl: 68-69].",
+      "src": "Chapter One, Section Two – pp.96-98"
+    },
+
+    {
+      "id": "q011",
+      "chapter": "1",
+      "topic": "Ayat al-Kursi",
+      "difficulty": "easy",
+      "q": "Why does Dr. Sallabi describe Ayat al-Kursi as 'the greatest verse in the Book of Allah'?",
+      "opts": [
+        "A. Because it is the longest verse in the Qur'an",
+        "B. Because everything in it pertains to the exalted divine essence, speaking of His Lordship, divinity, names and attributes of perfection, knowledge, and great authority",
+        "C. Because it is the most frequently recited verse in daily prayers",
+        "D. Because the Prophet ﷺ said it is equal to one-third of the Qur'an"
+      ],
+      "ans": 1,
+      "exp": "Dr. Sallabi says: 'Ayat al-Kursi is considered the best verse in the Book of Allah, as everything in it pertains to the exalted divine essence, speaking of His Lordship, divinity, and His names and attributes that indicate the perfection of His essence, knowledge, power, and great authority.' It fills the heart with awe of Allah's majesty.",
+      "src": "Chapter One, Section Two – p.150"
+    },
+
+    {
+      "id": "q012",
+      "chapter": "1",
+      "topic": "Ayat al-Kursi",
+      "difficulty": "medium",
+      "q": "In explaining Ayat al-Kursi's phrase: {His Kursi extends over the heavens and the earth}, Dr. Sallabi cites Ibn Abbas's interpretation. What did Ibn Abbas say the Kursi refers to?",
+      "opts": [
+        "A. The physical throne of Allah above the seven heavens",
+        "B. Allah's knowledge — indicating the vastness of His dominion and knowledge",
+        "C. The footstool placed beneath the Great Throne",
+        "D. The boundary between the heavens and the earth"
+      ],
+      "ans": 1,
+      "exp": "Ibn Abbas (may Allah be pleased with him) interpreted {His Kursi} as His knowledge. Dr. Sallabi notes: 'Interpreting it as a symbol of His authority aligns with the verse {and they encompass not a thing of His knowledge}. It is a metaphor for the greatness of His power, the extent of His will, the vastness of His knowledge.' The Hadith also states: 'The Kursi compared to the Throne is like a ring thrown in a vast desert.'",
+      "src": "Chapter One, Section Two – pp.158-182"
+    },
+
+    {
+      "id": "q013",
+      "chapter": "1",
+      "topic": "Ayat al-Kursi",
+      "difficulty": "hard",
+      "q": "Dr. Sallabi cites the comparison between the heavens/earth, the Kursi, and the Throne. What is the exact ratio described?",
+      "opts": [
+        "A. The Earth is to the solar system as the Kursi is to the Throne",
+        "B. The seven heavens in the Kursi are like a ring in a vast desert — and the Kursi compared to the Throne is also like a ring compared to a vast desert",
+        "C. The Kursi is 7 times the size of the heavens, and the Throne is 70 times the size of the Kursi",
+        "D. The sun is to the Milky Way as the Kursi is to the heavens"
+      ],
+      "ans": 1,
+      "exp": "The Prophet ﷺ told Abu Dharr: 'O Abu Dharr, the heavens in comparison to the Kursi are like a ring thrown in a vast desert, and the superiority of the Throne over the Kursi is like the superiority of the desert over the ring.' If a small iron ring — no more than 3 inches — is placed in a vast desert like the Sahara, this is the ratio of the seven heavens to the Kursi, and similarly Kursi to Throne.",
+      "src": "Chapter One, Section Two – p.181-182"
+    },
+
+    {
+      "id": "q014",
+      "chapter": "2",
+      "topic": "Beginning of Creation",
+      "difficulty": "medium",
+      "q": "The Prophet ﷺ answered a delegation from Yemen with four foundational statements about the beginning of creation. What were these four matters?",
+      "opts": [
+        "A. Light was created first; then water; then earth; then sky",
+        "B. (1) Allah existed and there was nothing else; (2) His Throne was on water; (3) He wrote all things in the Preserved Tablet; (4) He created the heavens and the earth",
+        "C. The Pen was first; then the Tablet; then the Throne; then water",
+        "D. Allah created angels first, then jinn, then the heavens, then Adam"
+      ],
+      "ans": 1,
+      "exp": "Imam Al-Bukhari narrated from Imran ibn Husayn: The Prophet ﷺ said to the people of Yemen: '(1) Allah existed and there was nothing else besides Him. (2) His Throne was over the water. (3) He wrote everything in the remembrance (Preserved Tablet). (4) He created the heavens and the earth.' These four statements constitute the foundational framework of creation.",
+      "src": "Chapter Two – pp.124-125"
+    },
+
+    {
+      "id": "q015",
+      "chapter": "2",
+      "topic": "First Creation — Throne, Water, or Pen?",
+      "difficulty": "hard",
+      "q": "There is scholarly debate on whether the Throne, Water, or Pen was created first. What does Dr. Sallabi conclude based on Ibn Hajar and Ibn Kathir?",
+      "opts": [
+        "A. The Pen was definitively the first creation based on a clear hadith with no interpretation needed",
+        "B. Water and the Throne are the first of creation; the Pen came after — and the primacy of the Pen in some hadiths refers to everything EXCEPT the Throne and water",
+        "C. All three were created simultaneously at the same moment",
+        "D. The intellect was the first creation based on a fabricated hadith that scholars rejected"
+      ],
+      "ans": 1,
+      "exp": "Ibn Hajar said: The hadith about the Pen being first 'can be reconciled by understanding that the primacy of the Pen refers to everything except water and the Throne.' Ibn Kathir reported that the majority hold the Throne was created before the Pen, based on the hadith: 'Allah recorded the fates of all creatures 50,000 years before creating the heavens and earth, and His Throne was upon water.' Note: The hadith 'The first thing Allah created was the intellect' has NO established chain.",
+      "src": "Chapter Two – pp.173-176"
+    },
+
+    {
+      "id": "q016",
+      "chapter": "2",
+      "topic": "The Throne",
+      "difficulty": "medium",
+      "q": "Dr. Sallabi mentions that Allah created FOUR things with His own hand. What are these four things?",
+      "opts": [
+        "A. The Throne, the Pen, the earth, and the angels",
+        "B. The Throne, the Pen, Adam, and the Garden of Eden (Jannatul Khuld)",
+        "C. The Throne, water, the soul, and Prophet Muhammad ﷺ",
+        "D. The Pen, the Preserved Tablet, Adam, and Hawwa"
+      ],
+      "ans": 1,
+      "exp": "Abdullah ibn Umar reported: 'Allah created four things with His hand: the Throne, the Pen, Adam, and the Garden of Eden. Then He said to the rest of creation: Be, and it was.' This was narrated by Al-Darimi, Abu Shaykh, and Al-Lalaka'i with a chain meeting the criteria of Sahih Muslim.",
+      "src": "Chapter Two – p.178"
+    },
+
+    {
+      "id": "q017",
+      "chapter": "2",
+      "topic": "The Throne",
+      "difficulty": "hard",
+      "q": "Dr. Sallabi cites a hadith narrated by Abu Dawood about the Angel carrying the Throne. What astonishing fact is mentioned?",
+      "opts": [
+        "A. The angel's wingspan covers the distance between east and west",
+        "B. The distance between the earlobe and shoulder of one of the Throne-bearing angels is a journey of 700 years",
+        "C. The angel's voice when glorifying Allah can be heard across all seven heavens",
+        "D. The Throne-bearing angels never sleep and have 600 wings"
+      ],
+      "ans": 1,
+      "exp": "Abu Dawood narrated: 'I have been permitted to tell about one of Allah's angels who bears the Throne that the distance between the lobe of his ear and his shoulder is a journey of 700 years.' Authenticated by Al-Albani. Dr. Sallabi reflects: 'If this is the description of the DISTANCE BETWEEN EARLOBE AND SHOULDER of ONE angel, what can be said about the Throne itself?'",
+      "src": "Chapter Two – p.180"
+    },
+
+    {
+      "id": "q018",
+      "chapter": "2",
+      "topic": "The Throne – Spiritual Significance",
+      "difficulty": "medium",
+      "q": "On the Day of Judgment when there is no shade, who are the 7 categories Allah will shade under His Throne? (As cited by Dr. Sallabi from Sahih Bukhari/Muslim)",
+      "opts": [
+        "A. The prophets, the martyrs, the scholars, the parents, the orphans, the poor, and the believers",
+        "B. A just ruler; a youth who grew up worshiping Allah; one attached to the masjid; two who love each other for Allah; a man who refuses beauty for fear of Allah; one who gives charity secretly; one who remembers Allah alone and weeps",
+        "C. Those who fasted Ramadan; performed Hajj; gave Zakat; prayed tahajjud; read Qur'an daily; avoided backbiting; protected their families",
+        "D. The sincere, the patient, the grateful, the humble, the truthful, the generous, and the repentant"
+      ],
+      "ans": 1,
+      "exp": "The Prophet ﷺ said: 'Seven people Allah will give them His Shade on the Day when there would be no shade but His Shade: (1) A just ruler; (2) A youth who grew up in worship of Allah; (3) A man whose heart is attached to mosques; (4) Two men who love and depart for Allah's sake; (5) A man who refuses a beautiful woman saying: I fear Allah; (6) One who gives charity so secretly the left hand doesn't know what the right gives; (7) One who remembers Allah in solitude with tearful eyes.'",
+      "src": "Chapter Two – pp.185-186"
+    },
+
+    {
+      "id": "q019",
+      "chapter": "2",
+      "topic": "Darwin's Theory",
+      "difficulty": "medium",
+      "q": "Dr. Sallabi discusses Darwin's theory of evolution extensively. What does he say about its historical misuse?",
+      "opts": [
+        "A. Darwin's theory was used by Islamic scholars to explain the diversity of races",
+        "B. Colonialists exploited it claiming the white race was strongest and fittest, leading to destructive ideologies like Nazism and Fascism — even though Darwin himself did not deny the existence of Allah",
+        "C. Darwin himself was a Muslim convert at the end of his life",
+        "D. The theory was only accepted by Christian missionaries but rejected universally by scientists"
+      ],
+      "ans": 1,
+      "exp": "Dr. Sallabi states: 'Darwin claimed to believe in a Creator who gave life, but atheists found in his theory what they were searching for.' Furthermore: 'Colonialists exploited this theory, claiming that the white race was the strongest and fittest, leading to the development of destructive ideologies such as Nazism and Fascism.' The introduction by Al-Qaradaghi elaborates this point extensively.",
+      "src": "Introduction by Al-Qaradaghi – pp.4-5"
+    },
+
+    {
+      "id": "q020",
+      "chapter": "2",
+      "topic": "Darwin's Theory – Scientific Refutation",
+      "difficulty": "hard",
+      "q": "Dr. Sallabi cites scientific evidence against Darwin's theory. What did scientist Charles Eugene calculate about forming a protein molecule by chance?",
+      "opts": [
+        "A. It would require 1 million years — making it highly unlikely",
+        "B. The probability of forming a single protein molecule by chance would require a time span of no less than 10,243 million years — far exceeding the Earth's age",
+        "C. The odds are 1 in 7 billion, similar to winning a lottery",
+        "D. It would require a volume of amino acids that is 500 times the size of the Earth"
+      ],
+      "ans": 1,
+      "exp": "Dr. Sallabi cites: 'Scientist Charles Eugene calculated the probability of forming a single protein molecule by chance and found that it could occur only once in a time span of no less than 10,243 million years — far exceeding the billions of years the Earth has existed.' In 1962, chemists Dixon and Webb found it would require a volume of amino acids 50,000 times the size of the ENTIRE UNIVERSE.",
+      "src": "Introduction by Al-Qaradaghi – pp.5-6"
+    },
+
+    {
+      "id": "q021",
+      "chapter": "2",
+      "topic": "Allah is the First",
+      "difficulty": "medium",
+      "q": "Dr. Sallabi explains the Divine Name 'Al-Awwal' (The First). According to Ibn al-Qayyim he cites, what does worshiping Allah by His name 'The First' require of a servant?",
+      "opts": [
+        "A. Acknowledging that Allah was before all creation in time",
+        "B. Detachment from relying on causes and means — recognizing that His grace and mercy alone initiated goodness, with no means from the servant in the state of non-existence before creation",
+        "C. Putting Allah before everything in your daily schedule and priorities",
+        "D. Making the first action every day a remembrance of Allah"
+      ],
+      "ans": 1,
+      "exp": "Ibn al-Qayyim says: 'Worshiping Him by His name The First requires detachment from focusing on the causes and relying on them, and instead recognizing His grace and mercy alone. He is the initiator of goodness without any means from the servant, as there was no means from the servant in the state of non-existence before his creation. What means could there be then? It was nothing but pure non-existence.'",
+      "src": "Chapter Two – pp.131-133"
+    },
+
+    {
+      "id": "q022",
+      "chapter": "2",
+      "topic": "Satanic Whispers about Creation",
+      "difficulty": "medium",
+      "q": "The Prophet ﷺ warned about Satanic whispers regarding creation — specifically about a dangerous question Satan plants in the mind. What is this question, and what is the prescribed remedy?",
+      "opts": [
+        "A. Question: 'Why did Allah create suffering?' — Remedy: Say Alhamdulillah and accept qadr",
+        "B. Question: 'Who created Allah?' — Remedy: Seek refuge in Allah, stop thinking about it, say 'I believe in Allah and His messengers,' recite Surah Al-Ikhlas, and spit to the left",
+        "C. Question: 'Does Allah really exist?' — Remedy: Perform extra prayers and increase fasting",
+        "D. Question: 'Is the Qur'an really from Allah?' — Remedy: Recite Ayat al-Kursi and seek forgiveness"
+      ],
+      "ans": 1,
+      "exp": "The Prophet ﷺ said: 'People will not stop asking questions till they say: This is Allah, Creator of everything — then who created Allah?' The remedy: 'When he gets to that length the man should seek refuge in Allah and stop thinking about it.' Muslim adds: 'Whoever experiences this should say: I believe in Allah.' Abu Dawood/An-Nasa'i add: 'Recite Surah Al-Ikhlas, then spit to his left, and seek refuge with Allah.'",
+      "src": "Chapter Two – pp.142-145"
+    },
+
+    {
+      "id": "q023",
+      "chapter": "2",
+      "topic": "Duality of Creation",
+      "difficulty": "easy",
+      "q": "Dr. Sallabi discusses the 'Duality of Creation' as evidence of the Oneness of the Creator. Which Qur'anic verse does he cite for this?",
+      "opts": [
+        "A. {And We created the heavens and earth in six days} [Hud: 7]",
+        "B. {And of all things We created two mates; perhaps you will remember} [Adh-Dhariyat: 49]",
+        "C. {There is nothing like unto Him, and He is the Hearing, the Seeing} [Ash-Shuraa: 11]",
+        "D. {Say, He is Allah, the One, the Eternal Refuge} [Al-Ikhlas: 1-2]"
+      ],
+      "ans": 1,
+      "exp": "Allah says: {And of all things We created two mates; perhaps you will remember} [Adh-Dhariyat: 49]. Al-Qurtubi explains: 'So that you may know that the Creator of pairs is One, for He is not subject to movement or stillness, light or darkness, sitting or standing, beginning or end.' The duality of creation — sky/earth, night/day, sun/moon, faith/disbelief — points to the Oneness of the Creator.",
+      "src": "Chapter Two – p.165"
+    },
+
+    {
+      "id": "q024",
+      "chapter": "2",
+      "topic": "Wisdom in Creation",
+      "difficulty": "medium",
+      "q": "Dr. Sallabi cites Ibn al-Qayyim's profound discussion on wisdom in creation. What dangerous impact does DENYING wisdom have on religion, according to Ibn al-Qayyim?",
+      "opts": [
+        "A. It leads to increased fatalism and passivity in society",
+        "B. Rational people cannot dismiss causes and wisdom from their minds — and when they cannot reconcile the denial of wisdom with divine laws, they cast aside the divine laws altogether",
+        "C. It causes people to doubt the existence of Allah entirely",
+        "D. It leads to excessive worship based on fear rather than love"
+      ],
+      "ans": 1,
+      "exp": "Ibn al-Qayyim said: 'The harm of this statement [denying wisdom] to the divine laws is among the greatest harms. For rational people cannot deny causes, wisdom, benefits, and ultimate purposes. When they see it is impossible to reconcile this with the divine laws and cannot dismiss it from their minds, they cast aside the divine laws, having a negative opinion of them, saying: We cannot reconcile them with our intellects.'",
+      "src": "Chapter Two – p.169"
+    },
+
+    {
+      "id": "q025",
+      "chapter": "2",
+      "topic": "Creation in Stages",
+      "difficulty": "easy",
+      "q": "According to Dr. Sallabi, Allah created the heavens and earth in SIX days. How many days did He use to create the EARTH specifically, according to [Fussilat: 9-10]?",
+      "opts": [
+        "A. One day for the earth itself, and three more for its mountains and sustenance",
+        "B. Two days for the earth, then four days for its mountains, sustenance, and blessings — totaling six including the heavens",
+        "C. Three days for the earth and three days for everything in it",
+        "D. One day for the earth and five days for all living things within it"
+      ],
+      "ans": 1,
+      "exp": "Allah says: {Say, Do you indeed disbelieve in He who created the earth in TWO days...? (9) And He placed firmly set mountains over its surface, and blessed it and determined its sustenance in FOUR days...} [Fussilat: 9-10]. Then He directed to the heavens. Total: 2 (earth) + 4 (its provisions/mountains) + creation of heavens = 6 days for the entire creation.",
+      "src": "Chapter Two – pp.163-164"
+    },
+
+    {
+      "id": "q026",
+      "chapter": "2",
+      "topic": "Allah's Self-Sufficiency",
+      "difficulty": "easy",
+      "q": "Dr. Sallabi emphasizes that Allah did NOT create creation out of need. What are the THREE things Allah did NOT need creation for?",
+      "opts": [
+        "A. He did not need worship, praise, or gratitude from creation",
+        "B. He did not create creation to seek companionship from loneliness, to increase His numbers from scarcity, or to strengthen Himself from weakness",
+        "C. He did not need helpers, partners, or advisors in creation",
+        "D. He did not need the heavens, earth, or angels to manage His kingdom"
+      ],
+      "ans": 1,
+      "exp": "Dr. Sallabi states: 'One of the key aspects of this grand narrative is that Allah Almighty did not create the creation to seek companionship from loneliness, to increase His numbers from scarcity, or to strengthen Himself from weakness. He is self-sufficient and independent of His creation, while they are in constant need of Him in all their states. He is The Mighty, The Praiseworthy.'",
+      "src": "Chapter Two – p.161"
+    },
+
+    {
+      "id": "q027",
+      "chapter": "3",
+      "topic": "Stages of Adam's Creation",
+      "difficulty": "medium",
+      "q": "Dr. Sallabi lists 6 stages of the creation of Adam ﷺ in Surah Al-A'raf. What are these six stages IN ORDER?",
+      "opts": [
+        "A. Light → Water → Clay → Mud → Form → Soul",
+        "B. Dust → Water → Clay → Moulded clay → Dark black mud → Pottery-like clay — then the soul was breathed into this pottery form",
+        "C. Sand → Wet clay → Sticky clay → Fired clay → Living form → Soul",
+        "D. Earth → Sounding clay → Altered mud → Black clay → Smooth clay → Living being"
+      ],
+      "ans": 1,
+      "exp": "Dr. Sallabi explains from Surah Al-A'raf: Stage 1: DUST; Stage 2: WATER; Stage 3: CLAY; Stage 4: MOULDED CLAY; Stage 5: DARK, BLACK MUD; Stage 6: POTTERY-like clay. After these stages, Adam ﷺ became a lifeless, molded form. This was the formation phase in preparation for the breathing of the soul by Allah: {when I have proportioned him and breathed into him of My [created] soul} [Sad: 71-72].",
+      "src": "Chapter Two, Section Three (Adam in Al-A'raf) – pp.19-20"
+    },
+
+    {
+      "id": "q028",
+      "chapter": "3",
+      "topic": "The Soul",
+      "difficulty": "hard",
+      "q": "Dr. Sallabi makes a profound statement about the honor of a human being in relation to the soul. What is it?",
+      "opts": [
+        "A. 'The honor of a human being is in their lineage and their deeds'",
+        "B. 'The honor of a human being is in the breath of the soul, not in the handful of clay. Religion is the soul of the soul, so the honor of the human being is in both the soul and the soul of the soul.'",
+        "C. 'The honor of a human being comes from being made from the earth and returning to it'",
+        "D. 'The honor of a human is in their mind, which distinguishes them from animals'"
+      ],
+      "ans": 1,
+      "exp": "Dr. Sallabi writes: 'The honor of a human being is embodied in the breath of the soul, not in the handful of clay. The clay's value is elevated by the breath of the soul, the recognition of the Noble Creator, and the great religion. Religion is the soul of the soul, so the honor of the human being is found in both the soul and the soul of the soul. Reflect on this!'",
+      "src": "Chapter Two – p.20"
+    },
+
+    {
+      "id": "q029",
+      "chapter": "3",
+      "topic": "Teaching Adam the Names",
+      "difficulty": "medium",
+      "q": "What does Dr. Sallabi say about the significance of Allah teaching Adam ﷺ 'all the names' [Al-Baqarah: 31]?",
+      "opts": [
+        "A. It means Allah taught Adam all human languages simultaneously",
+        "B. It demonstrates Adam's superiority over the angels — the intellect as the primary tool for learning, freedom of expression, and the origin of language are all connected to this miracle",
+        "C. It means Adam was given the gift of prophecy before any other prophet",
+        "D. It showed that knowledge of creation is a form of worship of the Creator"
+      ],
+      "ans": 1,
+      "exp": "Dr. Sallabi notes that the teaching of names to Adam ﷺ reveals: the intellect as the primary tool for learning, the origin of language, insights into unseen miracles, the reason Adam was given that name, and how freedom of expression manifested in him. When Adam named the things before the angels, it demonstrated his superiority over them — he knew what they did not.",
+      "src": "Chapter Two (Adam in Al-Baqarah) – pp.16-17"
+    },
+
+    {
+      "id": "q030",
+      "chapter": "3",
+      "topic": "Iblees",
+      "difficulty": "easy",
+      "q": "Dr. Sallabi addresses whether Iblees was from the JINN or the ANGELS. What does he conclude based on the Qur'anic verses?",
+      "opts": [
+        "A. Iblees was definitively an angel who became corrupted",
+        "B. The Qur'anic evidence indicates Iblees was from the jinn — specifically cited from Surah Al-Kahf: {he was of the jinn and departed from the command of his Lord}",
+        "C. Iblees was a hybrid creation — neither fully angel nor fully jinn",
+        "D. The matter is uncertain and scholars have no clear position"
+      ],
+      "ans": 1,
+      "exp": "Dr. Sallabi discusses this in the sections on Adam in Surah Al-Baqarah and Al-Kahf: Allah says {except Iblees. He was of the jinn and departed from the command of his Lord} [Al-Kahf: 50]. This establishes Iblees as being from the jinn — created from smokeless fire — not from the angels who are created from light. His being commanded with the angels was due to his worship and elevated station among them, not his nature.",
+      "src": "Chapter Two (Adam in Al-Baqarah/Al-Kahf) – p.17"
+    },
+
+    {
+      "id": "q031",
+      "chapter": "3",
+      "topic": "Iblees – Arrogance",
+      "difficulty": "medium",
+      "q": "Dr. Sallabi discusses arrogance as the root sin of Iblees. What was the ESSENCE of Iblees's argument when he refused to prostrate to Adam ﷺ?",
+      "opts": [
+        "A. He claimed Adam was not worthy because he was made of clay and was new",
+        "B. He compared himself to Adam and believed he was more honourable — 'I am better than him; You created me from fire and created him from clay' — making Qiyas (analogy) against a divine command",
+        "C. He argued that prostrating to anyone other than Allah is shirk",
+        "D. He claimed the other angels should not prostrate either since Adam was not a prophet yet"
+      ],
+      "ans": 1,
+      "exp": "Ibn Sirin said: 'Iblees tried to compare himself to Adam. He believed he was more honourable than Adam. Therefore he abstained from prostrating even though Allah had commanded him.' Iblees said: 'I am not the one to prostrate to a human being whom You created from sounding clay of altered black smooth mud.' He made a false analogy — fire is superior to clay — but missed the spiritual honor Allah gave Adam: the divine soul, knowledge of names, and divine selection.",
+      "src": "Chapter Two (Adam in Al-A'raf) – based on Qur'an [Al-A'raf: 11-13]"
+    },
+
+    {
+      "id": "q032",
+      "chapter": "3",
+      "topic": "Iblees – Methods of Misguidance",
+      "difficulty": "medium",
+      "q": "Dr. Sallabi lists 6 specific methods Iblees uses to misguide humanity, from Surah Al-Hijr. What are they?",
+      "opts": [
+        "A. Lying, stealing, murder, fornication, magic, and polytheism",
+        "B. (1) Doubting the Creator's existence; (2) Questioning Allah's right to exclusive worship/encouraging idols; (3) Doubting faith-based doctrines; (4) General skepticism about Muslim life; (5) Beautifying desires and sins; (6) Discouraging righteous deeds",
+        "C. Pride, envy, greed, anger, lust, laziness",
+        "D. Whispers in prayer, bad dreams, division among believers, financial corruption, doubts about the Qur'an, doubts about the Prophet ﷺ"
+      ],
+      "ans": 1,
+      "exp": "From Surah Al-Hijr: Iblees said {I will surely make disobedience attractive to them on earth, and I will mislead them all} [Al-Hijr: 39]. Dr. Sallabi details his 6 methods: (1) Doubt about Creator; (2) Question exclusive worship/promote idols; (3) Doubt doctrines; (4) General skepticism about Muslim life; (5) Beautify sins/desires; (6) Discourage righteous deeds. The antidote: Sincerity — 'except Your sincere servants' [Al-Hijr: 40].",
+      "src": "Chapter Two (Adam in Al-Hijr) – pp.23-24"
+    },
+
+    {
+      "id": "q033",
+      "chapter": "3",
+      "topic": "Adam's Repentance",
+      "difficulty": "easy",
+      "q": "Dr. Sallabi discusses the KEY difference between Adam ﷺ's disobedience and Iblees's disobedience. What is the fundamental difference?",
+      "opts": [
+        "A. Adam's sin was greater but forgiven due to his prophetic status",
+        "B. Adam ﷺ sinned, recognized his error, repented immediately, and was guided by Allah to words of repentance — while Iblees sinned through arrogance, refused to repent, and persisted in his rebellion",
+        "C. Adam's disobedience was accidental due to forgetfulness while Iblees acted deliberately",
+        "D. The difference is only a matter of degree — both committed the same type of sin"
+      ],
+      "ans": 1,
+      "exp": "Dr. Sallabi highlights: 'I emphasized the wisdom behind Adam's disobedience and his subsequent repentance, highlighting the difference between Adam's disobedience and that of Iblees.' Adam: {Then Adam received from his Lord some words, and He accepted his repentance} [Al-Baqarah: 37]. Iblees: arrogance, no repentance, eternal enmity. This also shows there is NO concept of inherited sin in Islam.",
+      "src": "Chapter Two (Adam in Al-Baqarah) – pp.18-19"
+    },
+
+    {
+      "id": "q034",
+      "chapter": "3",
+      "topic": "No Original Sin in Islam",
+      "difficulty": "easy",
+      "q": "Dr. Sallabi explicitly states an important contrast with Christian theology regarding Adam's sin. What does he clarify?",
+      "opts": [
+        "A. Islam agrees with Christianity that all humans carry the guilt of Adam's sin",
+        "B. 'There is no concept of inherited sin in Islam' — Adam repented, was forgiven, and his descendants do not carry guilt for his sin",
+        "C. Islam teaches that Adam's sin only affects those who repeat it",
+        "D. The concept of original sin applies only to the Children of Israel"
+      ],
+      "ans": 1,
+      "exp": "Dr. Sallabi states clearly: 'I also clarified that there is no concept of inherited sin in Islam.' Adam ﷺ repented, Allah accepted his repentance: {Indeed, it is He who is the Accepting of Repentance, the Merciful} [Al-Baqarah: 37]. Each person is accountable only for their own deeds: {And no bearer of burdens will bear the burden of another} [Al-An'am: 164].",
+      "src": "Chapter Two (Adam in Al-Baqarah) – p.18"
+    },
+
+    {
+      "id": "q035",
+      "chapter": "3",
+      "topic": "The Garden of Adam",
+      "difficulty": "medium",
+      "q": "Dr. Sallabi notes that the 'garden' where Adam ﷺ lived before the descent is discussed. What does he address regarding the tree Adam was instructed to avoid?",
+      "opts": [
+        "A. The tree was a fig tree and represents the cycle of seasons",
+        "B. He addresses which garden it was, the specific tree they were instructed to avoid 'in order to prevent wrongdoing,' and that they were warned about their enemy Iblees",
+        "C. The tree was purely symbolic and represents forbidden knowledge",
+        "D. The tree's fruit gave eternal life and was therefore kept exclusively for Allah"
+      ],
+      "ans": 1,
+      "exp": "Dr. Sallabi states: 'I addressed the garden mentioned in the story, where Adam and Eve were permitted to live, as well as the specific tree they were instructed to avoid in order to prevent wrongdoing. They were also warned about their enemy, Iblees.' The entry points of Satan through instincts — specifically the instincts of KINGSHIP and IMMORTALITY — were how he deceived them.",
+      "src": "Chapter Two (Adam in Al-Baqarah and Ta-Ha) – pp.17-18, 25"
+    },
+
+    {
+      "id": "q036",
+      "chapter": "3",
+      "topic": "Adam's Descent to Earth",
+      "difficulty": "medium",
+      "q": "According to Dr. Sallabi, the descent of Adam, Eve, and Iblees to earth was not a punishment without purpose. What wisdom does he cite for the descent?",
+      "opts": [
+        "A. The earth needed human custodians to build civilization and return to Allah",
+        "B. Adam and his wife were prepared to cultivate the earth — it is the 'grand home' — and the earth needed its vicegerent (khalifah) as originally announced to the angels",
+        "C. The descent was to test humanity before granting them Paradise permanently",
+        "D. Both A and B — the descent fulfilled the original divine plan of creating a khalifah on earth"
+      ],
+      "ans": 3,
+      "exp": "Dr. Sallabi states: 'I discussed the descent of Adam and his wife, as well as Iblees, to earth, and the wisdom behind this descent. I also explained that Adam and his wife were prepared to cultivate the earth, as it is our grand home.' This fulfills the original divine announcement to the angels: {I am going to place a vicegerent on earth} [Al-Baqarah: 30].",
+      "src": "Chapter Two (Adam in Al-Baqarah) – pp.18-19"
+    },
+
+    {
+      "id": "q037",
+      "chapter": "3",
+      "topic": "Adam's Prophethood",
+      "difficulty": "hard",
+      "q": "Dr. Sallabi addresses whether Adam ﷺ was a PROPHET and MESSENGER. What evidence does he provide for Adam's prophethood?",
+      "opts": [
+        "A. Adam is not mentioned among the prophets in the Qur'an so his prophethood is disputed",
+        "B. Multiple evidences: (1) Allah called him multiple times and spoke to him directly in Paradise; (2) Taught him all names; (3) He repented inspired by Allah; (4) He met the Prophet ﷺ in the lowest heaven during Isra — only prophets were encountered there; (5) All sects of Muslims unanimously count him among prophets",
+        "C. Adam was only a prophet after his descent to earth, not while in Paradise",
+        "D. His prophethood is proven only by the hadith of intercession on the Day of Judgment"
+      ],
+      "ans": 1,
+      "exp": "From Sallabi's article on the site: Allah called Adam multiple times in Paradise — this alone is sufficient for prophethood. The Prophet ﷺ met Adam in the lowest heaven during Mi'raj and only prophets were encountered. Additionally: {Indeed, Allah chose Adam and Noah and the family of Abraham and the family of Imran over the worlds} [Ali 'Imran: 33]. All sects of Muslims agree he is among the prophets and messengers.",
+      "src": "Chapter Two (Adam's Prophethood) – based on book content pp.689-672"
+    },
+
+    {
+      "id": "q038",
+      "chapter": "3",
+      "topic": "Eve (Hawwa)",
+      "difficulty": "easy",
+      "q": "Dr. Sallabi discusses the creation of Eve (Hawwa) and her role. What does he say her creation was for?",
+      "opts": [
+        "A. Eve was created to be a temptress to test Adam's obedience",
+        "B. Allah created Eve as a companion to Adam to share in life and help establish the FIRST BUILDING BLOCK of human civilization and its expansion",
+        "C. Eve was created only after Adam had lived alone for many years in the garden",
+        "D. Eve was created to show the equality of men and women before Allah"
+      ],
+      "ans": 1,
+      "exp": "Dr. Sallabi states: 'I discussed how Allah created our mother, Eve, as a companion to our father, Adam, to share in life and help establish the first building block of human civilization and its expansion.' The book also addresses marriage: 'The Holy Qur'an established the institution of marriage for Adam to be a divine tradition for humanity, aimed at providing companionship, love, fulfilling desires, and bearing offspring.'",
+      "src": "Chapter Two (Adam in Al-Baqarah) – p.17"
+    },
+
+    {
+      "id": "q039",
+      "chapter": "3",
+      "topic": "Marriage as Divine Institution",
+      "difficulty": "medium",
+      "q": "Dr. Sallabi emphasizes marriage as a divine institution established from Adam ﷺ. What Qur'anic verse does he cite to show the universal nature of this institution?",
+      "opts": [
+        "A. {And We created you in pairs} [An-Naba: 8]",
+        "B": "B. {And of His signs is that He created for you from yourselves mates that you may find tranquility in them; and He placed between you affection and mercy} [Ar-Rum: 21]",
+        "C. {So direct your face toward the religion, inclining to truth. The fitrah of Allah upon which He has created all people} [Ar-Rum: 30]",
+        "D. {And marry the unmarried among you} [An-Nur: 32]"
+      ],
+      "ans": 1,
+      "exp": "Dr. Sallabi states from the book: 'The Holy Qur'an established the institution of marriage for Adam ﷺ to be a divine tradition for humanity... It serves as the exclusive, pure, and blessed lawful means for the union of male and female.' He cites {And of His signs is that He created for you from yourselves mates that you may find tranquility in them; and He placed between you affection and mercy} [Ar-Rum: 21].",
+      "src": "Book content on Marriage – p.567-569"
+    },
+
+    {
+      "id": "q040",
+      "chapter": "3",
+      "topic": "Human Civilization",
+      "difficulty": "medium",
+      "q": "Dr. Sallabi outlines the foundations of early human civilization under Adam ﷺ. Which of the following is NOT listed among the topics he covers in the eighth section?",
+      "opts": [
+        "A. Marriage and Procreation; Provision of Life's Needs; Adam as Caller of Monotheism",
+        "B. Adam and the Sacred House (Ka'bah); Moral Foundation; The Stewardship of Earth",
+        "C. The Story of Cain and Abel; Human Dignity; Concept of Trust (Amanah)",
+        "D. The story of Noah's Ark and the first global flood under Adam's time"
+      ],
+      "ans": 3,
+      "exp": "Dr. Sallabi's eighth section on Adam's descent covers: Beginning of Human Civilization, Marriage and Procreation, Provision of Life's Needs, Adam as Caller of Monotheism, Worship of Allah on Earth, Adam and the Sacred House, Moral Foundation, Principles of Early Human Ethics, Stewardship of Earth, Divine Methodology, Succession, Trust (Amanah), Human Dignity, Physical Honor, Intellectual Honor, The Story of Cain and Abel, and The Death of Adam. Noah's flood is a separate era.",
+      "src": "Chapter Two (Section Eight) – pp.26-27"
+    },
+
+    {
+      "id": "q041",
+      "chapter": "3",
+      "topic": "Surah Al-Isra and Adam",
+      "difficulty": "medium",
+      "q": "In his section on Adam in Surah Al-Isra, Dr. Sallabi focuses on a concluding verse. What verse does he deeply reflect on?",
+      "opts": [
+        "A. {We have certainly honored the children of Adam} [Al-Isra: 70]",
+        "B. {And sufficient is your Lord as Disposer of affairs} [Al-Isra: 65] — and the name 'Al-Wakeel' (Disposer of Affairs) and its connection to the story",
+        "C. {And We said to the angels, Prostrate to Adam, and they prostrated} [Al-Isra: 61]",
+        "D. {And He taught Adam the names, all of them} [Al-Isra: 33]"
+      ],
+      "ans": 1,
+      "exp": "Dr. Sallabi states: 'I focused on the concluding verse of the story in Surah Al-Isra: {And sufficient is your Lord as Disposer of affairs} [Al-Isra: 65]. I reflected deeply on the name of Allah — The Disposer of Affairs — and its connection to the events of the story, considering its impact on human life in both this world and the Hereafter.'",
+      "src": "Chapter Two (Adam in Al-Isra) – pp.24-25"
+    },
+
+    {
+      "id": "q042",
+      "chapter": "3",
+      "topic": "Surah Sad and Creation",
+      "difficulty": "hard",
+      "q": "In the section on Adam in Surah Sad, Dr. Sallabi discusses a unique concept. What is the 'celestial assembly' (Al-Mala' Al-A'la) dialogue he refers to?",
+      "opts": [
+        "A. The dialogue between the angels and Iblees after the prostration",
+        "B. The dialogue that occurred in the highest assembly related to the creation of Adam — which can only be accessed through the Holy Qur'an revealed to Prophet Muhammad ﷺ",
+        "C. The conversation between Adam and Iblees in Paradise before the fall",
+        "D. The celestial meeting where the Preserved Tablet was revealed to the angels"
+      ],
+      "ans": 1,
+      "exp": "Dr. Sallabi states about Surah Sad: 'I discussed the beginning of humanity and the dialogue that occurred in the celestial assembly related to the creation of Adam (peace be upon him), which can only be accessed through the Holy Qur'an revealed to our truthful and infallible Prophet Muhammad (peace be upon him).' The verses in Sad 38:69-76 contain this celestial discussion.",
+      "src": "Chapter Two (Adam in Surah Sad) – p.25-26"
+    },
+
+    {
+      "id": "q043",
+      "chapter": "1",
+      "topic": "The Name Allah",
+      "difficulty": "medium",
+      "q": "Dr. Sallabi lists several unique qualities of the Name 'Allah'. Which of the following is one of them?",
+      "opts": [
+        "A. It is the name used most frequently by non-Muslims referring to God",
+        "B. It is a name that belongs to Him alone — no one else is associated with it, it is not applied to anyone else, and none of His creation claims it; it is also considered by some to be His Greatest Name",
+        "C. It has 7 letters in Arabic representing the 7 heavens",
+        "D. It is only used in formal prayer and not in everyday speech"
+      ],
+      "ans": 1,
+      "exp": "Dr. Sallabi lists: 'Allah' is a name that (1) belongs to Him alone — no creature is named by it; (2) is considered by some to be His Greatest Name; (3) is the most frequently mentioned name in Qur'an and Sunnah; (4) is the most famous name spoken by all creatures in various languages; (5) signifies the magnificent essence encompassing all divine attributes; (6) is associated with all worlds in their essence; (7) encompasses all divine names.",
+      "src": "Chapter One, Section One – pp.43-45"
+    },
+
+    {
+      "id": "q044",
+      "chapter": "1",
+      "topic": "Loyalty and Disavowal (Al-Wala' wal-Bara')",
+      "difficulty": "hard",
+      "q": "Dr. Sallabi cites Imam Ahmad's warning about 'loyalty and disavowal' as a SLOGAN. What did Imam Ahmad say?",
+      "opts": [
+        "A. Loyalty to believers and disavowal of disbelievers is obligatory for every Muslim",
+        "B. 'Loyalty is an innovation, and disavowal is an innovation' — referring to making it a banner for declaring Muslims as disbelievers and fighting them, as the Kharijites did",
+        "C. The concept is from the Sunnah and must be taught to every Muslim child",
+        "D. Loyalty and disavowal are the two pillars of the testimony of faith"
+      ],
+      "ans": 1,
+      "exp": "Imam Ahmad said (in the narration of al-Istukhri): 'Loyalty is an innovation, and disavowal is an innovation; they are the ones who say: We befriend so-and-so and disassociate from so-and-so — and this statement is an innovation, so beware of it.' This was directed at those who turned it into a slogan to excommunicate Muslims. Dr. Sallabi also cites Al-Qaradaghi's distinction: disavowal is from ACTIONS, not from persons.",
+      "src": "Chapter One, Section One – pp.70-71"
+    },
+
+    {
+      "id": "q045",
+      "chapter": "1",
+      "topic": "Allah is Self-Sufficient",
+      "difficulty": "easy",
+      "q": "How many times does the name 'Al-Ghani' (The Self-Sufficient) appear in the Holy Qur'an, and how is it most often paired, according to Dr. Sallabi?",
+      "opts": [
+        "A. 7 times — most often with Al-Aziz (The Mighty)",
+        "B. 18 times — most often with Al-Hamid (The Praiseworthy) as in {Allah is the Free of need, the Praiseworthy}",
+        "C. 99 times — as one of the 99 Names of Allah",
+        "D. 33 times — paired with Al-Wahhab (The Bestower)"
+      ],
+      "ans": 1,
+      "exp": "Dr. Sallabi states: 'Among the beautiful names of Allah is The Self-Sufficient (Al-Ghani), which is mentioned in the Holy Qur'an eighteen times; sometimes alone as in [Yunus: 68], and sometimes combined with His name The Praiseworthy — which is the most common — as in {O mankind, you are those in need of Allah, while Allah is the Free of need, the Praiseworthy} [Fatir: 15].'",
+      "src": "Chapter Two – pp.161-162"
+    },
+
+    {
+      "id": "q046",
+      "chapter": "2",
+      "topic": "The Preserved Tablet and Pen",
+      "difficulty": "medium",
+      "q": "What did Allah command the Pen to write, according to the hadith narrated by Imam Ahmad, Abu Dawood, and Al-Tirmidhi?",
+      "opts": [
+        "A. The 99 Names of Allah and their meanings",
+        "B. 'Write what was decreed about everything till the Last Hour comes' — meaning all decrees and destinies until the Day of Judgment",
+        "C. The Qur'an before it was revealed to Muhammad ﷺ",
+        "D. The names and destinies of all human beings who would ever live"
+      ],
+      "ans": 1,
+      "exp": "The hadith of Ubadah ibn al-Samit: 'The first thing Allah created was the pen. He said to it: Write. It asked: What should I write, my Lord? He said: Write what was decreed about everything till the Last Hour comes.' This establishes that all of creation's destiny — past, present, future — was written in the Preserved Tablet.",
+      "src": "Chapter Two – pp.174-175"
+    },
+
+    {
+      "id": "q047",
+      "chapter": "2",
+      "topic": "Creation and Resurrection",
+      "difficulty": "medium",
+      "q": "Dr. Sallabi cites a hadith about a person who denied the resurrection. What does the hadith say Allah responds about the comparison between first creation and resurrection?",
+      "opts": [
+        "A. 'Creation from nothing is easy for Me — restoring it is even easier'",
+        "B": "B. 'The son of Adam denied Me saying I will not resurrect him as I created him — but resurrecting him is not more difficult for Me than creating him in the first place'",
+        "C. 'If I created the seven heavens and earth in 6 days, I can recreate him in one moment'",
+        "D. 'Does he not know that I created him from a drop of fluid and then from a clinging substance?'"
+      ],
+      "ans": 1,
+      "exp": "The hadith narrated from Abu Huraira: 'Allah says: The son of Adam denied Me and he had no right to do so... As for his denying Me, it is his saying that I will not resurrect him as I created him in the beginning, but resurrecting him is NOT more difficult for Me than creating him in the first place.' [Al-Anbya: 104]: {As We began the first creation, We will repeat it}.",
+      "src": "Chapter Two – p.147"
+    },
+
+    {
+      "id": "q048",
+      "chapter": "2",
+      "topic": "The Throne – Souls of Martyrs",
+      "difficulty": "hard",
+      "q": "Dr. Sallabi cites a hadith about where the souls of MARTYRS reside. Where are they, according to the hadith from Sahih Muslim?",
+      "opts": [
+        "A. In a meadow in the highest Paradise (Firdaws)",
+        "B. Inside green birds having lanterns suspended from the Throne, roaming freely in Paradise where they please, then returning to those lanterns",
+        "C. Resting in the shade of the Throne awaiting the Day of Resurrection",
+        "D. Near the graves of their bodies, free to visit wherever they wish"
+      ],
+      "ans": 1,
+      "exp": "The Prophet ﷺ said in Sahih Muslim: 'Their souls are in the insides of green birds having lanterns suspended from the Throne, roaming freely in Paradise where they please, then taking shelter in those lanterns. Their Lord cast a glance at them, and said: Do you wish for anything? They said: What shall we wish for when we roam freely in Paradise where we please?' Three times they were asked, then they wished to fight for Allah again.",
+      "src": "Chapter Two – pp.184-185"
+    },
+
+    {
+      "id": "q049",
+      "chapter": "1",
+      "topic": "La ilaha illa Allah – Loyalty and Disavowal",
+      "difficulty": "medium",
+      "q": "What is Dr. Sallabi's key point about HOW La ilaha illa Allah united people of different nations?",
+      "opts": [
+        "A. It united them through a shared Arabic language",
+        "B": "B. La ilaha illa Allah united Suhayb the Roman, Bilal the Ethiopian, Salman the Persian, and Abu Bakr the Qurashi Arab — tribal, racial, and territorial loyalties faded under the banner of monotheism",
+        "C. It united them through a shared political system and caliphate",
+        "D. It united them through the Hajj pilgrimage to the Ka'bah every year"
+      ],
+      "ans": 1,
+      "exp": "Dr. Sallabi states: 'The declaration of La ilaha illa Allah united Suhayb the Roman, Bilal the Ethiopian, Salman the Persian, and Abu Bakr the Qurashi Arab. Tribal, racial, and territorial loyalties faded. The Messenger ﷺ said: Leave it, for it is something disgusting — referring to party spirit (asabiyyah). He also said: He who dies upholding party spirit does not belong to us.'",
+      "src": "Chapter One, Section One – p.66"
+    },
+
+    {
+      "id": "q050",
+      "chapter": "3",
+      "topic": "Adam's Death and Legacy",
+      "difficulty": "easy",
+      "q": "What was Adam ﷺ's PRIMARY mission to his descendants after his descent to earth, according to Dr. Sallabi?",
+      "opts": [
+        "A. Teaching them agriculture and how to cultivate the earth",
+        "B": "B. Acting as a Caller to Monotheism (Da'i ila al-Tawhid) and Divine Guidance — establishing worship of Allah on earth as his central mission",
+        "C. Building the first cities and establishing the first laws of governance",
+        "D. Carrying the divine scriptures and distributing them to all his children"
+      ],
+      "ans": 1,
+      "exp": "Dr. Sallabi includes 'Adam as a Caller of Monotheism and Divine Guidance' and 'Worship of Allah on Earth' as central topics in the section on Adam's life on earth. He also discusses 'Adam and the Sacred House,' showing his connection to the Ka'bah and the foundational Tawhid-based civilization. The moral foundation of early human civilization was built on the Oneness of Allah.",
+      "src": "Chapter Two (Section Eight) – pp.26-27"
+    }
+
+  ]
+}
